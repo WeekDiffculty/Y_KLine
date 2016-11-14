@@ -12,7 +12,8 @@
 #import "Y_StockChartViewController.h"
 #import "Masonry.h"
 #import "AppDelegate.h"
-@interface ViewController ()
+#import "HQViewController.h"
+@interface ViewController ()<HQVCDelegate>
 
 @end
 
@@ -21,13 +22,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor orangeColor];
-
-
+    UINavigationController *Navc = self.viewControllers[0];
+    HQViewController *HQVC = Navc.viewControllers.firstObject;
+    HQVC.HQdelegate = self;
 }
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
 }
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -38,12 +41,21 @@
 
     
 }
-- (IBAction)present:(id)sender {
-    AppDelegate *appdelegate = [UIApplication sharedApplication].delegate;
-    appdelegate.isEable = YES;
-    Y_StockChartViewController *stockChartVC = [Y_StockChartViewController new];
-    stockChartVC.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
-    [self presentViewController:stockChartVC animated:YES completion:nil];
+//- (IBAction)present:(id)sender {
+//    AppDelegate *appdelegate = [UIApplication sharedApplication].delegate;
+//    appdelegate.isEable = YES;
+//    Y_StockChartViewController *stockChartVC = [Y_StockChartViewController new];
+//    stockChartVC.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+//    [self presentViewController:stockChartVC animated:YES completion:nil];
+//}
+#pragma HqDelegate>>>>>>>>>>>>>>>>>>>>>>>
+
+- (void)openJiaoyiWithVC:(UIViewController *)VC{
+    [self setSelectedIndex:2];
+}
+- (void)openTubiaoWithVC:(UIViewController *)VC{
+    [self setSelectedIndex:1];
+
 }
 - (BOOL)shouldAutorotate
 {
