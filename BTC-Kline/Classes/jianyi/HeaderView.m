@@ -34,6 +34,7 @@
     UIView *leftView = [[UIView alloc]init];
     UIView *rightView = [[UIView alloc]init];
     leftView.backgroundColor = [UIColor redColor];
+    rightView.backgroundColor = [UIColor blackColor];
     [view addSubview:leftView];
     [view addSubview:rightView];
     [leftView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -53,6 +54,10 @@
     [leftView addSubview:symbolLabel];
     [leftView addSubview:statusLabel];
     [leftView addSubview:priceLabel];
+    
+}
+- (void)layoutSubviews{
+    [super layoutSubviews ];
     
 }
 @end

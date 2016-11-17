@@ -9,8 +9,14 @@
 #define Glob_h
 #define Width [UIScreen mainScreen].bounds.size.width
 #define Height [UIScreen mainScreen].bounds.size.height
+
+#define WeakObj(obj) __weak typeof(obj) weak##obj = obj
+//#define StrongObj(obj) __strong typeof(obj) strong##obj = obj
+
 #import "NetWorking.h"
 #import "Masonry.h"
+#import "GoodsPath.h"
+#import "JSViewController.h"
 //*行情*/
 #define  HQJK @"http://47.89.53.7:8777/api/?type=singlequote&symbol="
 //账号密码校验3

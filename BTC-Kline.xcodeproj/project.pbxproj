@@ -53,10 +53,21 @@
 		84FFC12E1CD4676F00C749F6 /* Y_StockChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FFC12D1CD4676F00C749F6 /* Y_StockChartView.m */; };
 		84FFC1541CD4A21600C749F6 /* UIColor+Y_StockChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FFC1531CD4A21600C749F6 /* UIColor+Y_StockChart.m */; };
 		911E22236ED76437562A6A2F /* libPods-BTC-Kline.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 74E3A205500B38FC6E717747 /* libPods-BTC-Kline.a */; };
+		C02B72871DDD49AC005FBE1C /* NomalCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C02B72851DDD49AC005FBE1C /* NomalCell.m */; };
+		C02B72881DDD49AC005FBE1C /* NomalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C02B72861DDD49AC005FBE1C /* NomalCell.xib */; };
+		C02B728C1DDD49CB005FBE1C /* DetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C02B728A1DDD49CB005FBE1C /* DetailCell.m */; };
+		C02B728D1DDD49CB005FBE1C /* DetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C02B728B1DDD49CB005FBE1C /* DetailCell.xib */; };
+		C02B72901DDD7FD9005FBE1C /* Account.m in Sources */ = {isa = PBXBuildFile; fileRef = C02B728F1DDD7FD9005FBE1C /* Account.m */; };
+		C02B72931DDD8A96005FBE1C /* AddAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C02B72921DDD8A96005FBE1C /* AddAccountViewController.m */; };
+		C06A1F061DDC3A5A008852B0 /* GoodsPath.m in Sources */ = {isa = PBXBuildFile; fileRef = C06A1F051DDC3A5A008852B0 /* GoodsPath.m */; };
+		C06A1F091DDC6CC9008852B0 /* NewJiaoyiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C06A1F081DDC6CC9008852B0 /* NewJiaoyiViewController.m */; };
+		C075B88C1DDAAB6A00F773AE /* SymbolModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C075B88B1DDAAB6A00F773AE /* SymbolModel.m */; };
 		C08F03531DD94A4200945352 /* AccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C08F03521DD94A4200945352 /* AccountViewController.m */; };
+		C0A7C55F1DDDA1310084B6A0 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0A7C55E1DDDA1310084B6A0 /* LoginViewController.m */; };
 		C0E4125B1DD9849600798679 /* HeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = C0E4125A1DD9849600798679 /* HeaderView.m */; };
 		C0E412621DD99FAD00798679 /* HangQing.m in Sources */ = {isa = PBXBuildFile; fileRef = C0E412611DD99FAD00798679 /* HangQing.m */; };
 		C0E412641DD9AB1F00798679 /* goods.plist in Resources */ = {isa = PBXBuildFile; fileRef = C0E412631DD9AB1F00798679 /* goods.plist */; };
+		C0E412671DD9C2FA00798679 /* TubiaoSetUPTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0E412661DD9C2FA00798679 /* TubiaoSetUPTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -148,13 +159,33 @@
 		84FFC1531CD4A21600C749F6 /* UIColor+Y_StockChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Y_StockChart.m"; sourceTree = "<group>"; };
 		91D39E2EDC14546C0231B348 /* Pods-BTC-Kline.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BTC-Kline.release.xcconfig"; path = "Pods/Target Support Files/Pods-BTC-Kline/Pods-BTC-Kline.release.xcconfig"; sourceTree = "<group>"; };
 		B7FEEF5804F5D1806CD22D6C /* Pods-BTC-Kline.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BTC-Kline.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BTC-Kline/Pods-BTC-Kline.debug.xcconfig"; sourceTree = "<group>"; };
+		C02B72841DDD49AC005FBE1C /* NomalCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NomalCell.h; sourceTree = "<group>"; };
+		C02B72851DDD49AC005FBE1C /* NomalCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NomalCell.m; sourceTree = "<group>"; };
+		C02B72861DDD49AC005FBE1C /* NomalCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NomalCell.xib; sourceTree = "<group>"; };
+		C02B72891DDD49CB005FBE1C /* DetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailCell.h; sourceTree = "<group>"; };
+		C02B728A1DDD49CB005FBE1C /* DetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailCell.m; sourceTree = "<group>"; };
+		C02B728B1DDD49CB005FBE1C /* DetailCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailCell.xib; sourceTree = "<group>"; };
+		C02B728E1DDD7FD9005FBE1C /* Account.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Account.h; sourceTree = "<group>"; };
+		C02B728F1DDD7FD9005FBE1C /* Account.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Account.m; sourceTree = "<group>"; };
+		C02B72911DDD8A96005FBE1C /* AddAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddAccountViewController.h; sourceTree = "<group>"; };
+		C02B72921DDD8A96005FBE1C /* AddAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddAccountViewController.m; sourceTree = "<group>"; };
+		C06A1F041DDC3A5A008852B0 /* GoodsPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoodsPath.h; sourceTree = "<group>"; };
+		C06A1F051DDC3A5A008852B0 /* GoodsPath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoodsPath.m; sourceTree = "<group>"; };
+		C06A1F071DDC6CC9008852B0 /* NewJiaoyiViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewJiaoyiViewController.h; sourceTree = "<group>"; };
+		C06A1F081DDC6CC9008852B0 /* NewJiaoyiViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewJiaoyiViewController.m; sourceTree = "<group>"; };
+		C075B88A1DDAAB6A00F773AE /* SymbolModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SymbolModel.h; sourceTree = "<group>"; };
+		C075B88B1DDAAB6A00F773AE /* SymbolModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SymbolModel.m; sourceTree = "<group>"; };
 		C08F03511DD94A4200945352 /* AccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountViewController.h; sourceTree = "<group>"; };
 		C08F03521DD94A4200945352 /* AccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountViewController.m; sourceTree = "<group>"; };
+		C0A7C55D1DDDA1310084B6A0 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		C0A7C55E1DDDA1310084B6A0 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		C0E412591DD9849600798679 /* HeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeaderView.h; sourceTree = "<group>"; };
 		C0E4125A1DD9849600798679 /* HeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeaderView.m; sourceTree = "<group>"; };
 		C0E412601DD99FAD00798679 /* HangQing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HangQing.h; sourceTree = "<group>"; };
 		C0E412611DD99FAD00798679 /* HangQing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HangQing.m; sourceTree = "<group>"; };
 		C0E412631DD9AB1F00798679 /* goods.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = goods.plist; sourceTree = "<group>"; };
+		C0E412651DD9C2FA00798679 /* TubiaoSetUPTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TubiaoSetUPTableViewController.h; sourceTree = "<group>"; };
+		C0E412661DD9C2FA00798679 /* TubiaoSetUPTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TubiaoSetUPTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -213,7 +244,15 @@
 			children = (
 				189433CD1DD446A800F3D618 /* JYViewController.h */,
 				189433CE1DD446A800F3D618 /* JYViewController.m */,
+				C06A1F071DDC6CC9008852B0 /* NewJiaoyiViewController.h */,
+				C06A1F081DDC6CC9008852B0 /* NewJiaoyiViewController.m */,
 				C0E412591DD9849600798679 /* HeaderView.h */,
+				C02B72891DDD49CB005FBE1C /* DetailCell.h */,
+				C02B728A1DDD49CB005FBE1C /* DetailCell.m */,
+				C02B728B1DDD49CB005FBE1C /* DetailCell.xib */,
+				C02B72841DDD49AC005FBE1C /* NomalCell.h */,
+				C02B72851DDD49AC005FBE1C /* NomalCell.m */,
+				C02B72861DDD49AC005FBE1C /* NomalCell.xib */,
 				C0E4125A1DD9849600798679 /* HeaderView.m */,
 			);
 			name = jiaoyi;
@@ -234,10 +273,18 @@
 		189433C91DD4464600F3D618 /* setup */ = {
 			isa = PBXGroup;
 			children = (
+				C02B728E1DDD7FD9005FBE1C /* Account.h */,
+				C02B728F1DDD7FD9005FBE1C /* Account.m */,
 				189433D31DD446C300F3D618 /* SetUpViewController.h */,
 				189433D41DD446C300F3D618 /* SetUpViewController.m */,
 				C08F03511DD94A4200945352 /* AccountViewController.h */,
 				C08F03521DD94A4200945352 /* AccountViewController.m */,
+				C02B72911DDD8A96005FBE1C /* AddAccountViewController.h */,
+				C02B72921DDD8A96005FBE1C /* AddAccountViewController.m */,
+				C0A7C55D1DDDA1310084B6A0 /* LoginViewController.h */,
+				C0A7C55E1DDDA1310084B6A0 /* LoginViewController.m */,
+				C0E412651DD9C2FA00798679 /* TubiaoSetUPTableViewController.h */,
+				C0E412661DD9C2FA00798679 /* TubiaoSetUPTableViewController.m */,
 			);
 			path = setup;
 			sourceTree = "<group>";
@@ -533,6 +580,10 @@
 			children = (
 				C0E412601DD99FAD00798679 /* HangQing.h */,
 				C0E412611DD99FAD00798679 /* HangQing.m */,
+				C075B88A1DDAAB6A00F773AE /* SymbolModel.h */,
+				C075B88B1DDAAB6A00F773AE /* SymbolModel.m */,
+				C06A1F041DDC3A5A008852B0 /* GoodsPath.h */,
+				C06A1F051DDC3A5A008852B0 /* GoodsPath.m */,
 				C0E412631DD9AB1F00798679 /* goods.plist */,
 			);
 			name = Model;
@@ -572,7 +623,7 @@
 				TargetAttributes = {
 					84C0D7851CD117B40013B3D4 = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = LSRRXAH5MP;
+						DevelopmentTeam = 73W72LVS68;
 					};
 				};
 			};
@@ -601,8 +652,10 @@
 			files = (
 				183E277B1DD5BDF100033F60 /* OptionView.xib in Resources */,
 				C0E412641DD9AB1F00798679 /* goods.plist in Resources */,
+				C02B728D1DDD49CB005FBE1C /* DetailCell.xib in Resources */,
 				189433E41DD4838F00F3D618 /* SimpleCell.xib in Resources */,
 				84FFC0F01CD31EBD00C749F6 /* 指标公式.md in Resources */,
+				C02B72881DDD49AC005FBE1C /* NomalCell.xib in Resources */,
 				84C0D7991CD117B40013B3D4 /* LaunchScreen.storyboard in Resources */,
 				84C0D7961CD117B40013B3D4 /* Assets.xcassets in Resources */,
 				84C0D7941CD117B40013B3D4 /* Main.storyboard in Resources */,
@@ -675,14 +728,17 @@
 				84FFC0F41CD35DD400C749F6 /* NetWorking.m in Sources */,
 				183E277F1DD5C8D600033F60 /* JSViewController.m in Sources */,
 				189433D21DD446B400F3D618 /* KViewController.m in Sources */,
+				C0A7C55F1DDDA1310084B6A0 /* LoginViewController.m in Sources */,
 				84C0D7911CD117B40013B3D4 /* ViewController.m in Sources */,
 				189433DF1DD4823F00F3D618 /* SimpleCell.m in Sources */,
 				84681CB11CD9A8EE008A8157 /* Y_KLineAccessory.m in Sources */,
 				84681C9A1CD895CB008A8157 /* Y_KLineVolumeView.m in Sources */,
 				C0E412621DD99FAD00798679 /* HangQing.m in Sources */,
+				C02B72871DDD49AC005FBE1C /* NomalCell.m in Sources */,
 				C08F03531DD94A4200945352 /* AccountViewController.m in Sources */,
 				C0E4125B1DD9849600798679 /* HeaderView.m in Sources */,
 				84681CB41CD9B868008A8157 /* Y_AccessoryMAView.m in Sources */,
+				C02B72901DDD7FD9005FBE1C /* Account.m in Sources */,
 				84681C941CD75DA1008A8157 /* Y_StockChartSegmentView.m in Sources */,
 				84D8EAB71CD1C298008D7BC7 /* Y_KLineModel.m in Sources */,
 				189433CC1DD4466700F3D618 /* HQViewController.m in Sources */,
@@ -691,18 +747,24 @@
 				84681C901CD7325F008A8157 /* Y_MALine.m in Sources */,
 				84681C9D1CD89954008A8157 /* Y_KLineVolume.m in Sources */,
 				189433CF1DD446A800F3D618 /* JYViewController.m in Sources */,
+				C06A1F091DDC6CC9008852B0 /* NewJiaoyiViewController.m in Sources */,
 				84681C8D1CD7290D008A8157 /* Y_KLine.m in Sources */,
 				189433D51DD446C300F3D618 /* SetUpViewController.m in Sources */,
 				84681CA91CD8DBFA008A8157 /* Y_VolumeMAView.m in Sources */,
 				189433E21DD4828700F3D618 /* SeniorCell.m in Sources */,
 				84681C801CD4B56E008A8157 /* Y_KLineMainView.m in Sources */,
 				84681C781CD4ABF5008A8157 /* Y_KLineView.m in Sources */,
+				C02B72931DDD8A96005FBE1C /* AddAccountViewController.m in Sources */,
+				C0E412671DD9C2FA00798679 /* TubiaoSetUPTableViewController.m in Sources */,
+				C06A1F061DDC3A5A008852B0 /* GoodsPath.m in Sources */,
+				C075B88C1DDAAB6A00F773AE /* SymbolModel.m in Sources */,
 				183E27791DD5BDD900033F60 /* OptionView.m in Sources */,
 				84681C731CD4A694008A8157 /* Y_StockChartGlobalVariable.m in Sources */,
 				183E275F1DD5B11200033F60 /* SymbolListTableViewController.m in Sources */,
 				84681C841CD6F5B0008A8157 /* Y_KLinePositionModel.m in Sources */,
 				84681CAD1CD8EC4F008A8157 /* Y_KLineAccessoryView.m in Sources */,
 				183E27631DD5B28B00033F60 /* EdtingTableViewController.m in Sources */,
+				C02B728C1DDD49CB005FBE1C /* DetailCell.m in Sources */,
 				84681C881CD70588008A8157 /* Y_KLineMAView.m in Sources */,
 				84681CA11CD89A38008A8157 /* Y_KLineVolumePositionModel.m in Sources */,
 				84C0D78B1CD117B40013B3D4 /* main.m in Sources */,
@@ -770,7 +832,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -809,7 +871,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -824,7 +886,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = LSRRXAH5MP;
+				DEVELOPMENT_TEAM = 73W72LVS68;
 				INFOPLIST_FILE = "BTC-Kline/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -841,7 +903,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = LSRRXAH5MP;
+				DEVELOPMENT_TEAM = 73W72LVS68;
 				INFOPLIST_FILE = "BTC-Kline/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

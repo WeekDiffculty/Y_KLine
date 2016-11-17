@@ -14,6 +14,7 @@
 @end
 
 @interface OptionView : UIView
+@property (nonatomic, weak) NSString *tittle;
 @property (nonatomic, weak) id <OptionViewDelegate> OptinViewDelegate;
 @property (weak, nonatomic) IBOutlet UILabel *symbolName;
 +(instancetype)optionView;

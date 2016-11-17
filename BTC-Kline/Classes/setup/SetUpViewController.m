@@ -8,6 +8,7 @@
 
 #import "SetUpViewController.h"
 #import "AccountViewController.h"
+#import "TubiaoSetUPTableViewController.h"
 @interface SetUpViewController ()
 @property (weak, nonatomic) IBOutlet UITableViewCell *aCount;
 @property (weak, nonatomic) IBOutlet UITableViewCell *OTP;
@@ -44,6 +45,8 @@
     self.guanyu.textLabel.text = @"关于";
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    TubiaoSetUPTableViewController *tbStVC = [storyboard instantiateViewControllerWithIdentifier:@"TubiaoSetUPTableViewController"];
     if (indexPath.section==0) {
         if (indexPath.row==0) {
             [self.navigationController pushViewController:[AccountViewController new] animated:YES];
@@ -53,6 +56,7 @@
     }else{
         switch (indexPath.row) {
             case 0:
+            [self.navigationController pushViewController:tbStVC animated:YES];
                 
                 break;
             case 1:

@@ -15,6 +15,11 @@
     OptionView *view = [[[NSBundle mainBundle]loadNibNamed:@"OptionView" owner:nil options:nil]firstObject];
     return view;
 }
+
+- (void)setTittle:(NSString *)tittle{
+    _tittle = tittle;
+    self.symbolName.text = tittle;
+}
 - (IBAction)newJiaoyi:(UIButton *)sender {
     if (self.OptinViewDelegate) {
         [self.OptinViewDelegate OpenJiaoyiWithoptionView:self];

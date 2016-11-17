@@ -1,5 +1,6 @@
 # Uncomment the next line to define a global platform for your project
 # platform :ios, '9.0'
+   pod 'MJRefresh', '~> 3.1.12'
  pod 'Masonry', '~> 1.0.2'
   pod 'AFNetworking', '~> 3.1.0'
 target 'BTC-Kline' do

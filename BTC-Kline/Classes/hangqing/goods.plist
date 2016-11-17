@@ -22,9 +22,69 @@
 	</dict>
 	<dict>
 		<key>symbol</key>
-		<string>EURNZD</string>
+		<string>AUDCHF</string>
 		<key>description</key>
-		<string>Euro vs New Zealand Dollar</string>
+		<string>AUStralian Dollar vs Swiss Franc</string>
+	</dict>
+	<dict>
+		<key>symbol</key>
+		<string>AUDJPY</string>
+		<key>description</key>
+		<string>Australian Dollar vs Japanese Yen</string>
+	</dict>
+	<dict>
+		<key>symbol</key>
+		<string>AUDNZD</string>
+		<key>description</key>
+		<string>Australian Dollar vs New Zealand Dollar</string>
+	</dict>
+	<dict>
+		<key>symbol</key>
+		<string>AUDUSD</string>
+		<key>description</key>
+		<string>Australian Dollar vs US Dollar </string>
+	</dict>
+	<dict>
+		<key>symbol</key>
+		<string>CADJPY</string>
+		<key>description</key>
+		<string>Canadian Dollar vs Japanese Yen</string>
+	</dict>
+	<dict>
+		<key>symbol</key>
+		<string>CHFJPY</string>
+		<key>description</key>
+		<string>Swiss Frank Japanese Yen </string>
+	</dict>
+	<dict>
+		<key>symbol</key>
+		<string>EURAUD</string>
+		<key>description</key>
+		<string>Euro vs Australian Dollar</string>
+	</dict>
+	<dict>
+		<key>symbol</key>
+		<string>EURCAD</string>
+		<key>description</key>
+		<string>Euro vs Canadian Dollar</string>
+	</dict>
+	<dict>
+		<key>symbol</key>
+		<string>EURCHF</string>
+		<key>description</key>
+		<string>Euro vs Swiss Franc</string>
+	</dict>
+	<dict>
+		<key>symbol</key>
+		<string>EURGBP</string>
+		<key>description</key>
+		<string>Euro vs Great Britain Pound</string>
+	</dict>
+	<dict>
+		<key>symbol</key>
+		<string>EURJPY</string>
+		<key>description</key>
+		<string>Euro vs Japanese Yen</string>
 	</dict>
 	<dict>
 		<key>symbol</key>
@@ -34,117 +94,39 @@
 	</dict>
 	<dict>
 		<key>symbol</key>
-		<string>EURNZD</string>
+		<string>GBPCHF</string>
 		<key>description</key>
-		<string>Euro vs New Zealand Dollar</string>
+		<string>Great Britain Pound vs Swiss Franc</string>
 	</dict>
 	<dict>
 		<key>symbol</key>
-		<string>EURNZD</string>
+		<string>GOLD</string>
 		<key>description</key>
-		<string>Euro vs New Zealand Dollar</string>
+		<string>Gold</string>
 	</dict>
 	<dict>
 		<key>symbol</key>
-		<string>EURNZD</string>
+		<string>USDCAD</string>
 		<key>description</key>
-		<string>Euro vs New Zealand Dollar</string>
+		<string>US Dollar vs Candian Dollar</string>
 	</dict>
 	<dict>
 		<key>symbol</key>
-		<string>EURNZD</string>
+		<string>USDCHF</string>
 		<key>description</key>
-		<string>Euro vs New Zealand Dollar</string>
+		<string>US Dollar vs Swiss Franc</string>
 	</dict>
 	<dict>
 		<key>symbol</key>
-		<string>EURNZD</string>
+		<string>XAGUSD</string>
 		<key>description</key>
-		<string>Euro vs New Zealand Dollar</string>
+		<string>Silver</string>
 	</dict>
 	<dict>
 		<key>symbol</key>
-		<string>EURNZD</string>
+		<string>XAUUSD</string>
 		<key>description</key>
-		<string>Euro vs New Zealand Dollar</string>
-	</dict>
-	<dict>
-		<key>symbol</key>
-		<string>EURNZD</string>
-		<key>description</key>
-		<string>Euro vs New Zealand Dollar</string>
-	</dict>
-	<dict>
-		<key>symbol</key>
-		<string>EURNZD</string>
-		<key>description</key>
-		<string>Euro vs New Zealand Dollar</string>
-	</dict>
-	<dict>
-		<key>symbol</key>
-		<string>EURNZD</string>
-		<key>description</key>
-		<string>Euro vs New Zealand Dollar</string>
-	</dict>
-	<dict>
-		<key>symbol</key>
-		<string>EURNZD</string>
-		<key>description</key>
-		<string>Euro vs New Zealand Dollar</string>
-	</dict>
-	<dict>
-		<key>symbol</key>
-		<string>EURNZD</string>
-		<key>description</key>
-		<string>Euro vs New Zealand Dollar</string>
-	</dict>
-	<dict>
-		<key>symbol</key>
-		<string>EURNZD</string>
-		<key>description</key>
-		<string>Euro vs New Zealand Dollar</string>
-	</dict>
-	<dict>
-		<key>symbol</key>
-		<string>EURNZD</string>
-		<key>description</key>
-		<string>Euro vs New Zealand Dollar</string>
-	</dict>
-	<dict>
-		<key>symbol</key>
-		<string>EURNZD</string>
-		<key>description</key>
-		<string>Euro vs New Zealand Dollar</string>
-	</dict>
-	<dict>
-		<key>symbol</key>
-		<string>EURNZD</string>
-		<key>description</key>
-		<string>Euro vs New Zealand Dollar</string>
-	</dict>
-	<dict>
-		<key>symbol</key>
-		<string>EURNZD</string>
-		<key>description</key>
-		<string>Euro vs New Zealand Dollar</string>
-	</dict>
-	<dict>
-		<key>symbol</key>
-		<string>EURNZD</string>
-		<key>description</key>
-		<string>Euro vs New Zealand Dollar</string>
-	</dict>
-	<dict>
-		<key>symbol</key>
-		<string>EURNZD</string>
-		<key>description</key>
-		<string>Euro vs New Zealand Dollar</string>
-	</dict>
-	<dict>
-		<key>symbol</key>
-		<string>EURNZD</string>
-		<key>description</key>
-		<string>Euro vs New Zealand Dollar</string>
+		<string>Gold</string>
 	</dict>
 </array>
 </plist>

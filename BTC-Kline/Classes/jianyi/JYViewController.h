@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface JYViewController : UIViewController
+- (IBAction)newJiaoyi:(UIBarButtonItem *)sender;
 
 @end

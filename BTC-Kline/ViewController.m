@@ -13,6 +13,8 @@
 #import "Masonry.h"
 #import "AppDelegate.h"
 #import "HQViewController.h"
+#import "JYViewController.h"
+#import "NewJiaoyiViewController.h"
 @interface ViewController ()<HQVCDelegate>
 
 @end
@@ -52,6 +54,7 @@
 
 - (void)openJiaoyiWithVC:(UIViewController *)VC{
     [self setSelectedIndex:2];
+    [self.viewControllers[2] pushViewController:[NewJiaoyiViewController new] animated:YES];
 }
 - (void)openTubiaoWithVC:(UIViewController *)VC{
     [self setSelectedIndex:1];

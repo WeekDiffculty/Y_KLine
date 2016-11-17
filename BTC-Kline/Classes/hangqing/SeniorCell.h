@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface SeniorCell : UITableViewCell
+@property (nonatomic, copy)NSString *symbol;
 + (instancetype)seniorCellWithTableView:(UITableView *)tableView;
 @end

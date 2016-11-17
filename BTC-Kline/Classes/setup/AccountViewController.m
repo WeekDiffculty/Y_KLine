@@ -8,32 +8,54 @@
 
 #import "AccountViewController.h"
 #import "Glob.h"
+#import "Account.h"
+#import "AddAccountViewController.h"
 @interface AccountViewController ()
-
+@property (nonatomic, strong)UILabel *noLoginView;
 @end
 
 @implementation AccountViewController
 
+- (UILabel *)noLoginView{
+    if (!_noLoginView) {
+        _noLoginView = [[UILabel alloc]init];
+        _noLoginView.backgroundColor = [UIColor lightGrayColor];
+        _noLoginView.frame = CGRectMake(0, 0, Width, Height);
+    }
+    return  _noLoginView;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self loadDefaultSetting];
 }
 
-- (void)viewWillAppear:(BOOL)animated{
-     self.navigationController.toolbarHidden = NO;
-}
+
 - (void)loadDefaultSetting{
+    self.view.backgroundColor = [UIColor whiteColor];
     self.title = @"账户";
-    UIButton *online = [[UIButton alloc]init];
-    [self.navigationController setToolbarItems:@[online]];
-    online.titleLabel.text = @"上线";
-    online.titleLabel.textColor = [UIColor redColor];
-    [online addTarget:self action:@selector(login ) forControlEvents:UIControlEventTouchUpInside];
+    
+    UIBarButtonItem *buttonitem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"add_22x22_"] style:0 target:self action:@selector(addAcount)];
+    if ([Account shareAccount].account) {//已登陆
+        [self.view addSubview:self.noLoginView];
+        self.noLoginView.text = @"当前登录用户：";
+        [self.noLoginView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.leading.trailing.equalTo(self.view);
+            make.height.equalTo(@50);
+        }];
+        
+    }else{//未登陆
+         self.navigationItem.rightBarButtonItem = buttonitem;
+        [self.view addSubview:self.noLoginView];
+        self.noLoginView.text = @"当前没有已登陆用户，请点击右上角加号添加账号";
+    }
     
 }
-- (void)login{
+
+- (void)addAcount{
+    UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     
+    [self.navigationController pushViewController:[storyBoard instantiateViewControllerWithIdentifier:@"AddAccountViewController" ] animated:YES];
 }
 - (void)viewWillDisappear:(BOOL)animated{
      self.navigationController.toolbarHidden = YES;

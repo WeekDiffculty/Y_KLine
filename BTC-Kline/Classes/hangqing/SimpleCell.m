@@ -36,6 +36,11 @@
     NSLog(@"%@",responseObject.price);
         dispatch_async(dispatch_get_main_queue(), ^{
             self.name.text = responseObject.symble;
+            self.mostLow.text = responseObject.price;
+            self.mostHight.text = responseObject.price;
+            
+            NSArray *aray = @[self.mostLow,self.mostHight];
+            [self changeColor:[responseObject.price substringFromIndex:(responseObject.price.length -1)].integerValue labelArray:aray];
         });
        
 } fail:^(NSError *error) {
@@ -43,6 +48,21 @@
 }];
 
 }
+
+- (void)changeColor:(NSInteger )length labelArray:(NSArray *)labelArray{
+    
+    for (NSInteger index = 0; index < 2; index ++) {
+        UILabel *label = labelArray[index];
+        if (length%2==0) {
+            label.textColor = [UIColor redColor];
+        }else{
+            label.textColor = [UIColor blueColor];
+        }
+    }
+    
+    
+}
+
 - (void)loadDefaultSetting{
     
 }
@@ -50,23 +70,5 @@
 - (void)layoutSubviews{
     [super layoutSubviews];
 }
-//- (void)drawRect:(CGRect)rect {
-//    
-//    CGContextRefcontext =UIGraphicsGetCurrentContext();
-//    
-//    CGContextSetFillColorWithColor(context, [UIColorclearColor].CGColor);
-//    
-//    CGContextFillRect(context, rect);
-//    
-//    //绘制分割线,其实就是在cell内画一条线
-//    
-//    CGContextSetStrokeColorWithColor(context, [UIColorgrayColor].CGColor);
-//    
-//    //设置所画线的frame
-//    
-//    CGContextStrokeRect(context,CGRectMake(5, rect.size.height, rect.size.width-10,1));
-//    
-//}
-
 
 @end

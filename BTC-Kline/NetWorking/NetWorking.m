@@ -36,30 +36,22 @@
 }
 //*行情接口/
 + (void)requestHQWithApi:(NSString *)url param:(NSDictionary *)param success:(void (^)(HangQing *responseObject))success fail:(void (^)(NSError *error))fail{
-//    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-//manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/plain", nil];
-//    
-//    [manager GET:url parameters:param progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-//        !responseObject?:success(responseObject);
-//    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-//        !error?:fail(error);
-//    }];
         NSURL *urls = [NSURL URLWithString:url];
         NSURLRequest *request = [NSURLRequest requestWithURL:urls];
         NSURLSession * session=[NSURLSession sharedSession];
         NSURLSessionDataTask *task=[session dataTaskWithRequest:request completionHandler:^(NSData * __nullable data, NSURLResponse * __nullable response, NSError * __nullable error){
             if(error){
-                NSLog(@"error %@",error);
+              //  NSLog(@"error %@",error);
             }
             //判断状态响应码
             NSHTTPURLResponse *httpresponse=(NSHTTPURLResponse *)response;
             if(httpresponse.statusCode==200){
                 //请求成功,解析数据
                 NSString *str=[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-                NSLog(@"%@",str);
+                //NSLog(@"%@",str);
                 NSArray *array = [str componentsSeparatedByString:@"|"];
                 success([HangQing hangqingModelWith:array]);
-                NSLog(@"%@",array);
+                //NSLog(@"%@",array);
                 dispatch_async(dispatch_get_main_queue(), ^{
                   [task suspend];
                 });
@@ -72,18 +64,28 @@
 
 //*checkAccout/password/
 + (void)checkAccountWithApi:(NSString *)url account:(NSString *)account password:(NSString *)passWord success:(void (^)(NSDictionary *responseObject))success fail:(void (^)(NSError *error))fail{
-    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-    [manager POST:url
-       parameters:nil constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
-           
-       } progress:^(NSProgress * _Nonnull uploadProgress) {
-           
-       } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-           !success?: success(responseObject);
-       } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-           !fail?:fail(error);
-       }];
-
+    NSString *str = [NSString stringWithFormat:@"%@?type=check&account=%@&password=%@",url,account,passWord];
+    NSURL *urls = [NSURL URLWithString:str];
+    NSURLRequest *request = [NSURLRequest requestWithURL:urls];
+    NSURLSession * session=[NSURLSession sharedSession];
+    NSURLSessionDataTask *task=[session dataTaskWithRequest:request completionHandler:^(NSData * __nullable data, NSURLResponse * __nullable response, NSError * __nullable error){
+        if(error){
+            !error?:fail(error);
+        }
+        //判断状态响应码
+        NSHTTPURLResponse *httpresponse=(NSHTTPURLResponse *)response;
+        if(httpresponse.statusCode==200){
+            //请求成功,解析数据
+            NSString *str=[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+            //NSLog(@"%@",array);
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [task suspend];
+            });
+        }
+    }];
+    //4.启动请求
+    [task resume];
+    
 }
 
 //*User query/
