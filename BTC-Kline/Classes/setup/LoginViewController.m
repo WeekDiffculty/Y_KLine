@@ -43,6 +43,8 @@
 
 
 - (IBAction)login:(UIBarButtonItem *)sender {
+    [self.account resignFirstResponder];
+    [self.password resignFirstResponder];
     if (![self.account.text isEqualToString:@""]&&![self.password.text isEqualToString:@""]) {
         [NetWorking checkAccountWithApi:ACCOUNT_PASSWORD account:self.account.text password:self.password.text success:^(NSDictionary *responseObject) {
             [self loginSucessBack];
@@ -71,8 +73,7 @@
     });
 }
 - (void)tip:(NSString *)str{
-    [self.account resignFirstResponder];
-    [self.password resignFirstResponder];
+
     UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:@"温馨提示" message:str preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction *yes = [UIAlertAction actionWithTitle:@"知道了" style:0 handler:^(UIAlertAction * _Nonnull action) {
        

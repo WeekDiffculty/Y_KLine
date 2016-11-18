@@ -12,7 +12,7 @@
 
 #define WeakObj(obj) __weak typeof(obj) weak##obj = obj
 //#define StrongObj(obj) __strong typeof(obj) strong##obj = obj
-
+#import "Reachability.h"
 #import "NetWorking.h"
 #import "Masonry.h"
 #import "GoodsPath.h"

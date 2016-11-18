@@ -11,6 +11,7 @@
 #import "HeaderView.h"
 #import "NomalCell.h"
 #import "DetailCell.h"
+#import "NewJiaoyiViewController.h"
 @interface JYViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UILabel *symbolAndBanlance;
 @property (strong, nonatomic) IBOutlet UIView *views;
@@ -110,7 +111,7 @@
 */
 
 - (IBAction)newJiaoyi:(UIBarButtonItem *)sender {
-    JYViewController *jyVC = [JYViewController new];
+    NewJiaoyiViewController *jyVC = [[NewJiaoyiViewController alloc]init];
     [self.navigationController pushViewController:jyVC animated:YES];
 }
 @end

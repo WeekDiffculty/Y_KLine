@@ -110,6 +110,27 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+//    // Allocate a reachability object
+//    Reachability* reach = [Reachability reachabilityWithHostname:@"http://47.89.53.7:8777/api/?type=singlequote&symbol=xagusd"];
+//    
+//    // Set the blocks
+//    reach.reachableBlock = ^(Reachability*reach)
+//    {
+//        // keep in mind this is called on a background thread
+//        // and if you are updating the UI it needs to happen
+//        // on the main thread, like this:
+//        
+//        dispatch_async(dispatch_get_main_queue(), ^{
+//            NSLog(@"REACHABLE!");
+//           
+//        });
+//    };
+//    reach.unreachableBlock = ^(Reachability*reach)
+//    {
+//        NSLog(@"UNREACHABLE!");
+//    };
+//    // Start the notifier, which will cause the reachability object to retain itself!
+//    [reach startNotifier];
     return self.arrayData.count;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{

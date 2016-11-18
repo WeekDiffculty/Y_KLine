@@ -53,6 +53,8 @@
 		84FFC12E1CD4676F00C749F6 /* Y_StockChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FFC12D1CD4676F00C749F6 /* Y_StockChartView.m */; };
 		84FFC1541CD4A21600C749F6 /* UIColor+Y_StockChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FFC1531CD4A21600C749F6 /* UIColor+Y_StockChart.m */; };
 		911E22236ED76437562A6A2F /* libPods-BTC-Kline.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 74E3A205500B38FC6E717747 /* libPods-BTC-Kline.a */; };
+		C026B68F1DDEF959002BDA25 /* Jiaoyi.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C026B68E1DDEF959002BDA25 /* Jiaoyi.storyboard */; };
+		C026B6921DDF1507002BDA25 /* NextJiaoyiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C026B6911DDF1507002BDA25 /* NextJiaoyiViewController.m */; };
 		C02B72871DDD49AC005FBE1C /* NomalCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C02B72851DDD49AC005FBE1C /* NomalCell.m */; };
 		C02B72881DDD49AC005FBE1C /* NomalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C02B72861DDD49AC005FBE1C /* NomalCell.xib */; };
 		C02B728C1DDD49CB005FBE1C /* DetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C02B728A1DDD49CB005FBE1C /* DetailCell.m */; };
@@ -68,6 +70,8 @@
 		C0E412621DD99FAD00798679 /* HangQing.m in Sources */ = {isa = PBXBuildFile; fileRef = C0E412611DD99FAD00798679 /* HangQing.m */; };
 		C0E412641DD9AB1F00798679 /* goods.plist in Resources */ = {isa = PBXBuildFile; fileRef = C0E412631DD9AB1F00798679 /* goods.plist */; };
 		C0E412671DD9C2FA00798679 /* TubiaoSetUPTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0E412661DD9C2FA00798679 /* TubiaoSetUPTableViewController.m */; };
+		C0F34A911DDECAD500E860CD /* GuanyuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0F34A901DDECAD500E860CD /* GuanyuViewController.m */; };
+		C0F34A941DDEDAD200E860CD /* XieyiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0F34A931DDEDAD200E860CD /* XieyiViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -159,6 +163,9 @@
 		84FFC1531CD4A21600C749F6 /* UIColor+Y_StockChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Y_StockChart.m"; sourceTree = "<group>"; };
 		91D39E2EDC14546C0231B348 /* Pods-BTC-Kline.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BTC-Kline.release.xcconfig"; path = "Pods/Target Support Files/Pods-BTC-Kline/Pods-BTC-Kline.release.xcconfig"; sourceTree = "<group>"; };
 		B7FEEF5804F5D1806CD22D6C /* Pods-BTC-Kline.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BTC-Kline.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BTC-Kline/Pods-BTC-Kline.debug.xcconfig"; sourceTree = "<group>"; };
+		C026B68E1DDEF959002BDA25 /* Jiaoyi.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Jiaoyi.storyboard; sourceTree = "<group>"; };
+		C026B6901DDF1507002BDA25 /* NextJiaoyiViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NextJiaoyiViewController.h; sourceTree = "<group>"; };
+		C026B6911DDF1507002BDA25 /* NextJiaoyiViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NextJiaoyiViewController.m; sourceTree = "<group>"; };
 		C02B72841DDD49AC005FBE1C /* NomalCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NomalCell.h; sourceTree = "<group>"; };
 		C02B72851DDD49AC005FBE1C /* NomalCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NomalCell.m; sourceTree = "<group>"; };
 		C02B72861DDD49AC005FBE1C /* NomalCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NomalCell.xib; sourceTree = "<group>"; };
@@ -186,6 +193,10 @@
 		C0E412631DD9AB1F00798679 /* goods.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = goods.plist; sourceTree = "<group>"; };
 		C0E412651DD9C2FA00798679 /* TubiaoSetUPTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TubiaoSetUPTableViewController.h; sourceTree = "<group>"; };
 		C0E412661DD9C2FA00798679 /* TubiaoSetUPTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TubiaoSetUPTableViewController.m; sourceTree = "<group>"; };
+		C0F34A8F1DDECAD500E860CD /* GuanyuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GuanyuViewController.h; sourceTree = "<group>"; };
+		C0F34A901DDECAD500E860CD /* GuanyuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GuanyuViewController.m; sourceTree = "<group>"; };
+		C0F34A921DDEDAD200E860CD /* XieyiViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XieyiViewController.h; sourceTree = "<group>"; };
+		C0F34A931DDEDAD200E860CD /* XieyiViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XieyiViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -246,6 +257,9 @@
 				189433CE1DD446A800F3D618 /* JYViewController.m */,
 				C06A1F071DDC6CC9008852B0 /* NewJiaoyiViewController.h */,
 				C06A1F081DDC6CC9008852B0 /* NewJiaoyiViewController.m */,
+				C026B68E1DDEF959002BDA25 /* Jiaoyi.storyboard */,
+				C026B6901DDF1507002BDA25 /* NextJiaoyiViewController.h */,
+				C026B6911DDF1507002BDA25 /* NextJiaoyiViewController.m */,
 				C0E412591DD9849600798679 /* HeaderView.h */,
 				C02B72891DDD49CB005FBE1C /* DetailCell.h */,
 				C02B728A1DDD49CB005FBE1C /* DetailCell.m */,
@@ -285,6 +299,10 @@
 				C0A7C55E1DDDA1310084B6A0 /* LoginViewController.m */,
 				C0E412651DD9C2FA00798679 /* TubiaoSetUPTableViewController.h */,
 				C0E412661DD9C2FA00798679 /* TubiaoSetUPTableViewController.m */,
+				C0F34A8F1DDECAD500E860CD /* GuanyuViewController.h */,
+				C0F34A901DDECAD500E860CD /* GuanyuViewController.m */,
+				C0F34A921DDEDAD200E860CD /* XieyiViewController.h */,
+				C0F34A931DDEDAD200E860CD /* XieyiViewController.m */,
 			);
 			path = setup;
 			sourceTree = "<group>";
@@ -658,6 +676,7 @@
 				C02B72881DDD49AC005FBE1C /* NomalCell.xib in Resources */,
 				84C0D7991CD117B40013B3D4 /* LaunchScreen.storyboard in Resources */,
 				84C0D7961CD117B40013B3D4 /* Assets.xcassets in Resources */,
+				C026B68F1DDEF959002BDA25 /* Jiaoyi.storyboard in Resources */,
 				84C0D7941CD117B40013B3D4 /* Main.storyboard in Resources */,
 				84D8EABB1CD1D0EE008D7BC7 /* MA-EMA-MACD介绍.md in Resources */,
 				187D5D3B1DD58E6C0064B084 /* SeniorCell.xib in Resources */,
@@ -720,6 +739,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0F34A911DDECAD500E860CD /* GuanyuViewController.m in Sources */,
 				84FFC12E1CD4676F00C749F6 /* Y_StockChartView.m in Sources */,
 				84D8EAB41CD1C284008D7BC7 /* Y_KLineGroupModel.m in Sources */,
 				84C0D7A21CD118080013B3D4 /* Y_StockChartViewController.m in Sources */,
@@ -732,6 +752,7 @@
 				84C0D7911CD117B40013B3D4 /* ViewController.m in Sources */,
 				189433DF1DD4823F00F3D618 /* SimpleCell.m in Sources */,
 				84681CB11CD9A8EE008A8157 /* Y_KLineAccessory.m in Sources */,
+				C0F34A941DDEDAD200E860CD /* XieyiViewController.m in Sources */,
 				84681C9A1CD895CB008A8157 /* Y_KLineVolumeView.m in Sources */,
 				C0E412621DD99FAD00798679 /* HangQing.m in Sources */,
 				C02B72871DDD49AC005FBE1C /* NomalCell.m in Sources */,
@@ -753,6 +774,7 @@
 				84681CA91CD8DBFA008A8157 /* Y_VolumeMAView.m in Sources */,
 				189433E21DD4828700F3D618 /* SeniorCell.m in Sources */,
 				84681C801CD4B56E008A8157 /* Y_KLineMainView.m in Sources */,
+				C026B6921DDF1507002BDA25 /* NextJiaoyiViewController.m in Sources */,
 				84681C781CD4ABF5008A8157 /* Y_KLineView.m in Sources */,
 				C02B72931DDD8A96005FBE1C /* AddAccountViewController.m in Sources */,
 				C0E412671DD9C2FA00798679 /* TubiaoSetUPTableViewController.m in Sources */,
