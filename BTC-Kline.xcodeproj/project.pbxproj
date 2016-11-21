@@ -64,6 +64,8 @@
 		C06A1F061DDC3A5A008852B0 /* GoodsPath.m in Sources */ = {isa = PBXBuildFile; fileRef = C06A1F051DDC3A5A008852B0 /* GoodsPath.m */; };
 		C06A1F091DDC6CC9008852B0 /* NewJiaoyiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C06A1F081DDC6CC9008852B0 /* NewJiaoyiViewController.m */; };
 		C075B88C1DDAAB6A00F773AE /* SymbolModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C075B88B1DDAAB6A00F773AE /* SymbolModel.m */; };
+		C08DD3D41DE299680090E528 /* Logined.m in Sources */ = {isa = PBXBuildFile; fileRef = C08DD3D31DE299680090E528 /* Logined.m */; };
+		C08DD3D61DE299A50090E528 /* Logined.xib in Resources */ = {isa = PBXBuildFile; fileRef = C08DD3D51DE299A50090E528 /* Logined.xib */; };
 		C08F03531DD94A4200945352 /* AccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C08F03521DD94A4200945352 /* AccountViewController.m */; };
 		C0A7C55F1DDDA1310084B6A0 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0A7C55E1DDDA1310084B6A0 /* LoginViewController.m */; };
 		C0E4125B1DD9849600798679 /* HeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = C0E4125A1DD9849600798679 /* HeaderView.m */; };
@@ -182,6 +184,9 @@
 		C06A1F081DDC6CC9008852B0 /* NewJiaoyiViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewJiaoyiViewController.m; sourceTree = "<group>"; };
 		C075B88A1DDAAB6A00F773AE /* SymbolModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SymbolModel.h; sourceTree = "<group>"; };
 		C075B88B1DDAAB6A00F773AE /* SymbolModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SymbolModel.m; sourceTree = "<group>"; };
+		C08DD3D21DE299680090E528 /* Logined.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Logined.h; sourceTree = "<group>"; };
+		C08DD3D31DE299680090E528 /* Logined.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Logined.m; sourceTree = "<group>"; };
+		C08DD3D51DE299A50090E528 /* Logined.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Logined.xib; sourceTree = "<group>"; };
 		C08F03511DD94A4200945352 /* AccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountViewController.h; sourceTree = "<group>"; };
 		C08F03521DD94A4200945352 /* AccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountViewController.m; sourceTree = "<group>"; };
 		C0A7C55D1DDDA1310084B6A0 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
@@ -293,6 +298,9 @@
 				189433D41DD446C300F3D618 /* SetUpViewController.m */,
 				C08F03511DD94A4200945352 /* AccountViewController.h */,
 				C08F03521DD94A4200945352 /* AccountViewController.m */,
+				C08DD3D21DE299680090E528 /* Logined.h */,
+				C08DD3D31DE299680090E528 /* Logined.m */,
+				C08DD3D51DE299A50090E528 /* Logined.xib */,
 				C02B72911DDD8A96005FBE1C /* AddAccountViewController.h */,
 				C02B72921DDD8A96005FBE1C /* AddAccountViewController.m */,
 				C0A7C55D1DDDA1310084B6A0 /* LoginViewController.h */,
@@ -670,6 +678,7 @@
 			files = (
 				183E277B1DD5BDF100033F60 /* OptionView.xib in Resources */,
 				C0E412641DD9AB1F00798679 /* goods.plist in Resources */,
+				C08DD3D61DE299A50090E528 /* Logined.xib in Resources */,
 				C02B728D1DDD49CB005FBE1C /* DetailCell.xib in Resources */,
 				189433E41DD4838F00F3D618 /* SimpleCell.xib in Resources */,
 				84FFC0F01CD31EBD00C749F6 /* 指标公式.md in Resources */,
@@ -781,6 +790,7 @@
 				C06A1F061DDC3A5A008852B0 /* GoodsPath.m in Sources */,
 				C075B88C1DDAAB6A00F773AE /* SymbolModel.m in Sources */,
 				183E27791DD5BDD900033F60 /* OptionView.m in Sources */,
+				C08DD3D41DE299680090E528 /* Logined.m in Sources */,
 				84681C731CD4A694008A8157 /* Y_StockChartGlobalVariable.m in Sources */,
 				183E275F1DD5B11200033F60 /* SymbolListTableViewController.m in Sources */,
 				84681C841CD6F5B0008A8157 /* Y_KLinePositionModel.m in Sources */,

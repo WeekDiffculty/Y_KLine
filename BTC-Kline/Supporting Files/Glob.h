@@ -17,6 +17,7 @@
 #import "Masonry.h"
 #import "GoodsPath.h"
 #import "JSViewController.h"
+#import "Account.h"
 //*行情*/
 #define  HQJK @"http://47.89.53.7:8777/api/?type=singlequote&symbol="
 //账号密码校验3

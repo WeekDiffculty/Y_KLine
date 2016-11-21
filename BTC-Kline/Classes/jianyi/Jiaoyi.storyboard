@@ -72,7 +72,7 @@
                                                 <size key="titleShadowOffset" width="1" height="0.0"/>
                                                 <state key="normal" title="下一个"/>
                                                 <connections>
-                                                    <segue destination="Wad-cr-URv" kind="push" id="6xE-X9-kV9"/>
+                                                    <action selector="next:" destination="gEo-AI-lrK" eventType="touchUpInside" id="Opc-Nu-7F1"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -181,7 +181,7 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dmp-M8-UWQ">
                                                         <rect key="frame" x="8" y="88" width="343" height="50"/>
                                                         <subviews>
-                                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="AUDNZD" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Uwn-me-pWb">
+                                                            <textField opaque="NO" clipsSubviews="YES" tag="66" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="AUDNZD" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Uwn-me-pWb">
                                                                 <rect key="frame" x="0.0" y="0.0" width="343" height="50"/>
                                                                 <nil key="textColor"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
@@ -200,7 +200,7 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AJH-3Q-TMS">
                                                         <rect key="frame" x="8" y="168" width="343" height="50"/>
                                                         <subviews>
-                                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="即时执行" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sgb-DN-m2h">
+                                                            <textField opaque="NO" clipsSubviews="YES" tag="77" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="即时执行" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sgb-DN-m2h">
                                                                 <rect key="frame" x="0.0" y="0.0" width="343" height="50"/>
                                                                 <nil key="textColor"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
@@ -288,7 +288,7 @@
         <!--Next Jiaoyi View Controller-->
         <scene sceneID="WHO-Bg-wrP">
             <objects>
-                <viewController id="Wad-cr-URv" customClass="NextJiaoyiViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NextJiaoyiViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Wad-cr-URv" customClass="NextJiaoyiViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="9mv-IT-LYa"/>
                         <viewControllerLayoutGuide type="bottom" id="KbH-SH-S4t"/>
@@ -582,10 +582,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oSo-Hv-tbK">
-                                <rect key="frame" x="0.0" y="568" width="375" height="50"/>
+                                <rect key="frame" x="0.0" y="578" width="375" height="40"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KfS-F3-NTp">
-                                        <rect key="frame" x="0.0" y="0.0" width="187.5" height="50"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="187.5" height="40"/>
                                         <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <state key="normal" title="卖出">
@@ -593,7 +593,7 @@
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yuz-nS-kTu">
-                                        <rect key="frame" x="187.5" y="0.0" width="187.5" height="50"/>
+                                        <rect key="frame" x="187.5" y="0.0" width="187.5" height="40"/>
                                         <color key="backgroundColor" red="0.17469974660000001" green="0.19753897519999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <state key="normal" title="买入">
@@ -609,7 +609,7 @@
                                     <constraint firstItem="KfS-F3-NTp" firstAttribute="top" secondItem="oSo-Hv-tbK" secondAttribute="top" id="LVy-2H-3uy"/>
                                     <constraint firstItem="KfS-F3-NTp" firstAttribute="leading" secondItem="oSo-Hv-tbK" secondAttribute="leading" id="dWI-rf-HGQ"/>
                                     <constraint firstItem="yuz-nS-kTu" firstAttribute="width" secondItem="KfS-F3-NTp" secondAttribute="width" id="hKB-2f-iJn"/>
-                                    <constraint firstAttribute="height" constant="50" id="qEa-Ke-zxo"/>
+                                    <constraint firstAttribute="height" constant="40" id="qEa-Ke-zxo"/>
                                     <constraint firstAttribute="bottom" secondItem="KfS-F3-NTp" secondAttribute="bottom" id="yAu-Pd-tjk"/>
                                     <constraint firstItem="yuz-nS-kTu" firstAttribute="leading" secondItem="KfS-F3-NTp" secondAttribute="trailing" id="zR5-Z6-QXV"/>
                                 </constraints>
@@ -637,6 +637,11 @@
                     <navigationItem key="navigationItem" id="iuP-Sk-7NK"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="cmds" destination="lZy-v3-7Qa" id="hY3-Mj-avE"/>
+                        <outlet property="symbolanddescription" destination="trH-er-xVI" id="9Yc-Hi-gMD"/>
+                        <outlet property="volumss" destination="i3l-x7-gx8" id="Ey9-z7-QfG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pmj-Rr-xyv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

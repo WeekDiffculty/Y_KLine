@@ -9,6 +9,9 @@
 #import "NextJiaoyiViewController.h"
 
 @interface NextJiaoyiViewController ()
+@property (weak, nonatomic) IBOutlet UILabel *symbolanddescription;
+@property (weak, nonatomic) IBOutlet UILabel *cmds;
+@property (weak, nonatomic) IBOutlet UILabel *volumss;
 
 @end
 
@@ -17,8 +20,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [self loadDefaultSetting];
 }
 
+- (void) loadDefaultSetting{
+    self.symbolanddescription.text = [NSString stringWithFormat:@"%@-%@",self.model.symbolName,self.model.descriptions];
+    self.cmds.text = self.cmd;
+    self.volumss.text = [NSString stringWithFormat:@"%g",self.volums];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

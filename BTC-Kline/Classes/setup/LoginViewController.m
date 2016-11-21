@@ -9,6 +9,7 @@
 #import "LoginViewController.h"
 #import "Glob.h"
 #import "ViewController.h"
+
 @interface LoginViewController ()<UITextFieldDelegate>
 
 @end
@@ -25,29 +26,19 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 - (BOOL)textFieldShouldReturn:(UITextField *)textField{
     [self login:nil];
     return YES;
 }
 
-
 - (IBAction)login:(UIBarButtonItem *)sender {
     [self.account resignFirstResponder];
     [self.password resignFirstResponder];
     if (![self.account.text isEqualToString:@""]&&![self.password.text isEqualToString:@""]) {
-        [NetWorking checkAccountWithApi:ACCOUNT_PASSWORD account:self.account.text password:self.password.text success:^(NSDictionary *responseObject) {
-            [self loginSucessBack];
+        [NetWorking checkAccountWithApi:ACCOUNT_PASSWORD account:self.account.text password:self.password.text success:^(BOOL responseObject) {
+            if(responseObject){
+                [self loginSucessBack];
+            }
         } fail:^(NSError *error) {
             [self tip:@"登陆失败，检查网络或联系交易服务商"];
         }];
@@ -57,20 +48,25 @@
 }
 
 -(void)loginWithceshi{
-    [NetWorking checkAccountWithApi:ACCOUNT_PASSWORD account:@"8888666" password:@"abc123456" success:^(NSDictionary *responseObject) {
+    [NetWorking checkAccountWithApi:ACCOUNT_PASSWORD account:@"999666" password:@"sst123456" success:^(BOOL responseObject) {
         [self loginSucessBack];
     } fail:^(NSError *error) {
-        
+        [self tip:@"请检查网络"];
     }];
-    
 }
 
 - (void)loginSucessBack{
-    [[ViewController new]setSelectedIndex:0];
+    Account *count =  [Account shareAccount];
+    count.account = self.account.text;
+    count.password = self.password.text;
+    BOOL ret = [NSKeyedArchiver archiveRootObject:count toFile:[GoodsPath sharePath].account];
+    NSLog(@"%@",ret?@2:@0);
+    
     WeakObj(self);
     dispatch_async(dispatch_get_main_queue(), ^{
         [weakself.navigationController popToRootViewControllerAnimated:YES];
     });
+    
 }
 - (void)tip:(NSString *)str{
 

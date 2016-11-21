@@ -42,6 +42,16 @@
             break;
     }
 }
+
+- (void)requestData{
+    Account *ccount = [NSKeyedUnarchiver unarchiveObjectWithFile:[GoodsPath sharePath].account];
+    [NetWorking checkThepositionWithApi:CHICANG account:ccount.account password:ccount.password success:^(NSDictionary *responseObject) {
+        
+    } fail:^(NSError *error) {
+        
+    }];
+    
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

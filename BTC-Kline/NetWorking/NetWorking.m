@@ -63,7 +63,7 @@
 }
 
 //*checkAccout/password/
-+ (void)checkAccountWithApi:(NSString *)url account:(NSString *)account password:(NSString *)passWord success:(void (^)(NSDictionary *responseObject))success fail:(void (^)(NSError *error))fail{
++ (void)checkAccountWithApi:(NSString *)url account:(NSString *)account password:(NSString *)passWord success:(void (^)(BOOL responseObject))success fail:(void (^)(NSError *error))fail{
     NSString *str = [NSString stringWithFormat:@"%@?type=check&account=%@&password=%@",url,account,passWord];
     NSURL *urls = [NSURL URLWithString:str];
     NSURLRequest *request = [NSURLRequest requestWithURL:urls];
@@ -77,7 +77,9 @@
         if(httpresponse.statusCode==200){
             //请求成功,解析数据
             NSString *str=[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-            //NSLog(@"%@",array);
+            if ([str isEqualToString:@"0"]) {
+                success(YES);
+            }
             dispatch_async(dispatch_get_main_queue(), ^{
                 [task suspend];
             });
@@ -90,32 +92,59 @@
 
 //*User query/
 + (void)userQueryWithApi:(NSString *)url account:(NSString *)account password:(NSString *)passWord success:(void (^)(NSDictionary *responseObject))success fail:(void (^)(NSError *error))fail{
-    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-    [manager POST:url
-       parameters:nil constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
-           
-       } progress:^(NSProgress * _Nonnull uploadProgress) {
-           
-       } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-           !success?: success(responseObject);
-       } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-           !fail?:fail(error);
-       }];
+    NSString *str = [NSString stringWithFormat:@"%@?type=userinfo&account=%@&password=%@",url,account,passWord];
+    NSURL *urls = [NSURL URLWithString:str];
+    NSURLRequest *request = [NSURLRequest requestWithURL:urls];
+    NSURLSession * session=[NSURLSession sharedSession];
+    NSURLSessionDataTask *task=[session dataTaskWithRequest:request completionHandler:^(NSData * __nullable data, NSURLResponse * __nullable response, NSError * __nullable error){
+        if(error){
+            !error?:fail(error);
+        }
+        //判断状态响应码
+        NSHTTPURLResponse *httpresponse=(NSHTTPURLResponse *)response;
+        if(httpresponse.statusCode==200){
+            //请求成功,解析数据
+            NSString *str=[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+            if ([str isEqualToString:@"0"]) {
+               
+            }
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [task suspend];
+            });
+        }
+    }];
+    //4.启动请求
+    [task resume];
+
+
 }
 
 //*查持仓/
 + (void)checkThepositionWithApi:(NSString *)url account:(NSString *)account password:(NSString *)passWord success:(void (^)(NSDictionary *responseObject))success fail:(void (^)(NSError *error))fail{
-    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-    [manager POST:url
-       parameters:nil constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
-           
-       } progress:^(NSProgress * _Nonnull uploadProgress) {
-           
-       } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-           !success?: success(responseObject);
-       } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-           !fail?:fail(error);
-       }];
+    NSString *str = [NSString stringWithFormat:@"%@?type=orderlist&account=%@&password=%@",url,account,passWord];
+    NSURL *urls = [NSURL URLWithString:str];
+    NSURLRequest *request = [NSURLRequest requestWithURL:urls];
+    NSURLSession * session=[NSURLSession sharedSession];
+    NSURLSessionDataTask *task=[session dataTaskWithRequest:request completionHandler:^(NSData * __nullable data, NSURLResponse * __nullable response, NSError * __nullable error){
+        if(error){
+            !error?:fail(error);
+        }
+        //判断状态响应码
+        NSHTTPURLResponse *httpresponse=(NSHTTPURLResponse *)response;
+        if(httpresponse.statusCode==200){
+            //请求成功,解析数据
+            NSString *str=[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+            if ([str isEqualToString:@"0"]) {
+                
+            }
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [task suspend];
+            });
+        }
+    }];
+    //4.启动请求
+    [task resume];
+    
 
 }
 

@@ -10,12 +10,32 @@
 #import "Glob.h"
 #import "Account.h"
 #import "AddAccountViewController.h"
+#import "Logined.h"
 @interface AccountViewController ()
 @property (nonatomic, strong)UILabel *noLoginView;
+@property (nonatomic, strong)Logined *logined;
+@property (nonatomic, strong)UIButton *logOutBtn;
 @end
 
 @implementation AccountViewController
 
+- (UIButton *)logOutBtn{
+    if (!_logOutBtn) {
+        _logOutBtn = [[UIButton alloc]init];
+        [_logOutBtn setTitle: @"退出登录" forState:UIControlStateNormal];
+        _logOutBtn.backgroundColor = [UIColor redColor];
+        _logOutBtn.frame = CGRectMake((Width - 100)*0.5, Height - 100, 100, 40);
+        [_logOutBtn addTarget:self action:@selector(logout:) forControlEvents:UIControlEventTouchUpInside];
+    }
+    return  _logOutBtn;
+}
+- (Logined *)logined{
+    if (!_logined) {
+        _logined = [Logined logined];
+        _logined.frame = CGRectMake(0, 114, Width, 150);
+    }
+    return _logined;
+}
 - (UILabel *)noLoginView{
     if (!_noLoginView) {
         _noLoginView = [[UILabel alloc]init];
@@ -34,16 +54,10 @@
 - (void)loadDefaultSetting{
     self.view.backgroundColor = [UIColor whiteColor];
     self.title = @"账户";
-    
     UIBarButtonItem *buttonitem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"add_22x22_"] style:0 target:self action:@selector(addAcount)];
-    if ([Account shareAccount].account) {//已登陆
-        [self.view addSubview:self.noLoginView];
-        self.noLoginView.text = @"当前登录用户：";
-        [self.noLoginView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.leading.trailing.equalTo(self.view);
-            make.height.equalTo(@50);
-        }];
-        
+    Account *ccount = [NSKeyedUnarchiver unarchiveObjectWithFile:[GoodsPath sharePath].account];
+    if (![ccount.account isEqualToString:@""]&&ccount) {//已登陆
+        [self loginedWithconfig:ccount];
     }else{//未登陆
          self.navigationItem.rightBarButtonItem = buttonitem;
         [self.view addSubview:self.noLoginView];
@@ -52,6 +66,29 @@
     
 }
 
+- (void)loginedWithconfig:(Account *)ccount{
+    [self.view addSubview:self.noLoginView];
+    self.noLoginView.text = @"当前登录用户：";
+    self.noLoginView.frame = CGRectMake(0, 64, Width, 50);
+    [self.view addSubview:self.logined];
+    [self.view addSubview:self.logOutBtn];
+    [NetWorking userQueryWithApi:USER_SEARCH account:ccount.account password:ccount.password success:^(NSDictionary *responseObject) {
+        
+    } fail:^(NSError *error) {
+        
+    }];
+}
+- (void)logout:(UIButton *)btn{
+    Account *count =  [Account shareAccount];
+    count.account = @"";
+    count.password = @"";
+    BOOL ret = [NSKeyedArchiver archiveRootObject:count toFile:[GoodsPath sharePath].account];
+    NSLog(@"%@",ret?@2:@0);
+    WeakObj(self);
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [weakself.navigationController popToRootViewControllerAnimated:YES];
+    });
+}
 - (void)addAcount{
     UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     
@@ -65,14 +102,5 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

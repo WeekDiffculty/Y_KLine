@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "SymbolModel.h"
 @interface NextJiaoyiViewController : UIViewController
-
+@property (nonatomic, copy) NSString *cmd;
+@property (nonatomic, strong) SymbolModel *model;
+@property (nonatomic) CGFloat volums;
 @end

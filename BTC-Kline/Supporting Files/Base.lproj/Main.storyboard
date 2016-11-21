@@ -1090,7 +1090,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_logo" translatesAutoresizingMaskIntoConstraints="NO" id="QU4-y3-CpM">
-                                        <rect key="frame" x="45" y="0.0" width="284" height="334.5"/>
+                                        <rect key="frame" x="57.5" y="30" width="259" height="304.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="QU4-y3-CpM" secondAttribute="height" multiplier="240:283" id="WNp-bJ-OZ7"/>
                                         </constraints>
@@ -1133,7 +1133,7 @@
                                     <constraint firstItem="qFk-U0-F0Z" firstAttribute="top" secondItem="t72-tM-9Pz" secondAttribute="bottom" id="kPX-C8-o34"/>
                                     <constraint firstItem="oRQ-hF-KoK" firstAttribute="top" secondItem="QU4-y3-CpM" secondAttribute="bottom" id="tcs-dX-wKC"/>
                                     <constraint firstAttribute="trailing" secondItem="t72-tM-9Pz" secondAttribute="trailing" id="tzh-r6-Kmw"/>
-                                    <constraint firstItem="QU4-y3-CpM" firstAttribute="top" secondItem="Gq8-nY-FzZ" secondAttribute="top" id="wbZ-qR-E2f"/>
+                                    <constraint firstItem="QU4-y3-CpM" firstAttribute="top" secondItem="Gq8-nY-FzZ" secondAttribute="top" constant="30" id="wbZ-qR-E2f"/>
                                 </constraints>
                             </view>
                         </subviews>

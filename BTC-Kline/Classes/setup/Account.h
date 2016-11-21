@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-
 @interface Account : NSObject
 @property (nonatomic, strong)NSString *account;
 @property (nonatomic, strong)NSString *password;

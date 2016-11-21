@@ -79,7 +79,6 @@
     tableView.delegate= self;
     tableView.dataSource = self;
     [tableView setRowHeight:60];
-    
 }
 
 - (void)refresh{

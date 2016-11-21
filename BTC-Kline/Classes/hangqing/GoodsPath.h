@@ -10,10 +10,13 @@
 #define currentGoods @"currentGoods.plist"
 #define goods @"goods.plist"
 #define etcGoods @"etcGoods.plist"
+#define accountPath @"account.archive"
 @interface GoodsPath : NSObject
 @property (nonatomic, weak) NSString * currentGoodsPath;
 @property (nonatomic, weak) NSString *goodsPath;
 @property (nonatomic, weak) NSString *etcPath;
+
+@property (nonatomic, weak) NSString *account;
 
 + (instancetype)sharePath;
 @end
