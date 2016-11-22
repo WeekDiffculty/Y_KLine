@@ -11,6 +11,7 @@
 #import "Account.h"
 #import "AddAccountViewController.h"
 #import "Logined.h"
+#import "userInfo.h"
 @interface AccountViewController ()
 @property (nonatomic, strong)UILabel *noLoginView;
 @property (nonatomic, strong)Logined *logined;
@@ -62,6 +63,7 @@
          self.navigationItem.rightBarButtonItem = buttonitem;
         [self.view addSubview:self.noLoginView];
         self.noLoginView.text = @"当前没有已登陆用户，请点击右上角加号添加账号";
+        self.noLoginView.font = [UIFont systemFontOfSize:13];
     }
     
 }
@@ -72,9 +74,10 @@
     self.noLoginView.frame = CGRectMake(0, 64, Width, 50);
     [self.view addSubview:self.logined];
     [self.view addSubview:self.logOutBtn];
-    [NetWorking userQueryWithApi:USER_SEARCH account:ccount.account password:ccount.password success:^(NSDictionary *responseObject) {
-        
-    } fail:^(NSError *error) {
+    Account *ccounts = [NSKeyedUnarchiver unarchiveObjectWithFile:[GoodsPath sharePath].account];
+    [NetWorking userQueryWithApi:USER_SEARCH account:ccounts.account password:ccounts.password success:^(userInfo *responseObject) {//
+        self.logined.model = responseObject;
+            } fail:^(NSError *error) {
         
     }];
 }

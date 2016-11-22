@@ -49,7 +49,9 @@
 
 -(void)loginWithceshi{
     [NetWorking checkAccountWithApi:ACCOUNT_PASSWORD account:@"999666" password:@"sst123456" success:^(BOOL responseObject) {
-        [self loginSucessBack];
+        if(responseObject){
+            [self loginSucessBack];
+        }
     } fail:^(NSError *error) {
         [self tip:@"请检查网络"];
     }];

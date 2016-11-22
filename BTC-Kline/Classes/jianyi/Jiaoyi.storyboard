@@ -98,7 +98,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u7R-xg-RY5">
-                                                <rect key="frame" x="8" y="38" width="359" height="234"/>
+                                                <rect key="frame" x="8" y="38" width="359" height="285"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JLr-Gv-9JC">
                                                         <rect key="frame" x="8" y="8" width="343" height="50"/>
@@ -205,6 +205,9 @@
                                                                 <nil key="textColor"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                                                 <textInputTraits key="textInputTraits"/>
+                                                                <connections>
+                                                                    <outlet property="delegate" destination="gEo-AI-lrK" id="cJi-1O-QML"/>
+                                                                </connections>
                                                             </textField>
                                                         </subviews>
                                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -226,6 +229,7 @@
                                                     <constraint firstItem="AJH-3Q-TMS" firstAttribute="leading" secondItem="u7R-xg-RY5" secondAttribute="leading" constant="8" id="MEX-AE-wIc"/>
                                                     <constraint firstItem="AJH-3Q-TMS" firstAttribute="top" secondItem="dmp-M8-UWQ" secondAttribute="bottom" constant="30" id="MyK-X4-aG3"/>
                                                     <constraint firstAttribute="trailing" secondItem="dmp-M8-UWQ" secondAttribute="trailing" constant="8" id="TDB-oa-KNN"/>
+                                                    <constraint firstAttribute="height" constant="285" id="Vf4-8r-8He"/>
                                                     <constraint firstItem="JLr-Gv-9JC" firstAttribute="leading" secondItem="u7R-xg-RY5" secondAttribute="leading" constant="8" id="WRE-C2-DMg"/>
                                                     <constraint firstAttribute="trailing" secondItem="AJH-3Q-TMS" secondAttribute="trailing" constant="8" id="iXY-3n-LNR"/>
                                                 </constraints>
@@ -233,7 +237,6 @@
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="u7R-xg-RY5" secondAttribute="bottom" constant="150" id="boR-we-Tqf"/>
                                             <constraint firstAttribute="trailing" secondItem="u7R-xg-RY5" secondAttribute="trailing" constant="8" id="cDD-uh-4YG"/>
                                             <constraint firstItem="5md-Ok-sDu" firstAttribute="leading" secondItem="jTT-Hk-gJl" secondAttribute="leading" id="dUm-lR-t5L"/>
                                             <constraint firstItem="u7R-xg-RY5" firstAttribute="leading" secondItem="jTT-Hk-gJl" secondAttribute="leading" constant="8" id="kcM-SE-5rM"/>
@@ -460,6 +463,9 @@
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="next"/>
+                                                        <connections>
+                                                            <outlet property="delegate" destination="Wad-cr-URv" id="S7y-fK-hZg"/>
+                                                        </connections>
                                                     </textField>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -489,6 +495,9 @@
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="next"/>
+                                                        <connections>
+                                                            <outlet property="delegate" destination="Wad-cr-URv" id="iuH-VT-xLi"/>
+                                                        </connections>
                                                     </textField>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -543,7 +552,10 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="343" height="37.5"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
+                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numbersAndPunctuation" returnKeyType="done"/>
+                                                        <connections>
+                                                            <outlet property="delegate" destination="Wad-cr-URv" id="akx-6m-GED"/>
+                                                        </connections>
                                                     </textField>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -639,8 +651,11 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="cmds" destination="lZy-v3-7Qa" id="hY3-Mj-avE"/>
+                        <outlet property="huoli" destination="POx-9g-E4z" id="Zih-tR-0Va"/>
+                        <outlet property="piancha" destination="Dwi-YD-mtr" id="ceE-rv-yi5"/>
                         <outlet property="symbolanddescription" destination="trH-er-xVI" id="9Yc-Hi-gMD"/>
                         <outlet property="volumss" destination="i3l-x7-gx8" id="Ey9-z7-QfG"/>
+                        <outlet property="zhisun" destination="MhJ-mL-UHk" id="Mxl-ge-jl3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pmj-Rr-xyv" userLabel="First Responder" sceneMemberID="firstResponder"/>

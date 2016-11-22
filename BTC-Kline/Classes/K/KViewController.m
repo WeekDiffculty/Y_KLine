@@ -23,7 +23,7 @@
 - (void)loadDefaultSetting{
     Y_StockChartViewController *srockChartViewController = [[Y_StockChartViewController alloc]init];
     [self addChildViewController:srockChartViewController];
-    srockChartViewController.view.frame = CGRectMake(0, 64,Width , Height-(104));
+    srockChartViewController.view.frame = CGRectMake(0, 64,Width , Height-(110));
     [self.view addSubview: srockChartViewController.view];
 }
 - (void)didReceiveMemoryWarning {

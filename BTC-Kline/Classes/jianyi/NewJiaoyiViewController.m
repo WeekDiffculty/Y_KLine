@@ -128,7 +128,6 @@
         self.symBol.text = model.symbolName;
         self.symbolAndDescriptions.text = [NSString stringWithFormat:@"%@-%@",model.symbolName, model.descriptions];
     }
-
 }
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField{

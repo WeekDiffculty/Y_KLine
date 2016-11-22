@@ -8,10 +8,13 @@
 
 #import "NextJiaoyiViewController.h"
 
-@interface NextJiaoyiViewController ()
+@interface NextJiaoyiViewController ()<UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *symbolanddescription;
 @property (weak, nonatomic) IBOutlet UILabel *cmds;
 @property (weak, nonatomic) IBOutlet UILabel *volumss;
+@property (weak, nonatomic) IBOutlet UITextField *zhisun;
+@property (weak, nonatomic) IBOutlet UITextField *huoli;
+@property (weak, nonatomic) IBOutlet UITextField *piancha;
 
 @end
 
@@ -27,6 +30,12 @@
     self.symbolanddescription.text = [NSString stringWithFormat:@"%@-%@",self.model.symbolName,self.model.descriptions];
     self.cmds.text = self.cmd;
     self.volumss.text = [NSString stringWithFormat:@"%g",self.volums];
+}
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    [self.zhisun resignFirstResponder];
+    [self.huoli resignFirstResponder];
+    [self.piancha resignFirstResponder];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

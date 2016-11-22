@@ -7,13 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "userInfo.h"
 @interface Logined : UIView
 @property (weak, nonatomic) IBOutlet UILabel *account;
 @property (weak, nonatomic) IBOutlet UILabel *group;
 @property (weak, nonatomic) IBOutlet UILabel *balance;
 @property (weak, nonatomic) IBOutlet UILabel *agent_account;
 @property (weak, nonatomic) IBOutlet UILabel *profit;
-
+@property (nonatomic, strong) userInfo *model ;
 +(instancetype)logined;
 @end

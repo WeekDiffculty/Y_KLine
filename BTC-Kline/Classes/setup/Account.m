@@ -28,10 +28,9 @@
     }
     return self;
 }
-
 - (void)encodeWithCoder:(NSCoder *)aCoder{
     [aCoder encodeObject:self.account forKey:@"account"];
-    [aCoder encodeObject:self.password forKey:@"pasword"];
+    [aCoder encodeObject:self.password forKey:@"password"];
     
 }
 @end

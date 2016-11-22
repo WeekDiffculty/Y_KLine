@@ -9,6 +9,9 @@
 #import "NetWorking.h"
 #import "AFNetworking.h"
 #import "HangQing.h"
+#import "Tool.h"
+#import "userInfo.h"
+#import "JsonstrTodic.h"
 @implementation NetWorking
 
 
@@ -17,7 +20,7 @@
 {
     
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-    [manager POST:url parameters:param progress:^(NSProgress * _Nonnull uploadProgress) {
+       [manager GET:url parameters:param progress:^(NSProgress * _Nonnull uploadProgress) {
         
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         
@@ -91,8 +94,8 @@
 }
 
 //*User query/
-+ (void)userQueryWithApi:(NSString *)url account:(NSString *)account password:(NSString *)passWord success:(void (^)(NSDictionary *responseObject))success fail:(void (^)(NSError *error))fail{
-    NSString *str = [NSString stringWithFormat:@"%@?type=userinfo&account=%@&password=%@",url,account,passWord];
++ (void)userQueryWithApi:(NSString *)url account:(NSString *)account password:(NSString *)passWord success:(void (^)(userInfo *responseObject))success fail:(void (^)(NSError *error))fail{
+    NSString *str = [NSString stringWithFormat:@"%@?type=userinfo&login=%@&password=%@",url,account,passWord];
     NSURL *urls = [NSURL URLWithString:str];
     NSURLRequest *request = [NSURLRequest requestWithURL:urls];
     NSURLSession * session=[NSURLSession sharedSession];
@@ -105,8 +108,10 @@
         if(httpresponse.statusCode==200){
             //请求成功,解析数据
             NSString *str=[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-            if ([str isEqualToString:@"0"]) {
-               
+            NSDictionary *dict = [JsonstrTodic dictionaryWithJsonString:str];
+            userInfo *model = [userInfo userInfoWith:dict[@"data"]];
+            if (model) {
+                success(model);
             }
             dispatch_async(dispatch_get_main_queue(), ^{
                 [task suspend];
@@ -149,10 +154,35 @@
 }
 
 //*历史K线History K line 参数:商品名称，K线周期，时间戳/
-+ (void)historyKlineQueryWithApi:(NSString *)url nameOfCommodity:(NSString *)nameOfCommodity KlineCycle:(NSInteger *)timeCycle timestamp:(NSString *)timestamp success:(void (^)(NSDictionary *responseObject))success fail:(void (^)(NSError *error))fail{
++ (void)historyKlineQueryWithApi:(NSString *)url  success:(void (^)(NSDictionary *responseObject))success fail:(void (^)(NSError *error))fail{
+    NSString *str = @"http://47.89.53.7:8788/api/?type=chart&symbol=USDCAD&period=30&starttime=1470333600&endtime=1470333600&timesign=300";
+    NSURL *urls = [NSURL URLWithString:str];
+    NSURLRequest *request = [NSURLRequest requestWithURL:urls];
+    NSURLSession * session=[NSURLSession sharedSession];
+    NSURLSessionDataTask *task=[session dataTaskWithRequest:request completionHandler:^(NSData * __nullable data, NSURLResponse * __nullable response, NSError * __nullable error){
+        if(error){
+            !error?:fail(error);
+        }
+        //判断状态响应码
+        NSHTTPURLResponse *httpresponse=(NSHTTPURLResponse *)response;
+        if(httpresponse.statusCode==200){
+            //请求成功,解析数据
+            NSString *str=[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+            if (str.length != 0) {
+                NSDictionary *dict = [JsonstrTodic dictionaryWithJsonString:str];
+                success (dict);
+            }
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [task suspend];
+            });
+        }
+    }];
+    //4.启动请求
+    [task resume];
     
 
 }
+
 //开仓 open Position 参数:帐号login,密码pwd，商品symbol，数量volume，方向cmd /
 + (void) openPositionWithApi:(NSString *)url param:(NSDictionary *)param success:(void (^)(NSDictionary *responseObject))success fail:(void (^)(NSError *error))fail{
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];

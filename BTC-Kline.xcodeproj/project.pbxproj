@@ -61,6 +61,9 @@
 		C02B728D1DDD49CB005FBE1C /* DetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C02B728B1DDD49CB005FBE1C /* DetailCell.xib */; };
 		C02B72901DDD7FD9005FBE1C /* Account.m in Sources */ = {isa = PBXBuildFile; fileRef = C02B728F1DDD7FD9005FBE1C /* Account.m */; };
 		C02B72931DDD8A96005FBE1C /* AddAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C02B72921DDD8A96005FBE1C /* AddAccountViewController.m */; };
+		C05890711DE41F4A004F0399 /* Tool.m in Sources */ = {isa = PBXBuildFile; fileRef = C05890701DE41F4A004F0399 /* Tool.m */; };
+		C05890751DE44A95004F0399 /* userInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = C05890741DE44A95004F0399 /* userInfo.m */; };
+		C05890781DE4546C004F0399 /* JsonstrTodic.m in Sources */ = {isa = PBXBuildFile; fileRef = C05890771DE4546C004F0399 /* JsonstrTodic.m */; };
 		C06A1F061DDC3A5A008852B0 /* GoodsPath.m in Sources */ = {isa = PBXBuildFile; fileRef = C06A1F051DDC3A5A008852B0 /* GoodsPath.m */; };
 		C06A1F091DDC6CC9008852B0 /* NewJiaoyiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C06A1F081DDC6CC9008852B0 /* NewJiaoyiViewController.m */; };
 		C075B88C1DDAAB6A00F773AE /* SymbolModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C075B88B1DDAAB6A00F773AE /* SymbolModel.m */; };
@@ -178,6 +181,12 @@
 		C02B728F1DDD7FD9005FBE1C /* Account.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Account.m; sourceTree = "<group>"; };
 		C02B72911DDD8A96005FBE1C /* AddAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddAccountViewController.h; sourceTree = "<group>"; };
 		C02B72921DDD8A96005FBE1C /* AddAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddAccountViewController.m; sourceTree = "<group>"; };
+		C058906F1DE41F4A004F0399 /* Tool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tool.h; sourceTree = "<group>"; };
+		C05890701DE41F4A004F0399 /* Tool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tool.m; sourceTree = "<group>"; };
+		C05890731DE44A95004F0399 /* userInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = userInfo.h; sourceTree = "<group>"; };
+		C05890741DE44A95004F0399 /* userInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = userInfo.m; sourceTree = "<group>"; };
+		C05890761DE4546C004F0399 /* JsonstrTodic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JsonstrTodic.h; sourceTree = "<group>"; };
+		C05890771DE4546C004F0399 /* JsonstrTodic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JsonstrTodic.m; sourceTree = "<group>"; };
 		C06A1F041DDC3A5A008852B0 /* GoodsPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoodsPath.h; sourceTree = "<group>"; };
 		C06A1F051DDC3A5A008852B0 /* GoodsPath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoodsPath.m; sourceTree = "<group>"; };
 		C06A1F071DDC6CC9008852B0 /* NewJiaoyiViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewJiaoyiViewController.h; sourceTree = "<group>"; };
@@ -281,6 +290,7 @@
 		189433C81DD4464600F3D618 /* K */ = {
 			isa = PBXGroup;
 			children = (
+				84FFC12F1CD4678A00C749F6 /* BTC_K线图 */,
 				189433D01DD446B400F3D618 /* KViewController.h */,
 				189433D11DD446B400F3D618 /* KViewController.m */,
 				84C0D7A01CD118080013B3D4 /* Y_StockChartViewController.h */,
@@ -292,6 +302,7 @@
 		189433C91DD4464600F3D618 /* setup */ = {
 			isa = PBXGroup;
 			children = (
+				C05890721DE44A62004F0399 /* model */,
 				C02B728E1DDD7FD9005FBE1C /* Account.h */,
 				C02B728F1DDD7FD9005FBE1C /* Account.m */,
 				189433D31DD446C300F3D618 /* SetUpViewController.h */,
@@ -319,7 +330,6 @@
 			isa = PBXGroup;
 			children = (
 				84FFC0F11CD35DD400C749F6 /* NetWorking */,
-				84FFC12F1CD4678A00C749F6 /* BTC_K线图 */,
 			);
 			name = Tools;
 			sourceTree = "<group>";
@@ -564,6 +574,10 @@
 		84FFC0F11CD35DD400C749F6 /* NetWorking */ = {
 			isa = PBXGroup;
 			children = (
+				C058906F1DE41F4A004F0399 /* Tool.h */,
+				C05890701DE41F4A004F0399 /* Tool.m */,
+				C05890761DE4546C004F0399 /* JsonstrTodic.h */,
+				C05890771DE4546C004F0399 /* JsonstrTodic.m */,
 				84FFC0F21CD35DD400C749F6 /* NetWorking.h */,
 				84FFC0F31CD35DD400C749F6 /* NetWorking.m */,
 			);
@@ -580,7 +594,7 @@
 				84FFC12D1CD4676F00C749F6 /* Y_StockChartView.m */,
 			);
 			name = "BTC_K线图";
-			path = "../BTC_K线图";
+			path = "../../BTC_K线图";
 			sourceTree = "<group>";
 		};
 		84FFC1511CD4A1E400C749F6 /* Theme */ = {
@@ -599,6 +613,15 @@
 				91D39E2EDC14546C0231B348 /* Pods-BTC-Kline.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		C05890721DE44A62004F0399 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				C05890731DE44A95004F0399 /* userInfo.h */,
+				C05890741DE44A95004F0399 /* userInfo.m */,
+			);
+			name = model;
 			sourceTree = "<group>";
 		};
 		C0E4125E1DD99F7200798679 /* Model */ = {
@@ -786,6 +809,7 @@
 				C026B6921DDF1507002BDA25 /* NextJiaoyiViewController.m in Sources */,
 				84681C781CD4ABF5008A8157 /* Y_KLineView.m in Sources */,
 				C02B72931DDD8A96005FBE1C /* AddAccountViewController.m in Sources */,
+				C05890781DE4546C004F0399 /* JsonstrTodic.m in Sources */,
 				C0E412671DD9C2FA00798679 /* TubiaoSetUPTableViewController.m in Sources */,
 				C06A1F061DDC3A5A008852B0 /* GoodsPath.m in Sources */,
 				C075B88C1DDAAB6A00F773AE /* SymbolModel.m in Sources */,
@@ -794,11 +818,13 @@
 				84681C731CD4A694008A8157 /* Y_StockChartGlobalVariable.m in Sources */,
 				183E275F1DD5B11200033F60 /* SymbolListTableViewController.m in Sources */,
 				84681C841CD6F5B0008A8157 /* Y_KLinePositionModel.m in Sources */,
+				C05890751DE44A95004F0399 /* userInfo.m in Sources */,
 				84681CAD1CD8EC4F008A8157 /* Y_KLineAccessoryView.m in Sources */,
 				183E27631DD5B28B00033F60 /* EdtingTableViewController.m in Sources */,
 				C02B728C1DDD49CB005FBE1C /* DetailCell.m in Sources */,
 				84681C881CD70588008A8157 /* Y_KLineMAView.m in Sources */,
 				84681CA11CD89A38008A8157 /* Y_KLineVolumePositionModel.m in Sources */,
+				C05890711DE41F4A004F0399 /* Tool.m in Sources */,
 				84C0D78B1CD117B40013B3D4 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

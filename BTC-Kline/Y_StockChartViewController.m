@@ -14,6 +14,7 @@
 #import "Y_KLineGroupModel.h"
 #import "UIColor+Y_StockChart.h"
 #import "AppDelegate.h"
+#import "Glob.h"
 @interface Y_StockChartViewController ()<Y_StockChartViewDataSource>
 
 @property (nonatomic, strong) Y_StockChartView *stockChartView;
@@ -130,17 +131,29 @@
     param[@"symbol"] = @"huobibtccny";
     param[@"size"] = @"300";
     
-    [NetWorking requestWithApi:@"https://www.btc123.com/kline/klineapi" param:param thenSuccess:^(NSDictionary *responseObject) {
-        if ([responseObject[@"isSuc"] boolValue]) {
-            Y_KLineGroupModel *groupModel = [Y_KLineGroupModel objectWithArray:responseObject[@"datas"]];
-            
-            self.groupModel = groupModel;
-            [self.modelsDict setObject:groupModel forKey:self.type];
-            NSLog(@"%@",groupModel);
-            [self.stockChartView reloadData];
-        }
+//    [NetWorking requestWithApi:@"https://www.btc123.com/kline/klineapi" param:param thenSuccess:^(NSDictionary *responseObject) {
+//        if ([responseObject[@"isSuc"] boolValue]) {
+//            Y_KLineGroupModel *groupModel = [Y_KLineGroupModel objectWithArray:responseObject[@"datas"]];
+//            NSDictionary *dict = (NSDictionary *)responseObject;
+//            [dict writeToFile:@"/Users/zbf920563837icloudcom/Desktop/data.plist" atomically:YES];
+//            self.groupModel = groupModel;
+//            [self.modelsDict setObject:groupModel forKey:self.type];
+//            NSLog(@"%@",groupModel);
+//            [self.stockChartView reloadData];
+//        }
+//        
+//    } fail:^{
+//        
+//    }];
+    [NetWorking historyKlineQueryWithApi:nil success:^(NSDictionary *responseObject) {
+        Y_KLineGroupModel *groupModel = [Y_KLineGroupModel objectWithArray:responseObject[@"data"]];
         
-    } fail:^{
+                    [responseObject writeToFile:@"/Users/zbf920563837icloudcom/Desktop/data22.plist" atomically:YES];
+                    self.groupModel = groupModel;
+                    [self.modelsDict setObject:groupModel forKey:self.type];
+                    NSLog(@"%@",groupModel);
+                    [self.stockChartView reloadData];
+    } fail:^(NSError *error) {
         
     }];
 }
