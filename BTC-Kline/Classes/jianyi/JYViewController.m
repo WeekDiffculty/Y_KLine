@@ -12,6 +12,7 @@
 #import "NomalCell.h"
 #import "DetailCell.h"
 #import "NewJiaoyiViewController.h"
+#import "jioayiModel.h"
 @interface JYViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UILabel *symbolAndBanlance;
 @property (strong, nonatomic) IBOutlet UIView *views;
@@ -25,6 +26,7 @@
 @property (nonatomic, copy) NSArray *arrayData;
 @property (nonatomic) BOOL isDetail;
 @property (nonatomic) NSInteger openCell;
+@property (nonatomic) CGFloat profit;
 @end
 
 @implementation JYViewController
@@ -58,58 +60,71 @@
     [tableView setScrollsToTop:NO];
     [tableView setShowsVerticalScrollIndicator:NO];
     [tableView setEstimatedRowHeight:120];
+    
+    [self reloadData];
 }
 #pragma  delegate >>>>>>>>>>>>>>>
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return  1;
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return  123;
+    return  self.arrayData.count;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    jioayiModel *model = self.arrayData[indexPath.row];
     if(self.isDetail) {
         if (indexPath.row == self.openCell) {
             DetailCell *cell = [DetailCell cellWith:tableView];
+            cell.model = model;
             return cell;
         }else{
             NomalCell *cell = [NomalCell cellWith:tableView];
+            cell.model = model;
             return  cell;
         }
         
     }else{
         NomalCell *cell = [NomalCell cellWith:tableView];
+        cell.model = model;
         return  cell;
     }
 }
 
+- (void)reloadData{
+     Account *ccount = [NSKeyedUnarchiver unarchiveObjectWithFile:[GoodsPath sharePath].account];
+    [NetWorking checkThepositionWithApi:CHICANG account:ccount.account password:ccount.password success:^(NSArray *responseObject) {
+        NSInteger count = responseObject.count;
+        NSMutableArray *arraM = [NSMutableArray arrayWithCapacity:count];
+        for (NSInteger index = 0; index < count; index ++) {
+            jioayiModel *model = [jioayiModel returnJiaoyiModelWithDictionary:responseObject[index]];
+            [arraM addObject:model];
+        }
+        self.arrayData = [arraM copy];
+        [self.tableView reloadData];
+        [self profie];
+    } fail:^(NSError *error) {
+        
+    }];
+}
+
+- (void)profie{
+    NSInteger count = self.arrayData.count;
+    
+    for (NSInteger index = 0; index < count; index ++) {
+        jioayiModel *model = self.arrayData[index];
+        self.profit += [model.profit doubleValue];
+    }
+    self.symbolAndBanlance.text = [NSString stringWithFormat:@"%g",self.profit];
+}
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     self.isDetail = !_isDetail;
     self.openCell = indexPath.row;
     [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    
 }
-//- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
-//    HeaderView *headerView = [HeaderView headerViewWithTableView:tableView];
-//    return  headerView;
-//}
-//- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-//    return  50;
-//}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 - (IBAction)newJiaoyi:(UIBarButtonItem *)sender {
     NewJiaoyiViewController *jyVC = [[NewJiaoyiViewController alloc]init];
     [self.navigationController pushViewController:jyVC animated:YES];

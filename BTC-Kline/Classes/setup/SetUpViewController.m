@@ -11,7 +11,7 @@
 #import "TubiaoSetUPTableViewController.h"
 @interface SetUpViewController ()
 @property (weak, nonatomic) IBOutlet UITableViewCell *aCount;
-@property (weak, nonatomic) IBOutlet UITableViewCell *OTP;
+//@property (weak, nonatomic) IBOutlet UITableViewCell *OTP;
 @property (weak, nonatomic) IBOutlet UITableViewCell *tubiao;
 @property (weak, nonatomic) IBOutlet UITableViewCell *mail;
 @property (weak, nonatomic) IBOutlet UITableViewCell *news;
@@ -36,8 +36,8 @@
 }
 - (void) loadDefaultSetting{
     self.aCount.textLabel.text=@"交易账户";
-    self.OTP.textLabel.text = @"OTP";
-    self.OTP.detailTextLabel.text = @"一次性密码生成器";
+//    self.OTP.textLabel.text = @"OTP";
+//    self.OTP.detailTextLabel.text = @"一次性密码生成器";
     self.tubiao.textLabel.text=@"图表";
     self.mail.textLabel.text = @"联系客服";
     self.news.textLabel.text = @"新闻";

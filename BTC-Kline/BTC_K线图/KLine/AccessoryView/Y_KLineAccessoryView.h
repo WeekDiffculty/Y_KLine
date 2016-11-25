@@ -4,7 +4,7 @@
 //
 //  Created by yate1996 on 16/5/3.
 //  Copyright © 2016年 yate1996. All rights reserved.
-//
+//  辅助视图
 
 #import <UIKit/UIKit.h>
 #import "Y_StockChartConstant.h"

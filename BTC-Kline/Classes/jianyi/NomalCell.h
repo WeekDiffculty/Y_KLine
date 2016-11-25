@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@class  jioayiModel;
 @interface NomalCell : UITableViewCell
+@property (nonatomic, strong) jioayiModel *model;
 + (instancetype) cellWith:(UITableView *)tableview;
 @end

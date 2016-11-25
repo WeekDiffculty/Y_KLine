@@ -12,11 +12,12 @@
 + (instancetype)userInfoWith:(NSDictionary *)dict{
     if(dict==nil)return nil;
     userInfo *userinfo = [[userInfo alloc]init];
-    userinfo.login = dict[@"login"];
-    userinfo.agent_account = dict[@"agent_account"];
-    userinfo.balance = dict[@"balance"];
+    NSNumberFormatter *formatter = [[NSNumberFormatter alloc]init];
+    userinfo.login = [formatter stringFromNumber: dict[@"login"]];
+   userinfo.agent_account = [formatter stringFromNumber: dict[@"agent_account"]];
+   userinfo.balance = [formatter stringFromNumber: dict[@"balance"]];
     userinfo.group = dict[@"group"];
-    userinfo.profit = dict[@"profit"];
+    userinfo.profit = [formatter stringFromNumber: dict[@"profit"]];
     return  userinfo;
 }
 @end

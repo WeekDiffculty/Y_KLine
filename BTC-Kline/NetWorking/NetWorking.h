@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 @class HangQing;
 @class userInfo;
+
 @interface NetWorking : NSObject
 
 
@@ -24,7 +25,7 @@
 + (void)userQueryWithApi:(NSString *)url account:(NSString *)account password:(NSString *)passWord success:(void (^)(userInfo *responseObject))success fail:(void (^)(NSError *error))fail;
 
 //*查持仓/
-+ (void)checkThepositionWithApi:(NSString *)url account:(NSString *)account password:(NSString *)passWord success:(void (^)(NSDictionary *responseObject))success fail:(void (^)(NSError *error))fail;
++ (void)checkThepositionWithApi:(NSString *)url account:(NSString *)account password:(NSString *)passWord success:(void (^)(NSArray *responseObject))success fail:(void (^)(NSError *error))fail;
 
 //*历史K线History K line 参数:商品名称，K线周期，时间戳/
 + (void)historyKlineQueryWithApi:(NSString *)url  success:(void (^)(NSDictionary *responseObject))success fail:(void (^)(NSError *error))fail;

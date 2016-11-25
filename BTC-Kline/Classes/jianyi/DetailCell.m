@@ -7,6 +7,7 @@
 //
 
 #import "DetailCell.h"
+#import "jioayiModel.h"
 @interface DetailCell ()
 @property (weak, nonatomic) IBOutlet UILabel *symbolName;
 @property (weak, nonatomic) IBOutlet UILabel *volum;
@@ -30,6 +31,29 @@
         cell = [[[NSBundle mainBundle]loadNibNamed:@"DetailCell" owner:nil options:nil] firstObject];
     }
     return  cell;
+}
+- (void)setModel:(jioayiModel *)model{
+    _model = model;
+    self.symbolName.text = model.symbol;
+    self.volum.text = model.volume;
+    self.starPrice.text = model.open_price;
+    self.currentPrice.text = model.close_price;
+    self.banlance.text = model.profit;
+    NSString *time = model.open_time;
+    NSTimeInterval interval=[time doubleValue] / 1.0;
+    NSDate *date = [NSDate dateWithTimeIntervalSince1970:interval];
+    NSDateFormatter *objDateformat = [[NSDateFormatter alloc] init];
+    [objDateformat setDateFormat:@"yyyy-MM-dd HH:mm:ss.SSS"];
+    NSString * timeStr = [NSString stringWithFormat:@"%@",[objDateformat stringFromDate: date]];
+    self.time.text = timeStr;
+    self.zhisun.text = @"";
+    self.kucunfei.text = model.tp;
+    self.huoli.text = model.sl;
+    self.shuifei.text = @"";
+    self.ID.text = model.order;
+    self.shouxufei.text = model.commisson;
+    
+    
 }
 - (void)awakeFromNib {
     [super awakeFromNib];

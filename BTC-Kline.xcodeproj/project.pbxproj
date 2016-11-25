@@ -61,12 +61,17 @@
 		C02B728D1DDD49CB005FBE1C /* DetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C02B728B1DDD49CB005FBE1C /* DetailCell.xib */; };
 		C02B72901DDD7FD9005FBE1C /* Account.m in Sources */ = {isa = PBXBuildFile; fileRef = C02B728F1DDD7FD9005FBE1C /* Account.m */; };
 		C02B72931DDD8A96005FBE1C /* AddAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C02B72921DDD8A96005FBE1C /* AddAccountViewController.m */; };
+		C0438D8C1DE6B54F0030C894 /* BalanceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C0438D8A1DE6B54F0030C894 /* BalanceCell.m */; };
+		C0438D8D1DE6B54F0030C894 /* BalanceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0438D8B1DE6B54F0030C894 /* BalanceCell.xib */; };
+		C0438D911DE6B56E0030C894 /* BalanceDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C0438D8F1DE6B56E0030C894 /* BalanceDetailCell.m */; };
+		C0438D921DE6B56E0030C894 /* BalanceDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0438D901DE6B56E0030C894 /* BalanceDetailCell.xib */; };
 		C05890711DE41F4A004F0399 /* Tool.m in Sources */ = {isa = PBXBuildFile; fileRef = C05890701DE41F4A004F0399 /* Tool.m */; };
 		C05890751DE44A95004F0399 /* userInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = C05890741DE44A95004F0399 /* userInfo.m */; };
 		C05890781DE4546C004F0399 /* JsonstrTodic.m in Sources */ = {isa = PBXBuildFile; fileRef = C05890771DE4546C004F0399 /* JsonstrTodic.m */; };
 		C06A1F061DDC3A5A008852B0 /* GoodsPath.m in Sources */ = {isa = PBXBuildFile; fileRef = C06A1F051DDC3A5A008852B0 /* GoodsPath.m */; };
 		C06A1F091DDC6CC9008852B0 /* NewJiaoyiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C06A1F081DDC6CC9008852B0 /* NewJiaoyiViewController.m */; };
 		C075B88C1DDAAB6A00F773AE /* SymbolModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C075B88B1DDAAB6A00F773AE /* SymbolModel.m */; };
+		C07E30881DE543FA005F1739 /* jioayiModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C07E30871DE543FA005F1739 /* jioayiModel.m */; };
 		C08DD3D41DE299680090E528 /* Logined.m in Sources */ = {isa = PBXBuildFile; fileRef = C08DD3D31DE299680090E528 /* Logined.m */; };
 		C08DD3D61DE299A50090E528 /* Logined.xib in Resources */ = {isa = PBXBuildFile; fileRef = C08DD3D51DE299A50090E528 /* Logined.xib */; };
 		C08F03531DD94A4200945352 /* AccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C08F03521DD94A4200945352 /* AccountViewController.m */; };
@@ -181,6 +186,12 @@
 		C02B728F1DDD7FD9005FBE1C /* Account.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Account.m; sourceTree = "<group>"; };
 		C02B72911DDD8A96005FBE1C /* AddAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddAccountViewController.h; sourceTree = "<group>"; };
 		C02B72921DDD8A96005FBE1C /* AddAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddAccountViewController.m; sourceTree = "<group>"; };
+		C0438D891DE6B54F0030C894 /* BalanceCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BalanceCell.h; sourceTree = "<group>"; };
+		C0438D8A1DE6B54F0030C894 /* BalanceCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BalanceCell.m; sourceTree = "<group>"; };
+		C0438D8B1DE6B54F0030C894 /* BalanceCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BalanceCell.xib; sourceTree = "<group>"; };
+		C0438D8E1DE6B56E0030C894 /* BalanceDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BalanceDetailCell.h; sourceTree = "<group>"; };
+		C0438D8F1DE6B56E0030C894 /* BalanceDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BalanceDetailCell.m; sourceTree = "<group>"; };
+		C0438D901DE6B56E0030C894 /* BalanceDetailCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BalanceDetailCell.xib; sourceTree = "<group>"; };
 		C058906F1DE41F4A004F0399 /* Tool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tool.h; sourceTree = "<group>"; };
 		C05890701DE41F4A004F0399 /* Tool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tool.m; sourceTree = "<group>"; };
 		C05890731DE44A95004F0399 /* userInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = userInfo.h; sourceTree = "<group>"; };
@@ -193,6 +204,8 @@
 		C06A1F081DDC6CC9008852B0 /* NewJiaoyiViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewJiaoyiViewController.m; sourceTree = "<group>"; };
 		C075B88A1DDAAB6A00F773AE /* SymbolModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SymbolModel.h; sourceTree = "<group>"; };
 		C075B88B1DDAAB6A00F773AE /* SymbolModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SymbolModel.m; sourceTree = "<group>"; };
+		C07E30861DE543FA005F1739 /* jioayiModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jioayiModel.h; sourceTree = "<group>"; };
+		C07E30871DE543FA005F1739 /* jioayiModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = jioayiModel.m; sourceTree = "<group>"; };
 		C08DD3D21DE299680090E528 /* Logined.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Logined.h; sourceTree = "<group>"; };
 		C08DD3D31DE299680090E528 /* Logined.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Logined.m; sourceTree = "<group>"; };
 		C08DD3D51DE299A50090E528 /* Logined.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Logined.xib; sourceTree = "<group>"; };
@@ -267,6 +280,7 @@
 		189433C71DD4464600F3D618 /* jiaoyi */ = {
 			isa = PBXGroup;
 			children = (
+				C07E30851DE543E2005F1739 /* model */,
 				189433CD1DD446A800F3D618 /* JYViewController.h */,
 				189433CE1DD446A800F3D618 /* JYViewController.m */,
 				C06A1F071DDC6CC9008852B0 /* NewJiaoyiViewController.h */,
@@ -274,13 +288,13 @@
 				C026B68E1DDEF959002BDA25 /* Jiaoyi.storyboard */,
 				C026B6901DDF1507002BDA25 /* NextJiaoyiViewController.h */,
 				C026B6911DDF1507002BDA25 /* NextJiaoyiViewController.m */,
-				C0E412591DD9849600798679 /* HeaderView.h */,
 				C02B72891DDD49CB005FBE1C /* DetailCell.h */,
 				C02B728A1DDD49CB005FBE1C /* DetailCell.m */,
 				C02B728B1DDD49CB005FBE1C /* DetailCell.xib */,
 				C02B72841DDD49AC005FBE1C /* NomalCell.h */,
 				C02B72851DDD49AC005FBE1C /* NomalCell.m */,
 				C02B72861DDD49AC005FBE1C /* NomalCell.xib */,
+				C0E412591DD9849600798679 /* HeaderView.h */,
 				C0E4125A1DD9849600798679 /* HeaderView.m */,
 			);
 			name = jiaoyi;
@@ -302,6 +316,7 @@
 		189433C91DD4464600F3D618 /* setup */ = {
 			isa = PBXGroup;
 			children = (
+				C0438D931DE6D6320030C894 /* chat */,
 				C05890721DE44A62004F0399 /* model */,
 				C02B728E1DDD7FD9005FBE1C /* Account.h */,
 				C02B728F1DDD7FD9005FBE1C /* Account.m */,
@@ -337,6 +352,12 @@
 		189433D71DD4643E00F3D618 /* lishi */ = {
 			isa = PBXGroup;
 			children = (
+				C0438D8E1DE6B56E0030C894 /* BalanceDetailCell.h */,
+				C0438D8F1DE6B56E0030C894 /* BalanceDetailCell.m */,
+				C0438D901DE6B56E0030C894 /* BalanceDetailCell.xib */,
+				C0438D8A1DE6B54F0030C894 /* BalanceCell.m */,
+				C0438D891DE6B54F0030C894 /* BalanceCell.h */,
+				C0438D8B1DE6B54F0030C894 /* BalanceCell.xib */,
 				189433D81DD4647E00F3D618 /* LSViewController.h */,
 				189433D91DD4647E00F3D618 /* LSViewController.m */,
 			);
@@ -615,11 +636,27 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		C0438D931DE6D6320030C894 /* chat */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = chat;
+			sourceTree = "<group>";
+		};
 		C05890721DE44A62004F0399 /* model */ = {
 			isa = PBXGroup;
 			children = (
 				C05890731DE44A95004F0399 /* userInfo.h */,
 				C05890741DE44A95004F0399 /* userInfo.m */,
+			);
+			name = model;
+			sourceTree = "<group>";
+		};
+		C07E30851DE543E2005F1739 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				C07E30861DE543FA005F1739 /* jioayiModel.h */,
+				C07E30871DE543FA005F1739 /* jioayiModel.m */,
 			);
 			name = model;
 			sourceTree = "<group>";
@@ -711,8 +748,10 @@
 				C026B68F1DDEF959002BDA25 /* Jiaoyi.storyboard in Resources */,
 				84C0D7941CD117B40013B3D4 /* Main.storyboard in Resources */,
 				84D8EABB1CD1D0EE008D7BC7 /* MA-EMA-MACD介绍.md in Resources */,
+				C0438D8D1DE6B54F0030C894 /* BalanceCell.xib in Resources */,
 				187D5D3B1DD58E6C0064B084 /* SeniorCell.xib in Resources */,
 				183E27801DD5C8D600033F60 /* JSViewController.xib in Resources */,
+				C0438D921DE6B56E0030C894 /* BalanceDetailCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -785,6 +824,7 @@
 				189433DF1DD4823F00F3D618 /* SimpleCell.m in Sources */,
 				84681CB11CD9A8EE008A8157 /* Y_KLineAccessory.m in Sources */,
 				C0F34A941DDEDAD200E860CD /* XieyiViewController.m in Sources */,
+				C07E30881DE543FA005F1739 /* jioayiModel.m in Sources */,
 				84681C9A1CD895CB008A8157 /* Y_KLineVolumeView.m in Sources */,
 				C0E412621DD99FAD00798679 /* HangQing.m in Sources */,
 				C02B72871DDD49AC005FBE1C /* NomalCell.m in Sources */,
@@ -813,12 +853,14 @@
 				C0E412671DD9C2FA00798679 /* TubiaoSetUPTableViewController.m in Sources */,
 				C06A1F061DDC3A5A008852B0 /* GoodsPath.m in Sources */,
 				C075B88C1DDAAB6A00F773AE /* SymbolModel.m in Sources */,
+				C0438D911DE6B56E0030C894 /* BalanceDetailCell.m in Sources */,
 				183E27791DD5BDD900033F60 /* OptionView.m in Sources */,
 				C08DD3D41DE299680090E528 /* Logined.m in Sources */,
 				84681C731CD4A694008A8157 /* Y_StockChartGlobalVariable.m in Sources */,
 				183E275F1DD5B11200033F60 /* SymbolListTableViewController.m in Sources */,
 				84681C841CD6F5B0008A8157 /* Y_KLinePositionModel.m in Sources */,
 				C05890751DE44A95004F0399 /* userInfo.m in Sources */,
+				C0438D8C1DE6B54F0030C894 /* BalanceCell.m in Sources */,
 				84681CAD1CD8EC4F008A8157 /* Y_KLineAccessoryView.m in Sources */,
 				183E27631DD5B28B00033F60 /* EdtingTableViewController.m in Sources */,
 				C02B728C1DDD49CB005FBE1C /* DetailCell.m in Sources */,
@@ -948,6 +990,10 @@
 				INFOPLIST_FILE = "BTC-Kline/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/BTC-Kline/Classes/setup/OtherResources/VoiceLib",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.yeeyuntech.BTC-Kline";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -965,6 +1011,10 @@
 				INFOPLIST_FILE = "BTC-Kline/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/BTC-Kline/Classes/setup/OtherResources/VoiceLib",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.yeeyuntech.BTC-Kline";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";

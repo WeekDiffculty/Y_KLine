@@ -38,7 +38,7 @@
 
 
 /**
- *  isEMA线
+ *  isEMA线 加权指数移动平均线
  */
 + (CGFloat)isEMALine;
 + (void)setisEMALine:(Y_StockChartTargetLineStatus)type;

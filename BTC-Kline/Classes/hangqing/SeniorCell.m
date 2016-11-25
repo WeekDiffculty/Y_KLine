@@ -79,8 +79,6 @@
                 label.textColor = [UIColor blueColor];
             }
     }
-
-    
 }
 - (void)loadDefaultSetting{
     

@@ -116,24 +116,16 @@
         self.kLineView.targetLineStatus = index;
         [self.kLineView reDraw];
         [self bringSubviewToFront:self.segmentView];
-    
     } else {
         if(self.dataSource && [self.dataSource respondsToSelector:@selector(stockDatasWithIndex:)])
         {
             id stockData = [self.dataSource stockDatasWithIndex:index];
-            
             if(!stockData)
             {
                 return;
             }
-            
             Y_StockChartViewItemModel *itemModel = self.itemModels[index];
-            
-            
             Y_StockChartCenterViewType type = itemModel.centerViewType;
-            
-
-            
             if(type != self.currentCenterViewType)
             {
                 //移除当前View，设置新的View
@@ -152,7 +144,6 @@
                         break;
                 }
             }
-            
             if(type == Y_StockChartcenterViewTypeOther)
             {
                 
@@ -164,11 +155,8 @@
             [self bringSubviewToFront:self.segmentView];
         }
     }
-
 }
-
 @end
-
 
 /************************ItemModel类************************/
 @implementation Y_StockChartViewItemModel

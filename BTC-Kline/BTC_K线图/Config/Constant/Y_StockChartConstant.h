@@ -4,7 +4,7 @@
 //
 //  Created by yate1996 on 16/4/30.
 //  Copyright © 2016年 yate1996. All rights reserved.
-//
+//  图表线常量
 
 #ifndef Y_StockChartConstant_h
 #define Y_StockChartConstant_h
@@ -173,11 +173,11 @@ typedef NS_ENUM(NSInteger, Y_StockChartCenterViewType) {
 
 //Accessory指标种类
 typedef NS_ENUM(NSInteger, Y_StockChartTargetLineStatus) {
-    Y_StockChartTargetLineStatusMACD = 100,    //MACD线
-    Y_StockChartTargetLineStatusKDJ,    //KDJ线
+    Y_StockChartTargetLineStatusMACD = 100,    //MACD线 指数平滑异动平均线
+    Y_StockChartTargetLineStatusKDJ,    //KDJ线 随机指标 0---100
     Y_StockChartTargetLineStatusAccessoryClose,    //关闭Accessory线
-    Y_StockChartTargetLineStatusMA , //MA线
-    Y_StockChartTargetLineStatusEMA,  //EMA线
-    Y_StockChartTargetLineStatusCloseMA  //MA关闭线
+    Y_StockChartTargetLineStatusMA , //MA线 简单移动平均
+    Y_StockChartTargetLineStatusEMA,  //EMA线 移动平均数
+    Y_StockChartTargetLineStatusCloseMA  //MA关闭线 
 
 };

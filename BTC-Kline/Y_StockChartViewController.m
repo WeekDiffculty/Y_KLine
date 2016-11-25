@@ -4,7 +4,7 @@
 //
 //  Created by yate1996 on 16/4/27.
 //  Copyright © 2016年 yate1996. All rights reserved.
-//
+//  K图控制器
 
 #import "Y_StockChartViewController.h"
 #import "Masonry.h"
@@ -12,6 +12,7 @@
 #import "Y_StockChartView.h"
 #import "NetWorking.h"
 #import "Y_KLineGroupModel.h"
+//颜色配置类
 #import "UIColor+Y_StockChart.h"
 #import "AppDelegate.h"
 #import "Glob.h"
@@ -19,13 +20,14 @@
 
 @property (nonatomic, strong) Y_StockChartView *stockChartView;
 
+//k图组model
 @property (nonatomic, strong) Y_KLineGroupModel *groupModel;
 
+//不同类型的K图组model
 @property (nonatomic, copy) NSMutableDictionary <NSString*, Y_KLineGroupModel*> *modelsDict;
 
-
 @property (nonatomic, assign) NSInteger currentIndex;
-
+//类型 1min 5min 1d
 @property (nonatomic, copy) NSString *type;
 
 @end
@@ -35,6 +37,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    //隐藏状态栏
     [UIApplication sharedApplication].statusBarHidden = YES;
 }
 
@@ -48,6 +51,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.currentIndex = -1;
+    //所有图表的背景颜色
     self.stockChartView.backgroundColor = [UIColor backgroundColor];
 }
 
@@ -126,10 +130,11 @@
 
 - (void)reloadData
 {
-    NSMutableDictionary *param = [NSMutableDictionary dictionary];
-    param[@"type"] = self.type;
-    param[@"symbol"] = @"huobibtccny";
-    param[@"size"] = @"300";
+    //NSMutableDictionary *param = [NSMutableDictionary dictionary];
+    // 周期  时间戳 symbol
+//    param[@"type"] = self.type;//周期  1h 30min
+//    param[@"symbol"] = @"huobibtccny"; //symbol
+//    param[@"size"] = @"300"; //
     
 //    [NetWorking requestWithApi:@"https://www.btc123.com/kline/klineapi" param:param thenSuccess:^(NSDictionary *responseObject) {
 //        if ([responseObject[@"isSuc"] boolValue]) {
@@ -145,10 +150,10 @@
 //    } fail:^{
 //        
 //    }];
+    
+    
     [NetWorking historyKlineQueryWithApi:nil success:^(NSDictionary *responseObject) {
         Y_KLineGroupModel *groupModel = [Y_KLineGroupModel objectWithArray:responseObject[@"data"]];
-        
-                    [responseObject writeToFile:@"/Users/zbf920563837icloudcom/Desktop/data22.plist" atomically:YES];
                     self.groupModel = groupModel;
                     [self.modelsDict setObject:groupModel forKey:self.type];
                     NSLog(@"%@",groupModel);
@@ -164,12 +169,12 @@
         _stockChartView.itemModels = @[
                                        [Y_StockChartViewItemModel itemModelWithTitle:@"指标" type:Y_StockChartcenterViewTypeOther],
                                        [Y_StockChartViewItemModel itemModelWithTitle:@"分时" type:Y_StockChartcenterViewTypeTimeLine],
-                                       [Y_StockChartViewItemModel itemModelWithTitle:@"1分" type:Y_StockChartcenterViewTypeKline],
-                                       [Y_StockChartViewItemModel itemModelWithTitle:@"5分" type:Y_StockChartcenterViewTypeKline],
-                                       [Y_StockChartViewItemModel itemModelWithTitle:@"30分" type:Y_StockChartcenterViewTypeKline],
-                                       [Y_StockChartViewItemModel itemModelWithTitle:@"60分" type:Y_StockChartcenterViewTypeKline],
-                                       [Y_StockChartViewItemModel itemModelWithTitle:@"日线" type:Y_StockChartcenterViewTypeKline],
-                                       [Y_StockChartViewItemModel itemModelWithTitle:@"周线" type:Y_StockChartcenterViewTypeKline],
+                                       [Y_StockChartViewItemModel itemModelWithTitle:@"M1" type:Y_StockChartcenterViewTypeKline],
+                                       [Y_StockChartViewItemModel itemModelWithTitle:@"M5" type:Y_StockChartcenterViewTypeKline],
+                                       [Y_StockChartViewItemModel itemModelWithTitle:@"M30" type:Y_StockChartcenterViewTypeKline],
+                                       [Y_StockChartViewItemModel itemModelWithTitle:@"H1" type:Y_StockChartcenterViewTypeKline],
+                                       [Y_StockChartViewItemModel itemModelWithTitle:@"D1" type:Y_StockChartcenterViewTypeKline],
+                                       [Y_StockChartViewItemModel itemModelWithTitle:@"W1" type:Y_StockChartcenterViewTypeKline],
  
                                        ];
         _stockChartView.backgroundColor = [UIColor orangeColor];
@@ -186,8 +191,8 @@
 }
 - (void)dismiss
 {
-    AppDelegate *appdelegate = [UIApplication sharedApplication].delegate;
-    appdelegate.isEable = NO;
+//    AppDelegate *app = [UIApplication sharedApplication].delegate;
+//    app.isEable = NO;
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 - (UIInterfaceOrientationMask)supportedInterfaceOrientations

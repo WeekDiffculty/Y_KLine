@@ -63,6 +63,7 @@
          self.navigationItem.rightBarButtonItem = buttonitem;
         [self.view addSubview:self.noLoginView];
         self.noLoginView.text = @"当前没有已登陆用户，请点击右上角加号添加账号";
+        self.noLoginView.textAlignment = NSTextAlignmentCenter;
         self.noLoginView.font = [UIFont systemFontOfSize:13];
     }
     
@@ -72,13 +73,12 @@
     [self.view addSubview:self.noLoginView];
     self.noLoginView.text = @"当前登录用户：";
     self.noLoginView.frame = CGRectMake(0, 64, Width, 50);
-    [self.view addSubview:self.logined];
     [self.view addSubview:self.logOutBtn];
-    Account *ccounts = [NSKeyedUnarchiver unarchiveObjectWithFile:[GoodsPath sharePath].account];
-    [NetWorking userQueryWithApi:USER_SEARCH account:ccounts.account password:ccounts.password success:^(userInfo *responseObject) {//
-        self.logined.model = responseObject;
-            } fail:^(NSError *error) {
-        
+     [self.view addSubview:self.logined];
+    WeakObj(self);
+    [NetWorking userQueryWithApi:USER_SEARCH account:ccount.account password:ccount.password success:^(userInfo *responseObject) {//
+            weakself.logined.model = responseObject;
+             } fail:^(NSError *error) {
     }];
 }
 - (void)logout:(UIButton *)btn{
@@ -105,5 +105,10 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)dealloc{
+    self.noLoginView = nil;
+    self.logined = nil;
+    self.logOutBtn = nil;
+}
 
 @end

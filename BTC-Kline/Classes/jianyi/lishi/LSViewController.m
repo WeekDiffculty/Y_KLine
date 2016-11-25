@@ -9,8 +9,15 @@
 #import "LSViewController.h"
 #import "NetWorking.h"
 #import "Glob.h"
-@interface LSViewController ()
-
+#import "jioayiModel.h"
+#import "BalanceCell.h"
+#import "BalanceDetailCell.h"
+@interface LSViewController ()<UITableViewDelegate,UITableViewDataSource>
+@property (weak, nonatomic) IBOutlet UILabel *rujin;
+@property (weak, nonatomic) IBOutlet UILabel *jieyu;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (nonatomic) BOOL isDetail;
+@property (nonatomic) NSInteger openCell;
 @end
 
 @implementation LSViewController
@@ -22,7 +29,33 @@
 }
 
 - (void) loadDefaultSetting{
-   
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
+    [self.tableView setEstimatedRowHeight:120];
+    [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
+}
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return 11;
+}
+-  (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    if(self.isDetail) {
+        if (indexPath.row == self.openCell) {
+            BalanceDetailCell *cell = [BalanceDetailCell balanceDetailCellWith:tableView];
+            
+            return cell;
+        }else{
+            BalanceCell *cell = [BalanceCell balanceCellWith:tableView];
+            
+            return  cell;
+        }
+        
+    }else{
+        BalanceCell *cell = [BalanceCell balanceCellWith:tableView];
+        
+        return  cell;
+    }
+
+    return nil;
 }
 - (IBAction)valueChanged:(UISegmentedControl *)sender {
     switch (sender.selectedSegmentIndex) {
@@ -44,27 +77,17 @@
 }
 
 - (void)requestData{
-    Account *ccount = [NSKeyedUnarchiver unarchiveObjectWithFile:[GoodsPath sharePath].account];
-    [NetWorking checkThepositionWithApi:CHICANG account:ccount.account password:ccount.password success:^(NSDictionary *responseObject) {
-        
-    } fail:^(NSError *error) {
-        
-    }];
-    
+   
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    self.isDetail = !_isDetail;
+    self.openCell = indexPath.row;
+    [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

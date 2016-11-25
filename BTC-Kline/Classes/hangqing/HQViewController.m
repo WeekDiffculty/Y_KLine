@@ -159,7 +159,7 @@
     self.timer = [NSTimer scheduledTimerWithTimeInterval:3.5 target:self selector:@selector(refresh) userInfo:nil repeats:YES];
        [self.timer fire];
     self.arrayData = nil;
-    NSInteger count = self.arrayData.count;
+    NSLog(@"%@", self.arrayData);
     [self.tabView reloadData];
 }
 

@@ -18,11 +18,11 @@
 }
 
 - (void)setModel:(userInfo *)model{
-    _model = model;
-    self.account.text = model.login;
-    self.group.text = model.group;
-    self.balance.text =model.balance;
-    self.agent_account.text = model.agent_account;
-    self.profit.text = model.profit;
+        _model = model;
+        self.account.text = model.login;
+        self.group.text = model.group;
+        self.balance.text =model.balance;
+        self.agent_account.text = model.agent_account;
+        self.profit.text = model.profit;
 }
 @end
