@@ -130,12 +130,12 @@
 
 - (void)reloadData
 {
-    //NSMutableDictionary *param = [NSMutableDictionary dictionary];
-    // 周期  时间戳 symbol
+//    NSMutableDictionary *param = [NSMutableDictionary dictionary];
+//    // 周期  时间戳 symbol
 //    param[@"type"] = self.type;//周期  1h 30min
 //    param[@"symbol"] = @"huobibtccny"; //symbol
 //    param[@"size"] = @"300"; //
-    
+//    
 //    [NetWorking requestWithApi:@"https://www.btc123.com/kline/klineapi" param:param thenSuccess:^(NSDictionary *responseObject) {
 //        if ([responseObject[@"isSuc"] boolValue]) {
 //            Y_KLineGroupModel *groupModel = [Y_KLineGroupModel objectWithArray:responseObject[@"datas"]];
@@ -150,7 +150,7 @@
 //    } fail:^{
 //        
 //    }];
-    
+//    
     
     [NetWorking historyKlineQueryWithApi:nil success:^(NSDictionary *responseObject) {
         Y_KLineGroupModel *groupModel = [Y_KLineGroupModel objectWithArray:responseObject[@"data"]];

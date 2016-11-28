@@ -261,7 +261,7 @@
     //起始位置
     NSInteger needDrawKLineStartIndex ;
     
-    if(self.pinchStartIndex > 0) {
+    if(self.pinchStartIndex > 0) {//捏合点
         needDrawKLineStartIndex = self.pinchStartIndex;
         _needDrawStartIndex = self.pinchStartIndex;
         self.pinchStartIndex = -1;
@@ -339,8 +339,6 @@
         }
 
     }];
-    
-    
     
     maxAssert *= 1.0001;
     minAssert *= 0.9991;
@@ -430,7 +428,6 @@
         
         CGPoint ma7Point = CGPointMake(xPosition, ma7Y);
         CGPoint ma30Point = CGPointMake(xPosition, ma30Y);
-        
         if(kLineModel.MA7)
         {
             [self.MA7Positions addObject: [NSValue valueWithCGPoint: ma7Point]];

@@ -47,7 +47,7 @@
 @property (nonatomic, strong) Y_StockChartRightYView *volumeView;
 
 /**
- *  右侧Accessory图
+ *  右侧Accessory图 
  */
 @property (nonatomic, strong) Y_StockChartRightYView *accessoryView;
 
@@ -76,13 +76,13 @@
  */
 @property (nonatomic, strong) UIView *verticalView;
 
-
+//主K图高
 @property (nonatomic, strong) MASConstraint *kLineMainViewHeightConstraint;
-
+//成交图高
 @property (nonatomic, strong) MASConstraint *kLineVolumeViewHeightConstraint;
-
+//价格图高
 @property (nonatomic, strong) MASConstraint *priceViewHeightConstraint;
-
+//右侧成交图高
 @property (nonatomic, strong) MASConstraint *volumeViewHeightConstraint;
 
 @end
@@ -342,10 +342,10 @@
 - (void)event_pichMethod:(UIPinchGestureRecognizer *)pinch
 {
     static CGFloat oldScale = 1.0f;
+    //绝对值大于0.03
     CGFloat difValue = pinch.scale - oldScale;
     if(ABS(difValue) > Y_StockChartScaleBound) {
-        CGFloat oldKLineWidth = [Y_StockChartGlobalVariable kLineWidth];
-
+        CGFloat oldKLineWidth = [Y_StockChartGlobalVariable kLineWidth];//2
         NSInteger oldNeedDrawStartIndex = self.kLineMainView.needDrawStartIndex;
         NSLog(@"原来的index%ld",self.kLineMainView.needDrawStartIndex);
         [Y_StockChartGlobalVariable setkLineWith:oldKLineWidth * (difValue > 0 ? (1 + Y_StockChartScaleFactor) : (1 - Y_StockChartScaleFactor))];
@@ -354,8 +354,8 @@
         [self.kLineMainView updateMainViewWidth];
         
         if( pinch.numberOfTouches == 2 ) {
-            CGPoint p1 = [pinch locationOfTouch:0 inView:self.scrollView];
-            CGPoint p2 = [pinch locationOfTouch:1 inView:self.scrollView];
+            CGPoint p1 = [pinch locationOfTouch:0 inView:self.scrollView];//第一个点的位置
+            CGPoint p2 = [pinch locationOfTouch:1 inView:self.scrollView];//第二个点的位置
             CGPoint centerPoint = CGPointMake((p1.x+p2.x)/2, (p1.y+p2.y)/2);
             NSUInteger oldLeftArrCount = ABS((centerPoint.x - self.scrollView.contentOffset.x) - [Y_StockChartGlobalVariable kLineGap]) / ([Y_StockChartGlobalVariable kLineGap] + oldKLineWidth);
             NSUInteger newLeftArrCount = ABS((centerPoint.x - self.scrollView.contentOffset.x) - [Y_StockChartGlobalVariable kLineGap]) / ([Y_StockChartGlobalVariable kLineGap] + [Y_StockChartGlobalVariable kLineWidth]);

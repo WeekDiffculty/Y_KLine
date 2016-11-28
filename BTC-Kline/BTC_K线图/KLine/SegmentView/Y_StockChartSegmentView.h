@@ -4,7 +4,7 @@
 //
 //  Created by yate1996 on 16/5/2.
 //  Copyright © 2016年 yate1996. All rights reserved.
-//
+// 底部选择view
 
 #import <UIKit/UIKit.h>
 

@@ -22,7 +22,15 @@
     {
         Y_KLineModel *model = [Y_KLineModel new];
         model.PreviousKlineModel = preModel;
-        [model initWithArray:valueArr];
+        
+        
+        //将数据排序
+        NSMutableArray *arrayM = [valueArr mutableCopy];
+//        [arrayM exchangeObjectAtIndex:1 withObjectAtIndex:2];
+//        [arrayM exchangeObjectAtIndex:2 withObjectAtIndex:5];
+        NSArray *array = [arrayM copy];
+        
+        [model initWithArray:array];
         model.ParentGroupModel = groupModel;
         
         [mutableArr addObject:model];

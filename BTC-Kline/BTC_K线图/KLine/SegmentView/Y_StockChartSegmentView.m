@@ -226,7 +226,7 @@ static NSInteger const Y_StockChartSegmentStartTag = 2000;
     return btn;
 }
 
-#pragma mark 底部按钮点击事件
+#pragma mark 底部按钮点击事件 根据Button tag调整K图
 - (void)event_segmentButtonClicked:(UIButton *)btn
 {
     self.selectedBtn = btn;

@@ -35,4 +35,5 @@
 //*平仓close position UNWIND 参数:帐号login,密码pwd，单号order,平仓数量volume，品种symbol，价格price/
 + (void) unwindWithApi:(NSString *)url param:(NSDictionary *)param success:(void (^)(NSDictionary *responseObject))success fail:(void (^)(NSError *error))fail;
 
++ (void) getTokenWithApi:(NSString *)url success:(void (^)(NSString *token))cuccess;
 @end

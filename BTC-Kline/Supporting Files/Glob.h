@@ -35,4 +35,5 @@
 //平仓
 #define CLOSE_POSITION @"http://47.89.53.7:8788/api/"
 #endif /* Glob_h */
-
+//获取token
+#define TOKEN @"http://api.cn.ronghub.com/user/getToken.json"

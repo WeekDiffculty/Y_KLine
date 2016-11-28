@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 #import "Glob.h"
+#import <RongIMKit/RongIMKit.h>
+#import "NetWorking.h"
 @interface AppDelegate ()
 
 @end
@@ -17,8 +19,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-   
-    return YES;
+   [[RCIMClient sharedRCIMClient] initWithAppKey:@"qd46yzrfqukaf"];
+           return YES;
 }
 - (UIInterfaceOrientationMask)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window
 {

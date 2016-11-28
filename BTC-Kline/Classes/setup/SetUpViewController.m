@@ -9,6 +9,7 @@
 #import "SetUpViewController.h"
 #import "AccountViewController.h"
 #import "TubiaoSetUPTableViewController.h"
+#import "ChatViewController.h"
 @interface SetUpViewController ()
 @property (weak, nonatomic) IBOutlet UITableViewCell *aCount;
 //@property (weak, nonatomic) IBOutlet UITableViewCell *OTP;
@@ -60,7 +61,7 @@
                 
                 break;
             case 1:
-                
+            [self toChat];
                 break;
             case 2:
                 
@@ -75,6 +76,17 @@
                 break;
         }
     }
+}
+
+- (void)toChat{
+    ChatViewController *chat = [[ChatViewController alloc] init];
+    chat.conversationType = ConversationType_CUSTOMERSERVICE;
+    //设置会话的目标会话ID。（单聊、客服、公众服务会话为对方的ID，讨论组、群聊、聊天室为会话的ID）
+    chat.targetId = @"KEFU147970983317739";
+    //设置聊天会话界面要显示的标题
+    chat.title = @"联系客服";
+    //显示聊天会话界面
+    [self.navigationController pushViewController:chat animated:YES];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

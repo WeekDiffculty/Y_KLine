@@ -61,6 +61,7 @@
 		C02B728D1DDD49CB005FBE1C /* DetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C02B728B1DDD49CB005FBE1C /* DetailCell.xib */; };
 		C02B72901DDD7FD9005FBE1C /* Account.m in Sources */ = {isa = PBXBuildFile; fileRef = C02B728F1DDD7FD9005FBE1C /* Account.m */; };
 		C02B72931DDD8A96005FBE1C /* AddAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C02B72921DDD8A96005FBE1C /* AddAccountViewController.m */; };
+		C02E12361DEC0FF000ECBE60 /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C02E12351DEC0FF000ECBE60 /* ChatViewController.m */; };
 		C0438D8C1DE6B54F0030C894 /* BalanceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C0438D8A1DE6B54F0030C894 /* BalanceCell.m */; };
 		C0438D8D1DE6B54F0030C894 /* BalanceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0438D8B1DE6B54F0030C894 /* BalanceCell.xib */; };
 		C0438D911DE6B56E0030C894 /* BalanceDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C0438D8F1DE6B56E0030C894 /* BalanceDetailCell.m */; };
@@ -186,6 +187,8 @@
 		C02B728F1DDD7FD9005FBE1C /* Account.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Account.m; sourceTree = "<group>"; };
 		C02B72911DDD8A96005FBE1C /* AddAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddAccountViewController.h; sourceTree = "<group>"; };
 		C02B72921DDD8A96005FBE1C /* AddAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddAccountViewController.m; sourceTree = "<group>"; };
+		C02E12341DEC0FF000ECBE60 /* ChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatViewController.h; sourceTree = "<group>"; };
+		C02E12351DEC0FF000ECBE60 /* ChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatViewController.m; sourceTree = "<group>"; };
 		C0438D891DE6B54F0030C894 /* BalanceCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BalanceCell.h; sourceTree = "<group>"; };
 		C0438D8A1DE6B54F0030C894 /* BalanceCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BalanceCell.m; sourceTree = "<group>"; };
 		C0438D8B1DE6B54F0030C894 /* BalanceCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BalanceCell.xib; sourceTree = "<group>"; };
@@ -639,6 +642,8 @@
 		C0438D931DE6D6320030C894 /* chat */ = {
 			isa = PBXGroup;
 			children = (
+				C02E12341DEC0FF000ECBE60 /* ChatViewController.h */,
+				C02E12351DEC0FF000ECBE60 /* ChatViewController.m */,
 			);
 			name = chat;
 			sourceTree = "<group>";
@@ -835,6 +840,7 @@
 				84681C941CD75DA1008A8157 /* Y_StockChartSegmentView.m in Sources */,
 				84D8EAB71CD1C298008D7BC7 /* Y_KLineModel.m in Sources */,
 				189433CC1DD4466700F3D618 /* HQViewController.m in Sources */,
+				C02E12361DEC0FF000ECBE60 /* ChatViewController.m in Sources */,
 				189433DA1DD4647E00F3D618 /* LSViewController.m in Sources */,
 				84C0D78E1CD117B40013B3D4 /* AppDelegate.m in Sources */,
 				84681C901CD7325F008A8157 /* Y_MALine.m in Sources */,

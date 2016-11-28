@@ -18,6 +18,7 @@ PODS:
   - MJExtension (3.0.13)
   - MJRefresh (3.1.12)
   - Reachability (3.2)
+  - RongCloudIMKit (2.7.3)
 
 DEPENDENCIES:
   - AFNetworking (~> 3.1.0)
@@ -25,6 +26,7 @@ DEPENDENCIES:
   - MJExtension (~> 3.0.13)
   - MJRefresh (~> 3.1.12)
   - Reachability (~> 3.2)
+  - RongCloudIMKit (~> 2.7.3)
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
@@ -32,7 +34,8 @@ SPEC CHECKSUMS:
   MJExtension: 5932755f451458eefa24239358817f8d291240c7
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
+  RongCloudIMKit: 0b93700b17d224c7c213815b8a23a9c356fe20e2
 
-PODFILE CHECKSUM: 8d08380327cde06a426dccf21a4a72db84cbb8e9
+PODFILE CHECKSUM: 247670451f7be7f75f808accd4edcca501382f83
 
 COCOAPODS: 1.1.1

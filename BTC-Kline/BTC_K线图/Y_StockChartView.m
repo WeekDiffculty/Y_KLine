@@ -24,7 +24,7 @@
 @property (nonatomic, strong) Y_StockChartSegmentView *segmentView;
 
 /**
- *  图表类型
+ *  图表类型 定义的枚举
  */
 @property(nonatomic,assign) Y_StockChartCenterViewType currentCenterViewType;
 
@@ -66,6 +66,7 @@
     return _segmentView;
 }
 
+//模型导入
 - (void)setItemModels:(NSArray *)itemModels
 {
     _itemModels = itemModels;
@@ -76,9 +77,10 @@
         {
             [items addObject:item.title];
         }
+        //SegmentView config
         self.segmentView.items = items;
         Y_StockChartViewItemModel *firstModel = itemModels.firstObject;
-        self.currentCenterViewType = firstModel.centerViewType;
+        self.currentCenterViewType = firstModel.centerViewType;//K线类型
     }
     if(self.dataSource)
     {
@@ -101,6 +103,7 @@
 
 #pragma mark - 代理方法
 
+//根据点击的Button的tag 重画K图
 - (void)y_StockChartSegmentView:(Y_StockChartSegmentView *)segmentView clickSegmentButtonIndex:(NSInteger)index
 {
     self.currentIndex = index;

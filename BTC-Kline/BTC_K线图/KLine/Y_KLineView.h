@@ -12,7 +12,7 @@
 @interface Y_KLineView : UIView
 
 /**
- *  第一个View的高所占比例
+ *  第一个View的高所占比例 主K图
  */
 @property (nonatomic, assign) CGFloat mainViewRatio;
 
@@ -22,7 +22,7 @@
 @property (nonatomic, assign) CGFloat volumeViewRatio;
 
 /**
- *  数据
+ *  数据 
  */
 @property(nonatomic, copy) NSArray<Y_KLineModel *> *kLineModels;
 
@@ -33,12 +33,12 @@
 
 
 /**
- *  K线类型
+ *  K线类型  K 线 分时 other
  */
 @property (nonatomic, assign) Y_StockChartCenterViewType MainViewType;
 
 /**
- *  Accessory指标种类
+ *  Accessory指标种类 辅助指标 简单移动平均等
  */
 @property (nonatomic, assign) Y_StockChartTargetLineStatus targetLineStatus;
 @end

@@ -14,6 +14,7 @@
 #import "JsonstrTodic.h"
 #import "jioayiModel.h"
 #import "MJExtension.h"
+#import "Glob.h"
 @implementation NetWorking
 
 +(void)requestWithApi:(NSString *)url param:(NSMutableDictionary *)param thenSuccess:(void (^)(NSDictionary *responseObject))success fail:(void (^)(void))fail
@@ -216,5 +217,20 @@
            !fail?:fail(error);
        }];
 
+}
+
++ (void)getTokenWithApi:(NSString *)url success:(void (^)(NSString *))cuccess{
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    Account *ccount = [NSKeyedUnarchiver unarchiveObjectWithFile:[GoodsPath sharePath].account];
+    NSDictionary *param = @{@"userId":ccount.account,@"name":ccount.account,@"portraitUri":@""};
+    [manager POST:TOKEN parameters:param progress:^(NSProgress * _Nonnull uploadProgress) {
+        
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSDictionary *dict = (NSDictionary *)responseObject;
+        NSString *stt = dict[@"token"];
+        cuccess(stt);
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        NSLog(@"");
+    }];
 }
 @end

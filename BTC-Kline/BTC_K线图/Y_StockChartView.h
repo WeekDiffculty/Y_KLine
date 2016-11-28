@@ -4,7 +4,7 @@
 //
 //  Created by yate1996 on 16/4/30.
 //  Copyright © 2016年 yate1996. All rights reserved.
-//
+//  Y_StockChartView  Y_StockChartViewItemModel 类
 
 #import <UIKit/UIKit.h>
 #import "Y_StockChartConstant.h"
