@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>趋势</key>
+	<array>
+		<string>Average Directional Movement Index</string>
+		<string>Bollinger Bands</string>
+		<string>Envelopes</string>
+		<string>Ichimoku Kinko Hyo</string>
+		<string>Moving Average </string>
+		<string>Parabolic SAR</string>
+		<string>Standard Deviation</string>
+	</array>
+	<key>振荡器</key>
+	<array>
+		<string>Average True Range</string>
+		<string>Bears Power</string>
+		<string>Commodity Channel Index</string>
+		<string>DeMarker</string>
+		<string>Force Index</string>
+		<string>MACD</string>
+		<string>Momentum</string>
+		<string>Moving Average of Oscillator</string>
+		<string>Relative Vigor Index</string>
+		<string>Stochastic</string>
+		<string>Williams&apos;Percent Range</string>
+	</array>
+	<key>交易量</key>
+	<array>
+		<string>Accumulation/Distribution</string>
+		<string>Money Flow Index</string>
+		<string>On Balance Volume</string>
+		<string>Volumes</string>
+	</array>
+	<key>比尔.威廉姆斯指标</key>
+	<array>
+		<string>Accelerator Oscillator</string>
+		<string>Alligator</string>
+		<string>Awesome Oscilator</string>
+		<string>Fractals</string>
+		<string>Gator Oscillator</string>
+		<string>Market Facilitation Index</string>
+	</array>
+</dict>
+</plist>

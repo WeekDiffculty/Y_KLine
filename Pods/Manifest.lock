@@ -19,6 +19,9 @@ PODS:
   - MJRefresh (3.1.12)
   - Reachability (3.2)
   - RongCloudIMKit (2.7.3)
+  - SDWebImage (3.8.2):
+    - SDWebImage/Core (= 3.8.2)
+  - SDWebImage/Core (3.8.2)
 
 DEPENDENCIES:
   - AFNetworking (~> 3.1.0)
@@ -27,6 +30,7 @@ DEPENDENCIES:
   - MJRefresh (~> 3.1.12)
   - Reachability (~> 3.2)
   - RongCloudIMKit (~> 2.7.3)
+  - SDWebImage (~> 3.8.2)
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
@@ -35,7 +39,8 @@ SPEC CHECKSUMS:
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
   RongCloudIMKit: 0b93700b17d224c7c213815b8a23a9c356fe20e2
+  SDWebImage: '098e97e6176540799c27e804c96653ee0833d13c'
 
-PODFILE CHECKSUM: 247670451f7be7f75f808accd4edcca501382f83
+PODFILE CHECKSUM: fb2ddeb062764461d513e1cb1ae733b678f0e8b2
 
 COCOAPODS: 1.1.1

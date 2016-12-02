@@ -26,6 +26,7 @@
 @property (nonatomic, copy) NSString *TP;
 @property (nonatomic, copy) NSString *server;
 @property (nonatomic, strong) NSTimer *timer;
+
 @end
 
 @implementation NextJiaoyiViewController
@@ -52,27 +53,66 @@
     
 }
 
-- (IBAction)sell:(id)sender {
-    
-}
+
+//下单
 
 - (IBAction)Openorder:(id)sender {
     
     Account *ccount = [NSKeyedUnarchiver unarchiveObjectWithFile:[GoodsPath sharePath].account];
-    NSString *openURL = [NSString stringWithFormat:@"%@?type=%@&volume=%@&price=%@&symbol=%@&cmd=%@&SL=%@,&TP=%@&server=%@&login=%@&pwd=%@",CLOSE_POSITION,@"openorder",self.volume,@11,self.model.symbolName,@"1",@0,@0,self.server,ccount.account,ccount.password];
-    [NetWorking openPositionWithApi:openURL param:nil success:^(NSDictionary *responseObject) {
-        
+    NSString *cmd ;
+    if ([self.CMD isEqualToString:@"即时买入"]) {
+        cmd = [NSString stringWithFormat:@"%d",0];
+    }
+    if ([self.CMD isEqualToString:@"即时卖出"]) {
+       cmd = [NSString stringWithFormat:@"%d",1];
+    }if ([self.CMD isEqualToString:@"买入限价"]) {
+        cmd = [NSString stringWithFormat:@"%d",2];
+    }if ([self.CMD isEqualToString:@"卖出限价"]) {
+      cmd = [NSString stringWithFormat:@"%d",3];
+    }if ([self.CMD isEqualToString:@"买入止损"]) {
+       cmd = [NSString stringWithFormat:@"%d",4];
+    }if ([self.CMD isEqualToString:@"卖出止损"]) {
+       cmd = [NSString stringWithFormat:@"%d",5];
+    }
+   
+    NSString *openURL = [NSString stringWithFormat:@"%@?type=%@&volume=%@&price=%@&symbol=%@&cmd=%@&SL=%@,&TP=%@&server=%@&login=%@&pwd=%@",OPEN_POSITION,@"openorder",self.volume,self.price,self.model.symbolName,cmd,self.SL,self.TP,self.server,ccount.account,ccount.password];
+    [NetWorking openPositionWithApi:openURL param:nil success:^(NSString *responseObject) {
+        if ([responseObject isEqualToString:@"成功"]) {
+            [self jiaoyiSuccess];
+        }else{
+            [self tip:@"交易失败"];
+        }
     } fail:^(NSError *error) {
+        NSLog(@"%@",error.userInfo);
+    }];
+}
+- (void) jiaoyiSuccess{
+    [self tip:@"交易成功"];
+    [self.navigationController popToRootViewControllerAnimated:YES];
+}
+
+- (void)tip:(NSString *)str{
+    
+    UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:@"温馨提示" message:str preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *yes = [UIAlertAction actionWithTitle:@"知道了" style:0 handler:^(UIAlertAction * _Nonnull action) {
         
     }];
+    [alertVC addAction:yes];
+    [self presentViewController:alertVC animated:YES completion:nil];
 }
 
 - (void)setCurrentPrice{
     NSString *url = [HQJK stringByAppendingString:self.model.symbolName];
+    WeakObj(self);
     [NetWorking requestHQWithApi:url param:nil success:^(HangQing *responseObject) {
         dispatch_async(dispatch_get_main_queue(), ^{
-            NSArray *array = @[self.gewei,self.fenshu,self.lifang];
-            [self changeColor:[responseObject.price substringFromIndex:(responseObject.price.length -1)].integerValue labelArray:array];
+            NSArray *array = @[weakself.gewei,weakself.fenshu,weakself.lifang];
+            NSInteger length = responseObject.price.length;
+            weakself.gewei.text = [responseObject.price substringToIndex:(length -3)];
+            weakself.fenshu.text = [responseObject.price substringWithRange:NSMakeRange(length-3, 2)];
+            weakself.lifang.text = [responseObject.price substringFromIndex:(length -1)];
+            weakself.price = responseObject.price;
+            [weakself changeColor:[responseObject.price substringFromIndex:(responseObject.price.length -1)].integerValue labelArray:array];
         });
         
     } fail:^(NSError *error) {
@@ -92,7 +132,7 @@
 
 - (void)changeColor:(NSInteger )length labelArray:(NSArray *)labelArray{
     
-    for (NSInteger index = 0; index < labelArray.count -1; index ++) {
+    for (NSInteger index = 0; index < labelArray.count ; index ++) {
         UILabel *label = labelArray[index];
         if (length%2==0) {
             label.textColor = [UIColor redColor];

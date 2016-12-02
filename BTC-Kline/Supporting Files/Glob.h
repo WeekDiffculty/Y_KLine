@@ -37,3 +37,5 @@
 #endif /* Glob_h */
 //获取token
 #define TOKEN @"http://api.cn.ronghub.com/user/getToken.json"
+//头像
+#define PORTRAITURLI @"http://img5.duitang.com/uploads/item/201601/06/20160106061634_ALNQs.jpeg"

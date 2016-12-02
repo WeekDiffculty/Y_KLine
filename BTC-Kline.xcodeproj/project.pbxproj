@@ -61,7 +61,6 @@
 		C02B728D1DDD49CB005FBE1C /* DetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C02B728B1DDD49CB005FBE1C /* DetailCell.xib */; };
 		C02B72901DDD7FD9005FBE1C /* Account.m in Sources */ = {isa = PBXBuildFile; fileRef = C02B728F1DDD7FD9005FBE1C /* Account.m */; };
 		C02B72931DDD8A96005FBE1C /* AddAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C02B72921DDD8A96005FBE1C /* AddAccountViewController.m */; };
-		C02E12361DEC0FF000ECBE60 /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C02E12351DEC0FF000ECBE60 /* ChatViewController.m */; };
 		C0438D8C1DE6B54F0030C894 /* BalanceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C0438D8A1DE6B54F0030C894 /* BalanceCell.m */; };
 		C0438D8D1DE6B54F0030C894 /* BalanceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0438D8B1DE6B54F0030C894 /* BalanceCell.xib */; };
 		C0438D911DE6B56E0030C894 /* BalanceDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C0438D8F1DE6B56E0030C894 /* BalanceDetailCell.m */; };
@@ -71,11 +70,14 @@
 		C05890781DE4546C004F0399 /* JsonstrTodic.m in Sources */ = {isa = PBXBuildFile; fileRef = C05890771DE4546C004F0399 /* JsonstrTodic.m */; };
 		C06A1F061DDC3A5A008852B0 /* GoodsPath.m in Sources */ = {isa = PBXBuildFile; fileRef = C06A1F051DDC3A5A008852B0 /* GoodsPath.m */; };
 		C06A1F091DDC6CC9008852B0 /* NewJiaoyiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C06A1F081DDC6CC9008852B0 /* NewJiaoyiViewController.m */; };
+		C071624A1DEFF5B4000789B0 /* RCDCustomerServiceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C07162491DEFF5B4000789B0 /* RCDCustomerServiceViewController.m */; };
 		C075B88C1DDAAB6A00F773AE /* SymbolModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C075B88B1DDAAB6A00F773AE /* SymbolModel.m */; };
 		C07E30881DE543FA005F1739 /* jioayiModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C07E30871DE543FA005F1739 /* jioayiModel.m */; };
 		C08DD3D41DE299680090E528 /* Logined.m in Sources */ = {isa = PBXBuildFile; fileRef = C08DD3D31DE299680090E528 /* Logined.m */; };
 		C08DD3D61DE299A50090E528 /* Logined.xib in Resources */ = {isa = PBXBuildFile; fileRef = C08DD3D51DE299A50090E528 /* Logined.xib */; };
 		C08F03531DD94A4200945352 /* AccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C08F03521DD94A4200945352 /* AccountViewController.m */; };
+		C0921CFF1DEE686A00E4B522 /* ChangeCanshuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0921CFE1DEE686A00E4B522 /* ChangeCanshuViewController.m */; };
+		C0921D021DEE6AEE00E4B522 /* CANSHU.plist in Resources */ = {isa = PBXBuildFile; fileRef = C0921D011DEE6AEE00E4B522 /* CANSHU.plist */; };
 		C0A7C55F1DDDA1310084B6A0 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0A7C55E1DDDA1310084B6A0 /* LoginViewController.m */; };
 		C0E4125B1DD9849600798679 /* HeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = C0E4125A1DD9849600798679 /* HeaderView.m */; };
 		C0E412621DD99FAD00798679 /* HangQing.m in Sources */ = {isa = PBXBuildFile; fileRef = C0E412611DD99FAD00798679 /* HangQing.m */; };
@@ -187,8 +189,6 @@
 		C02B728F1DDD7FD9005FBE1C /* Account.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Account.m; sourceTree = "<group>"; };
 		C02B72911DDD8A96005FBE1C /* AddAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddAccountViewController.h; sourceTree = "<group>"; };
 		C02B72921DDD8A96005FBE1C /* AddAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddAccountViewController.m; sourceTree = "<group>"; };
-		C02E12341DEC0FF000ECBE60 /* ChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatViewController.h; sourceTree = "<group>"; };
-		C02E12351DEC0FF000ECBE60 /* ChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatViewController.m; sourceTree = "<group>"; };
 		C0438D891DE6B54F0030C894 /* BalanceCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BalanceCell.h; sourceTree = "<group>"; };
 		C0438D8A1DE6B54F0030C894 /* BalanceCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BalanceCell.m; sourceTree = "<group>"; };
 		C0438D8B1DE6B54F0030C894 /* BalanceCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BalanceCell.xib; sourceTree = "<group>"; };
@@ -205,6 +205,8 @@
 		C06A1F051DDC3A5A008852B0 /* GoodsPath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoodsPath.m; sourceTree = "<group>"; };
 		C06A1F071DDC6CC9008852B0 /* NewJiaoyiViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewJiaoyiViewController.h; sourceTree = "<group>"; };
 		C06A1F081DDC6CC9008852B0 /* NewJiaoyiViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewJiaoyiViewController.m; sourceTree = "<group>"; };
+		C07162481DEFF5B4000789B0 /* RCDCustomerServiceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCDCustomerServiceViewController.h; sourceTree = "<group>"; };
+		C07162491DEFF5B4000789B0 /* RCDCustomerServiceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCDCustomerServiceViewController.m; sourceTree = "<group>"; };
 		C075B88A1DDAAB6A00F773AE /* SymbolModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SymbolModel.h; sourceTree = "<group>"; };
 		C075B88B1DDAAB6A00F773AE /* SymbolModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SymbolModel.m; sourceTree = "<group>"; };
 		C07E30861DE543FA005F1739 /* jioayiModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jioayiModel.h; sourceTree = "<group>"; };
@@ -214,6 +216,9 @@
 		C08DD3D51DE299A50090E528 /* Logined.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Logined.xib; sourceTree = "<group>"; };
 		C08F03511DD94A4200945352 /* AccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountViewController.h; sourceTree = "<group>"; };
 		C08F03521DD94A4200945352 /* AccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountViewController.m; sourceTree = "<group>"; };
+		C0921CFD1DEE686A00E4B522 /* ChangeCanshuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangeCanshuViewController.h; sourceTree = "<group>"; };
+		C0921CFE1DEE686A00E4B522 /* ChangeCanshuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangeCanshuViewController.m; sourceTree = "<group>"; };
+		C0921D011DEE6AEE00E4B522 /* CANSHU.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = CANSHU.plist; sourceTree = "<group>"; };
 		C0A7C55D1DDDA1310084B6A0 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		C0A7C55E1DDDA1310084B6A0 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		C0E412591DD9849600798679 /* HeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeaderView.h; sourceTree = "<group>"; };
@@ -307,11 +312,14 @@
 		189433C81DD4464600F3D618 /* K */ = {
 			isa = PBXGroup;
 			children = (
+				C0921D001DEE6AA500E4B522 /* model */,
 				84FFC12F1CD4678A00C749F6 /* BTC_K线图 */,
 				189433D01DD446B400F3D618 /* KViewController.h */,
 				189433D11DD446B400F3D618 /* KViewController.m */,
 				84C0D7A01CD118080013B3D4 /* Y_StockChartViewController.h */,
 				84C0D7A11CD118080013B3D4 /* Y_StockChartViewController.m */,
+				C0921CFD1DEE686A00E4B522 /* ChangeCanshuViewController.h */,
+				C0921CFE1DEE686A00E4B522 /* ChangeCanshuViewController.m */,
 			);
 			path = K;
 			sourceTree = "<group>";
@@ -642,8 +650,8 @@
 		C0438D931DE6D6320030C894 /* chat */ = {
 			isa = PBXGroup;
 			children = (
-				C02E12341DEC0FF000ECBE60 /* ChatViewController.h */,
-				C02E12351DEC0FF000ECBE60 /* ChatViewController.m */,
+				C07162481DEFF5B4000789B0 /* RCDCustomerServiceViewController.h */,
+				C07162491DEFF5B4000789B0 /* RCDCustomerServiceViewController.m */,
 			);
 			name = chat;
 			sourceTree = "<group>";
@@ -662,6 +670,14 @@
 			children = (
 				C07E30861DE543FA005F1739 /* jioayiModel.h */,
 				C07E30871DE543FA005F1739 /* jioayiModel.m */,
+			);
+			name = model;
+			sourceTree = "<group>";
+		};
+		C0921D001DEE6AA500E4B522 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				C0921D011DEE6AEE00E4B522 /* CANSHU.plist */,
 			);
 			name = model;
 			sourceTree = "<group>";
@@ -748,6 +764,7 @@
 				189433E41DD4838F00F3D618 /* SimpleCell.xib in Resources */,
 				84FFC0F01CD31EBD00C749F6 /* 指标公式.md in Resources */,
 				C02B72881DDD49AC005FBE1C /* NomalCell.xib in Resources */,
+				C0921D021DEE6AEE00E4B522 /* CANSHU.plist in Resources */,
 				84C0D7991CD117B40013B3D4 /* LaunchScreen.storyboard in Resources */,
 				84C0D7961CD117B40013B3D4 /* Assets.xcassets in Resources */,
 				C026B68F1DDEF959002BDA25 /* Jiaoyi.storyboard in Resources */,
@@ -831,6 +848,7 @@
 				C0F34A941DDEDAD200E860CD /* XieyiViewController.m in Sources */,
 				C07E30881DE543FA005F1739 /* jioayiModel.m in Sources */,
 				84681C9A1CD895CB008A8157 /* Y_KLineVolumeView.m in Sources */,
+				C071624A1DEFF5B4000789B0 /* RCDCustomerServiceViewController.m in Sources */,
 				C0E412621DD99FAD00798679 /* HangQing.m in Sources */,
 				C02B72871DDD49AC005FBE1C /* NomalCell.m in Sources */,
 				C08F03531DD94A4200945352 /* AccountViewController.m in Sources */,
@@ -840,7 +858,6 @@
 				84681C941CD75DA1008A8157 /* Y_StockChartSegmentView.m in Sources */,
 				84D8EAB71CD1C298008D7BC7 /* Y_KLineModel.m in Sources */,
 				189433CC1DD4466700F3D618 /* HQViewController.m in Sources */,
-				C02E12361DEC0FF000ECBE60 /* ChatViewController.m in Sources */,
 				189433DA1DD4647E00F3D618 /* LSViewController.m in Sources */,
 				84C0D78E1CD117B40013B3D4 /* AppDelegate.m in Sources */,
 				84681C901CD7325F008A8157 /* Y_MALine.m in Sources */,
@@ -857,6 +874,7 @@
 				C02B72931DDD8A96005FBE1C /* AddAccountViewController.m in Sources */,
 				C05890781DE4546C004F0399 /* JsonstrTodic.m in Sources */,
 				C0E412671DD9C2FA00798679 /* TubiaoSetUPTableViewController.m in Sources */,
+				C0921CFF1DEE686A00E4B522 /* ChangeCanshuViewController.m in Sources */,
 				C06A1F061DDC3A5A008852B0 /* GoodsPath.m in Sources */,
 				C075B88C1DDAAB6A00F773AE /* SymbolModel.m in Sources */,
 				C0438D911DE6B56E0030C894 /* BalanceDetailCell.m in Sources */,

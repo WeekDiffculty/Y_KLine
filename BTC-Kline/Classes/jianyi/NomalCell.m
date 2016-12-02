@@ -31,7 +31,15 @@
     [super awakeFromNib];
     // Initialization code
 }
-
+- (instancetype)initWithCoder:(NSCoder *)aDecoder{
+    if ([super initWithCoder:aDecoder]) {
+        [self loadDefaultSetting];
+    }
+    return self;
+}
+- (void) loadDefaultSetting{
+    
+}
 - (void)setModel:(jioayiModel *)model{
     _model = model;    
     self.symbolName.text = model.symbol;

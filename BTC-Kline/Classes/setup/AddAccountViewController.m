@@ -18,10 +18,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
     [self loadDefaultSetting];
 }
-
 - (void)loadDefaultSetting{
     self.title = @"新账户";
     self.xuni.textLabel.text = @"无需注册，自动生成测试账户登录";
@@ -29,17 +27,10 @@
     self.zhenshi.textLabel.text = @"使用交易商获取的账号密码登录";
     self.zhenshi.detailTextLabel.text = @"交易账号";
 }
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.row==0) {
         [[LoginViewController new] loginWithceshi];
-        
     }else if(indexPath.row ==1){
-        
     }
 }
 @end

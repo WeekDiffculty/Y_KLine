@@ -89,7 +89,7 @@
 
 @implementation Y_KLineView
 
-//initWithFrame设置视图比例
+//initWithFrame 设置视图比例
 - (instancetype)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];

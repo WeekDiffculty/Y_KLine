@@ -85,6 +85,8 @@
     Account *count =  [Account shareAccount];
     count.account = @"";
     count.password = @"";
+    [[NSUserDefaults standardUserDefaults]setObject:@"" forKey:@"token"];
+    [[NSUserDefaults standardUserDefaults]synchronize];
     BOOL ret = [NSKeyedArchiver archiveRootObject:count toFile:[GoodsPath sharePath].account];
     NSLog(@"%@",ret?@2:@0);
     WeakObj(self);

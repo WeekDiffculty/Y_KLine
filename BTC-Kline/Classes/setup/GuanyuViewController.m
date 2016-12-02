@@ -20,7 +20,9 @@
 }
 - (IBAction)xieyi:(UIButton *)sender {
     XieyiViewController *xieyiVC = [[XieyiViewController alloc]init];
+    self.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:xieyiVC animated:YES];
+    self.hidesBottomBarWhenPushed = NO;
 }
 
 - (void)didReceiveMemoryWarning {

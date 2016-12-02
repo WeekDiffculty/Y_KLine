@@ -71,7 +71,7 @@
 
 - (void)changeColor:(NSInteger )length labelArray:(NSArray *)labelArray{
     
-        for (NSInteger index = 0; index < labelArray.count -1; index ++) {
+        for (NSInteger index = 0; index < labelArray.count ; index ++) {
             UILabel *label = labelArray[index];
             if (length%2==0) {
                 label.textColor = [UIColor redColor];

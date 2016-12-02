@@ -37,6 +37,10 @@
     }
     return  _arrayData;
 }
+
+- (void)viewWillAppear:(BOOL)animated{
+    [self reloadData];
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -121,10 +125,8 @@
     self.openCell = indexPath.row;
     [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
 }
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
+
+
 - (IBAction)newJiaoyi:(UIBarButtonItem *)sender {
     NewJiaoyiViewController *jyVC = [[NewJiaoyiViewController alloc]init];
     [self.navigationController pushViewController:jyVC animated:YES];

@@ -16,7 +16,7 @@
     Y_KLineGroupModel *groupModel = [Y_KLineGroupModel new];
     NSMutableArray *mutableArr = @[].mutableCopy;
     __block Y_KLineModel *preModel = [[Y_KLineModel alloc]init];
-    
+   
     //设置数据
     for (NSArray *valueArr in arr)
     {
@@ -28,6 +28,15 @@
         NSMutableArray *arrayM = [valueArr mutableCopy];
 //        [arrayM exchangeObjectAtIndex:1 withObjectAtIndex:2];
 //        [arrayM exchangeObjectAtIndex:2 withObjectAtIndex:5];
+        NSInteger digits = [[NSUserDefaults standardUserDefaults]integerForKey:@"digits"];
+        NSInteger beishu = 1;
+        for (NSInteger index =0 ; index< digits; index++ ) {
+            beishu *= 10;
+        }
+        NSString *str = [NSString stringWithFormat:@"%@",arrayM[1]];
+        [arrayM removeObjectAtIndex:1];
+        [arrayM insertObject:[NSString stringWithFormat:@"%.3f",(CGFloat)str.floatValue/beishu] atIndex:1];
+        
         NSArray *array = [arrayM copy];
         
         [model initWithArray:array];

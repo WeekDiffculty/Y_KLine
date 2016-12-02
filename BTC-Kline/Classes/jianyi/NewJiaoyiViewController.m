@@ -48,7 +48,7 @@
 
 - (NSArray *)arrayCMD{
     if (!_arrayCMD) {
-        _arrayCMD = @[@"即使执行",@"买入限价",@"卖出限价",@"买入止损",@"卖出止损"];
+        _arrayCMD = @[@"即时买入",@"即时卖出",@"买入限价",@"卖出限价",@"买入止损",@"卖出止损"];
     }
     return _arrayCMD;
 }
@@ -81,6 +81,7 @@
     self.CmdtextField.inputView = pickView;
     self.CmdtextField.delegate = self;
     self.CmdtextField.enabled = YES;
+    self.title = @"新交易";
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
@@ -176,8 +177,18 @@
         nextVC.cmd = self.cmd.text;
         [self.navigationController pushViewController:nextVC animated:YES];
 
-    }
+    }else{
+        [self tip:@"请核对算选的参数"];
+    }   
+}
+- (void)tip:(NSString *)str{
     
-    }
+    UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:@"温馨提示" message:str preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *yes = [UIAlertAction actionWithTitle:@"知道了" style:0 handler:^(UIAlertAction * _Nonnull action) {
+        
+    }];
+    [alertVC addAction:yes];
+    [self presentViewController:alertVC animated:YES completion:nil];
+}
 
 @end

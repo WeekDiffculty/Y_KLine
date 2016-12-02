@@ -10,4 +10,5 @@
 
 @interface Y_StockChartViewController : UIViewController
 
+- (void)changeCanshu;
 @end

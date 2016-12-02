@@ -301,7 +301,7 @@
     
     NSArray *kLineModels = self.needDrawKLineModels;
     
-    //计算最小单位
+    //计算最小单位 最高价和最低价的计算
     Y_KLineModel *firstModel = kLineModels.firstObject;
     __block CGFloat minAssert = firstModel.Low.floatValue;
     __block CGFloat maxAssert = firstModel.High.floatValue;

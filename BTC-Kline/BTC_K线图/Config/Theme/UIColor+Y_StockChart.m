@@ -24,7 +24,8 @@
 #pragma mark 所有图表的背景颜色
 +(UIColor *)backgroundColor
 {
-    return [UIColor colorWithRGBHex:0x181c20];
+    return [UIColor lightGrayColor];
+  // return [UIColor colorWithRGBHex:0x181c20];
 }
 
 #pragma mark 辅助背景色

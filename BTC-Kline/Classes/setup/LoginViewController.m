@@ -63,7 +63,10 @@
     count.password = self.password.text;
     BOOL ret = [NSKeyedArchiver archiveRootObject:count toFile:[GoodsPath sharePath].account];
     NSLog(@"%@",ret?@2:@0);
-    
+    [NetWorking getTokenWithApi:TOKEN withUserId:count.account name:count.account portraitUri:nil success:^(NSString *token) {
+        [[NSUserDefaults standardUserDefaults]setObject:token forKey:@"token"];
+        [[NSUserDefaults standardUserDefaults]synchronize];
+    }];
     WeakObj(self);
     dispatch_async(dispatch_get_main_queue(), ^{
         [weakself.navigationController popToRootViewControllerAnimated:YES];

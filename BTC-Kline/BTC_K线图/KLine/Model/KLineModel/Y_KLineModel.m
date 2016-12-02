@@ -231,7 +231,7 @@
 }
 
 - (NSNumber *)NineClocksMaxPrice {
-    if (!_NineClocksMaxPrice) {
+        if (!_NineClocksMaxPrice) {
         if([self.ParentGroupModel.models indexOfObject:self] >= 8)
         {
             [self rangeLastNinePriceByArray:self.ParentGroupModel.models condition:NSOrderedAscending];

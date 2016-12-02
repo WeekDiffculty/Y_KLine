@@ -5,7 +5,7 @@
 //  Created by yate1996 on 16/4/27.
 //  Copyright © 2016年 yate1996. All rights reserved.
 //  K图控制器
-
+#import "ChangeCanshuViewController.h"
 #import "Y_StockChartViewController.h"
 #import "Masonry.h"
 #import "Y_StockChartView.h"
@@ -130,12 +130,13 @@
 
 - (void)reloadData
 {
-//    NSMutableDictionary *param = [NSMutableDictionary dictionary];
-//    // 周期  时间戳 symbol
-//    param[@"type"] = self.type;//周期  1h 30min
-//    param[@"symbol"] = @"huobibtccny"; //symbol
-//    param[@"size"] = @"300"; //
-//    
+    NSMutableDictionary *param = [NSMutableDictionary dictionary];
+    // 周期  时间戳 symbol
+    NSString *endTime = [self getCurrentTimestamp];
+    NSString *startTime = [self getStartTimestampWithType:self.type];
+    param[@"symbol"] = @"AUDCHF"; //symbol
+    param[@"starttime"] = startTime;
+    param[@"endtime"] = endTime;
 //    [NetWorking requestWithApi:@"https://www.btc123.com/kline/klineapi" param:param thenSuccess:^(NSDictionary *responseObject) {
 //        if ([responseObject[@"isSuc"] boolValue]) {
 //            Y_KLineGroupModel *groupModel = [Y_KLineGroupModel objectWithArray:responseObject[@"datas"]];
@@ -150,17 +151,65 @@
 //    } fail:^{
 //        
 //    }];
-//    
-    
-    [NetWorking historyKlineQueryWithApi:nil success:^(NSDictionary *responseObject) {
+//
+    [NetWorking historyKlineQueryWithApi:param success:^(NSDictionary *responseObject) {
+         NSInteger digits = [responseObject[@"digits"] integerValue];
+        [[NSUserDefaults standardUserDefaults]setInteger:digits forKey:@"digits"];
+        [[NSUserDefaults standardUserDefaults]synchronize];
         Y_KLineGroupModel *groupModel = [Y_KLineGroupModel objectWithArray:responseObject[@"data"]];
-                    self.groupModel = groupModel;
+        NSArray *aray = responseObject[@"data"];
+        [aray writeToFile:@"/Users/zbf920563837icloudcom/Desktop/djj.plist" atomically:YES];;
+            self.groupModel = groupModel;
                     [self.modelsDict setObject:groupModel forKey:self.type];
                     NSLog(@"%@",groupModel);
                     [self.stockChartView reloadData];
     } fail:^(NSError *error) {
         
     }];
+}
+
+-(NSString*)getCurrentTimestamp{
+    
+    NSDate* dat = [NSDate dateWithTimeIntervalSinceNow:0];
+    
+    NSTimeInterval a=[dat timeIntervalSince1970];
+    
+    NSString*timeString = [NSString stringWithFormat:@"%0.f", a];//转为字符型
+    
+    return timeString;
+    
+}
+
+- (NSString *)getStartTimestampWithType:(NSString *)type{
+    
+    NSDate* dat = [NSDate dateWithTimeIntervalSinceNow:0];
+    
+    NSTimeInterval a=[dat timeIntervalSince1970];
+     NSString*timeString = [NSString stringWithFormat:@"%0.f", a];//转为字符型
+    NSInteger time = timeString.integerValue;
+    NSString *starttime ;
+    if ([self.type isEqualToString:@"1min"]) {
+        starttime  = [NSString stringWithFormat:@"%ld",time-60];
+    }
+    
+    if ([self.type isEqualToString:@"5min"]) {
+        starttime  = [NSString stringWithFormat:@"%ld",time-300];
+    }
+    if ([self.type isEqualToString:@"30min"]) {
+        starttime  = [NSString stringWithFormat:@"%ld",time-1800];
+    }
+    if ([self.type isEqualToString:@"1hour"]) {
+        starttime  = [NSString stringWithFormat:@"%ld",time-3600];
+    }
+    if ([self.type isEqualToString:@"1day"]) {
+        starttime  = [NSString stringWithFormat:@"%ld",time-86400];
+    }
+    if ([self.type isEqualToString:@"1week"]) {
+        starttime  = [NSString stringWithFormat:@"%ld",time-604800];
+    }
+    
+    return starttime;
+
 }
 - (Y_StockChartView *)stockChartView
 {
@@ -191,8 +240,8 @@
 }
 - (void)dismiss
 {
-//    AppDelegate *app = [UIApplication sharedApplication].delegate;
-//    app.isEable = NO;
+   AppDelegate *app = [UIApplication sharedApplication].delegate;
+    app.isEable = NO;
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 - (UIInterfaceOrientationMask)supportedInterfaceOrientations
@@ -202,5 +251,9 @@
 - (BOOL)shouldAutorotate
 {
     return NO;
+}
+- (void)changeCanshu{
+    ChangeCanshuViewController *changeVC = [[ChangeCanshuViewController alloc]init];
+    [self.navigationController pushViewController:changeVC animated:YES];
 }
 @end

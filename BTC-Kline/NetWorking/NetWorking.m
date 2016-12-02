@@ -152,8 +152,9 @@
 }
 
 //*历史K线History K line 参数:商品名称，K线周期，时间戳/
-+ (void)historyKlineQueryWithApi:(NSString *)url  success:(void (^)(NSDictionary *responseObject))success fail:(void (^)(NSError *error))fail{
-    NSString *str = @"http://47.89.53.7:8788/api/?type=chart&symbol=USDCAD&period=30&starttime=1470333600&endtime=1470333600&timesign=300";
++ (void)historyKlineQueryWithApi:(NSDictionary *)parma  success:(void (^)(NSDictionary *responseObject))success fail:(void (^)(NSError *error))fail{
+    
+    NSString *str = [NSString stringWithFormat:@"%@?type=%@&symbol=%@&period=%@&starttime=%@&endtime=%@&timesign=%@",K_LINE,@"chart",parma[@"symbol"],@30,parma[@"starttime"],parma[@"endtime"],@300];
     NSURL *urls = [NSURL URLWithString:str];
     NSURLRequest *request = [NSURLRequest requestWithURL:urls];
     NSURLSession * session=[NSURLSession sharedSession];
@@ -180,7 +181,7 @@
 }
 
 //开仓 open Position 参数:帐号login,密码pwd，商品symbol，数量volume，方向cmd /
-+ (void) openPositionWithApi:(NSString *)url param:(NSDictionary *)param success:(void (^)(NSDictionary *responseObject))success fail:(void (^)(NSError *error))fail{
++ (void) openPositionWithApi:(NSString *)url param:(NSDictionary *)param success:(void (^)(NSString *responseObject))success fail:(void (^)(NSError *error))fail{
     NSURL *urls = [NSURL URLWithString:url];
     NSURLRequest *request = [NSURLRequest requestWithURL:urls];
     NSURLSession * session=[NSURLSession sharedSession];
@@ -192,8 +193,9 @@
         NSHTTPURLResponse *httpresponse=(NSHTTPURLResponse *)response;
         if(httpresponse.statusCode==200){
             //请求成功,解析数据
-           // NSString *str=[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-           // NSDictionary *dict = [JsonstrTodic dictionaryWithJsonString:str];
+            NSString *str=[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+            
+            success(str);
             dispatch_async(dispatch_get_main_queue(), ^{
                 [task suspend];
             });
@@ -219,10 +221,9 @@
 
 }
 
-+ (void)getTokenWithApi:(NSString *)url success:(void (^)(NSString *))cuccess{
++ (void)getTokenWithApi:(NSString *)url withUserId:(NSString *)userID name:(NSString *)name portraitUri:(NSString *)portraitUri success:(void (^)(NSString *))cuccess {
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-    Account *ccount = [NSKeyedUnarchiver unarchiveObjectWithFile:[GoodsPath sharePath].account];
-    NSDictionary *param = @{@"userId":ccount.account,@"name":ccount.account,@"portraitUri":@""};
+    NSDictionary *param = @{@"userId":userID,@"name":name,@"portraitUri":PORTRAITURLI};
     [manager POST:TOKEN parameters:param progress:^(NSProgress * _Nonnull uploadProgress) {
         
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {

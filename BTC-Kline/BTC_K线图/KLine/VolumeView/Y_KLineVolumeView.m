@@ -4,7 +4,7 @@
 //
 //  Created by yate1996 on 16/5/3.
 //  Copyright © 2016年 yate1996. All rights reserved.
-//
+//  最高价  最低价
 
 #import "Y_KLineVolumeView.h"
 #import "Y_KLineModel.h"
