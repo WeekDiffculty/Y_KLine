@@ -15,22 +15,38 @@
 @property (weak, nonatomic) IBOutlet UILabel *volumss;
 @property (weak, nonatomic) IBOutlet UITextField *zhisun;
 @property (weak, nonatomic) IBOutlet UITextField *huoli;
+//DATE
 @property (weak, nonatomic) IBOutlet UITextField *piancha;
 @property (weak, nonatomic) IBOutlet UILabel *gewei;
 @property (weak, nonatomic) IBOutlet UILabel *fenshu;
 @property (weak, nonatomic) IBOutlet UILabel *lifang;
 @property (nonatomic, copy) NSString *price;
 @property (nonatomic, copy) NSString *volume;
-@property (nonatomic, copy) NSString *CMD;
 @property (nonatomic, copy) NSString *SL;
 @property (nonatomic, copy) NSString *TP;
 @property (nonatomic, copy) NSString *server;
 @property (nonatomic, strong) NSTimer *timer;
-
+@property (weak, nonatomic) IBOutlet UIButton *oderTo;
+@property (nonatomic, strong) UIDatePicker *datePicker;
 @end
 
 @implementation NextJiaoyiViewController
 
+- (UIDatePicker *)datePicker{
+    if (!_datePicker) {
+        _datePicker = [[UIDatePicker alloc]init];
+       _datePicker.locale = [NSLocale localeWithLocaleIdentifier:@"zh"];
+        _datePicker.datePickerMode = UIDatePickerModeDateAndTime;
+        [_datePicker addTarget:self action:@selector(valuechanged:) forControlEvents:UIControlEventValueChanged];
+    }
+    return  _datePicker;
+}
+- (void)valuechanged:(UIDatePicker *)datePicker{
+    NSDate *date = datePicker.date;
+    NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
+    formatter.dateFormat = @"YYYY.MM.dd HH:mm";
+    self.piancha.text = [formatter stringFromDate:date];
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -41,6 +57,7 @@
     self.symbolanddescription.text = [NSString stringWithFormat:@"%@-%@",self.model.symbolName,self.model.descriptions];
     self.cmds.text = self.cmd;
     self.volumss.text = [NSString stringWithFormat:@"%g",self.volums];
+    self.piancha.inputView = self.datePicker;
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
@@ -60,21 +77,26 @@
     
     Account *ccount = [NSKeyedUnarchiver unarchiveObjectWithFile:[GoodsPath sharePath].account];
     NSString *cmd ;
-    if ([self.CMD isEqualToString:@"即时买入"]) {
+    if ([self.cmd isEqualToString:@"即时买入"]) {
         cmd = [NSString stringWithFormat:@"%d",0];
     }
-    if ([self.CMD isEqualToString:@"即时卖出"]) {
+    if ([self.cmd isEqualToString:@"即时卖出"]) {
        cmd = [NSString stringWithFormat:@"%d",1];
-    }if ([self.CMD isEqualToString:@"买入限价"]) {
+    }if ([self.cmd isEqualToString:@"买入限价"]) {
         cmd = [NSString stringWithFormat:@"%d",2];
-    }if ([self.CMD isEqualToString:@"卖出限价"]) {
+    }if ([self.cmd isEqualToString:@"卖出限价"]) {
       cmd = [NSString stringWithFormat:@"%d",3];
-    }if ([self.CMD isEqualToString:@"买入止损"]) {
+    }if ([self.cmd isEqualToString:@"买入止损"]) {
        cmd = [NSString stringWithFormat:@"%d",4];
-    }if ([self.CMD isEqualToString:@"卖出止损"]) {
+    }if ([self.cmd isEqualToString:@"卖出止损"]) {
        cmd = [NSString stringWithFormat:@"%d",5];
     }
-   
+    if ([self.cmd isEqualToString:@"即时买入"]||[self.cmd isEqualToString:@"即时卖出"]) {
+        NSLog(@"");
+    }else{
+        [self tip:@"目前只支持即时买入、即时卖出哦！"];
+        return;
+    }
     NSString *openURL = [NSString stringWithFormat:@"%@?type=%@&volume=%@&price=%@&symbol=%@&cmd=%@&SL=%@,&TP=%@&server=%@&login=%@&pwd=%@",OPEN_POSITION,@"openorder",self.volume,self.price,self.model.symbolName,cmd,self.SL,self.TP,self.server,ccount.account,ccount.password];
     [NetWorking openPositionWithApi:openURL param:nil success:^(NSString *responseObject) {
         if ([responseObject isEqualToString:@"成功"]) {
@@ -86,10 +108,6 @@
         NSLog(@"%@",error.userInfo);
     }];
 }
-- (void) jiaoyiSuccess{
-    [self tip:@"交易成功"];
-    [self.navigationController popToRootViewControllerAnimated:YES];
-}
 
 - (void)tip:(NSString *)str{
     
@@ -99,6 +117,11 @@
     }];
     [alertVC addAction:yes];
     [self presentViewController:alertVC animated:YES completion:nil];
+}
+
+- (void) jiaoyiSuccess{
+    [self tip:@"交易成功"];
+    [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
 - (void)setCurrentPrice{

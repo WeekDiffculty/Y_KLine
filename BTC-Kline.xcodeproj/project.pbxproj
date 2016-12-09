@@ -53,6 +53,8 @@
 		84FFC12E1CD4676F00C749F6 /* Y_StockChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FFC12D1CD4676F00C749F6 /* Y_StockChartView.m */; };
 		84FFC1541CD4A21600C749F6 /* UIColor+Y_StockChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FFC1531CD4A21600C749F6 /* UIColor+Y_StockChart.m */; };
 		911E22236ED76437562A6A2F /* libPods-BTC-Kline.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 74E3A205500B38FC6E717747 /* libPods-BTC-Kline.a */; };
+		C003941D1DF5114100514803 /* orderEdting.m in Sources */ = {isa = PBXBuildFile; fileRef = C003941A1DF5114000514803 /* orderEdting.m */; };
+		C003941E1DF5114100514803 /* orderEdting.xib in Resources */ = {isa = PBXBuildFile; fileRef = C003941B1DF5114000514803 /* orderEdting.xib */; };
 		C026B68F1DDEF959002BDA25 /* Jiaoyi.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C026B68E1DDEF959002BDA25 /* Jiaoyi.storyboard */; };
 		C026B6921DDF1507002BDA25 /* NextJiaoyiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C026B6911DDF1507002BDA25 /* NextJiaoyiViewController.m */; };
 		C02B72871DDD49AC005FBE1C /* NomalCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C02B72851DDD49AC005FBE1C /* NomalCell.m */; };
@@ -61,6 +63,7 @@
 		C02B728D1DDD49CB005FBE1C /* DetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C02B728B1DDD49CB005FBE1C /* DetailCell.xib */; };
 		C02B72901DDD7FD9005FBE1C /* Account.m in Sources */ = {isa = PBXBuildFile; fileRef = C02B728F1DDD7FD9005FBE1C /* Account.m */; };
 		C02B72931DDD8A96005FBE1C /* AddAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C02B72921DDD8A96005FBE1C /* AddAccountViewController.m */; };
+		C042E2421DF7AEEE00EBEB32 /* GoodsDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = C042E2411DF7AEEE00EBEB32 /* GoodsDetail.m */; };
 		C0438D8C1DE6B54F0030C894 /* BalanceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C0438D8A1DE6B54F0030C894 /* BalanceCell.m */; };
 		C0438D8D1DE6B54F0030C894 /* BalanceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0438D8B1DE6B54F0030C894 /* BalanceCell.xib */; };
 		C0438D911DE6B56E0030C894 /* BalanceDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C0438D8F1DE6B56E0030C894 /* BalanceDetailCell.m */; };
@@ -176,6 +179,9 @@
 		84FFC1531CD4A21600C749F6 /* UIColor+Y_StockChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Y_StockChart.m"; sourceTree = "<group>"; };
 		91D39E2EDC14546C0231B348 /* Pods-BTC-Kline.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BTC-Kline.release.xcconfig"; path = "Pods/Target Support Files/Pods-BTC-Kline/Pods-BTC-Kline.release.xcconfig"; sourceTree = "<group>"; };
 		B7FEEF5804F5D1806CD22D6C /* Pods-BTC-Kline.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BTC-Kline.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BTC-Kline/Pods-BTC-Kline.debug.xcconfig"; sourceTree = "<group>"; };
+		C003941A1DF5114000514803 /* orderEdting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = orderEdting.m; sourceTree = "<group>"; };
+		C003941B1DF5114000514803 /* orderEdting.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = orderEdting.xib; sourceTree = "<group>"; };
+		C003941C1DF5114100514803 /* orderEdting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = orderEdting.h; sourceTree = "<group>"; };
 		C026B68E1DDEF959002BDA25 /* Jiaoyi.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Jiaoyi.storyboard; sourceTree = "<group>"; };
 		C026B6901DDF1507002BDA25 /* NextJiaoyiViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NextJiaoyiViewController.h; sourceTree = "<group>"; };
 		C026B6911DDF1507002BDA25 /* NextJiaoyiViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NextJiaoyiViewController.m; sourceTree = "<group>"; };
@@ -189,18 +195,20 @@
 		C02B728F1DDD7FD9005FBE1C /* Account.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Account.m; sourceTree = "<group>"; };
 		C02B72911DDD8A96005FBE1C /* AddAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddAccountViewController.h; sourceTree = "<group>"; };
 		C02B72921DDD8A96005FBE1C /* AddAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddAccountViewController.m; sourceTree = "<group>"; };
+		C042E2401DF7AEEE00EBEB32 /* GoodsDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoodsDetail.h; sourceTree = "<group>"; };
+		C042E2411DF7AEEE00EBEB32 /* GoodsDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoodsDetail.m; sourceTree = "<group>"; };
 		C0438D891DE6B54F0030C894 /* BalanceCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BalanceCell.h; sourceTree = "<group>"; };
 		C0438D8A1DE6B54F0030C894 /* BalanceCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BalanceCell.m; sourceTree = "<group>"; };
 		C0438D8B1DE6B54F0030C894 /* BalanceCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BalanceCell.xib; sourceTree = "<group>"; };
 		C0438D8E1DE6B56E0030C894 /* BalanceDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BalanceDetailCell.h; sourceTree = "<group>"; };
 		C0438D8F1DE6B56E0030C894 /* BalanceDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BalanceDetailCell.m; sourceTree = "<group>"; };
 		C0438D901DE6B56E0030C894 /* BalanceDetailCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BalanceDetailCell.xib; sourceTree = "<group>"; };
-		C058906F1DE41F4A004F0399 /* Tool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tool.h; sourceTree = "<group>"; };
-		C05890701DE41F4A004F0399 /* Tool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tool.m; sourceTree = "<group>"; };
+		C058906F1DE41F4A004F0399 /* Tool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Tool.h; path = ../NetWorking/Tool.h; sourceTree = "<group>"; };
+		C05890701DE41F4A004F0399 /* Tool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Tool.m; path = ../NetWorking/Tool.m; sourceTree = "<group>"; };
 		C05890731DE44A95004F0399 /* userInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = userInfo.h; sourceTree = "<group>"; };
 		C05890741DE44A95004F0399 /* userInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = userInfo.m; sourceTree = "<group>"; };
-		C05890761DE4546C004F0399 /* JsonstrTodic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JsonstrTodic.h; sourceTree = "<group>"; };
-		C05890771DE4546C004F0399 /* JsonstrTodic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JsonstrTodic.m; sourceTree = "<group>"; };
+		C05890761DE4546C004F0399 /* JsonstrTodic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JsonstrTodic.h; path = ../NetWorking/JsonstrTodic.h; sourceTree = "<group>"; };
+		C05890771DE4546C004F0399 /* JsonstrTodic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JsonstrTodic.m; path = ../NetWorking/JsonstrTodic.m; sourceTree = "<group>"; };
 		C06A1F041DDC3A5A008852B0 /* GoodsPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoodsPath.h; sourceTree = "<group>"; };
 		C06A1F051DDC3A5A008852B0 /* GoodsPath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoodsPath.m; sourceTree = "<group>"; };
 		C06A1F071DDC6CC9008852B0 /* NewJiaoyiViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewJiaoyiViewController.h; sourceTree = "<group>"; };
@@ -262,25 +270,9 @@
 		189433C61DD4464600F3D618 /* hangqing */ = {
 			isa = PBXGroup;
 			children = (
+				A12215DA1DF95F930076218E /* Controller */,
+				A12215D91DF95F8C0076218E /* View */,
 				C0E4125E1DD99F7200798679 /* Model */,
-				189433CA1DD4466700F3D618 /* HQViewController.h */,
-				189433CB1DD4466700F3D618 /* HQViewController.m */,
-				183E277C1DD5C8D600033F60 /* JSViewController.h */,
-				183E277D1DD5C8D600033F60 /* JSViewController.m */,
-				183E277E1DD5C8D600033F60 /* JSViewController.xib */,
-				183E27771DD5BDD900033F60 /* OptionView.h */,
-				183E27781DD5BDD900033F60 /* OptionView.m */,
-				183E277A1DD5BDF100033F60 /* OptionView.xib */,
-				183E27611DD5B28B00033F60 /* EdtingTableViewController.h */,
-				183E27621DD5B28B00033F60 /* EdtingTableViewController.m */,
-				183E275C1DD5B11100033F60 /* SymbolListTableViewController.h */,
-				183E275D1DD5B11100033F60 /* SymbolListTableViewController.m */,
-				189433DD1DD4823F00F3D618 /* SimpleCell.h */,
-				189433DE1DD4823F00F3D618 /* SimpleCell.m */,
-				189433E31DD4838F00F3D618 /* SimpleCell.xib */,
-				189433E11DD4828700F3D618 /* SeniorCell.m */,
-				189433E01DD4828700F3D618 /* SeniorCell.h */,
-				187D5D3A1DD58E6C0064B084 /* SeniorCell.xib */,
 			);
 			path = hangqing;
 			sourceTree = "<group>";
@@ -288,22 +280,9 @@
 		189433C71DD4464600F3D618 /* jiaoyi */ = {
 			isa = PBXGroup;
 			children = (
+				A12215DC1DF95FCD0076218E /* Controller */,
+				A12215DB1DF95FC60076218E /* View */,
 				C07E30851DE543E2005F1739 /* model */,
-				189433CD1DD446A800F3D618 /* JYViewController.h */,
-				189433CE1DD446A800F3D618 /* JYViewController.m */,
-				C06A1F071DDC6CC9008852B0 /* NewJiaoyiViewController.h */,
-				C06A1F081DDC6CC9008852B0 /* NewJiaoyiViewController.m */,
-				C026B68E1DDEF959002BDA25 /* Jiaoyi.storyboard */,
-				C026B6901DDF1507002BDA25 /* NextJiaoyiViewController.h */,
-				C026B6911DDF1507002BDA25 /* NextJiaoyiViewController.m */,
-				C02B72891DDD49CB005FBE1C /* DetailCell.h */,
-				C02B728A1DDD49CB005FBE1C /* DetailCell.m */,
-				C02B728B1DDD49CB005FBE1C /* DetailCell.xib */,
-				C02B72841DDD49AC005FBE1C /* NomalCell.h */,
-				C02B72851DDD49AC005FBE1C /* NomalCell.m */,
-				C02B72861DDD49AC005FBE1C /* NomalCell.xib */,
-				C0E412591DD9849600798679 /* HeaderView.h */,
-				C0E4125A1DD9849600798679 /* HeaderView.m */,
 			);
 			name = jiaoyi;
 			path = jianyi;
@@ -327,27 +306,11 @@
 		189433C91DD4464600F3D618 /* setup */ = {
 			isa = PBXGroup;
 			children = (
+				A12215DF1DF9604E0076218E /* other */,
+				A12215DE1DF9603A0076218E /* View */,
+				A12215DD1DF960040076218E /* Controller */,
 				C0438D931DE6D6320030C894 /* chat */,
 				C05890721DE44A62004F0399 /* model */,
-				C02B728E1DDD7FD9005FBE1C /* Account.h */,
-				C02B728F1DDD7FD9005FBE1C /* Account.m */,
-				189433D31DD446C300F3D618 /* SetUpViewController.h */,
-				189433D41DD446C300F3D618 /* SetUpViewController.m */,
-				C08F03511DD94A4200945352 /* AccountViewController.h */,
-				C08F03521DD94A4200945352 /* AccountViewController.m */,
-				C08DD3D21DE299680090E528 /* Logined.h */,
-				C08DD3D31DE299680090E528 /* Logined.m */,
-				C08DD3D51DE299A50090E528 /* Logined.xib */,
-				C02B72911DDD8A96005FBE1C /* AddAccountViewController.h */,
-				C02B72921DDD8A96005FBE1C /* AddAccountViewController.m */,
-				C0A7C55D1DDDA1310084B6A0 /* LoginViewController.h */,
-				C0A7C55E1DDDA1310084B6A0 /* LoginViewController.m */,
-				C0E412651DD9C2FA00798679 /* TubiaoSetUPTableViewController.h */,
-				C0E412661DD9C2FA00798679 /* TubiaoSetUPTableViewController.m */,
-				C0F34A8F1DDECAD500E860CD /* GuanyuViewController.h */,
-				C0F34A901DDECAD500E860CD /* GuanyuViewController.m */,
-				C0F34A921DDEDAD200E860CD /* XieyiViewController.h */,
-				C0F34A931DDEDAD200E860CD /* XieyiViewController.m */,
 			);
 			path = setup;
 			sourceTree = "<group>";
@@ -355,6 +318,7 @@
 		189433D61DD446F900F3D618 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				A12215D51DF95F280076218E /* StringTool */,
 				84FFC0F11CD35DD400C749F6 /* NetWorking */,
 			);
 			name = Tools;
@@ -363,14 +327,8 @@
 		189433D71DD4643E00F3D618 /* lishi */ = {
 			isa = PBXGroup;
 			children = (
-				C0438D8E1DE6B56E0030C894 /* BalanceDetailCell.h */,
-				C0438D8F1DE6B56E0030C894 /* BalanceDetailCell.m */,
-				C0438D901DE6B56E0030C894 /* BalanceDetailCell.xib */,
-				C0438D8A1DE6B54F0030C894 /* BalanceCell.m */,
-				C0438D891DE6B54F0030C894 /* BalanceCell.h */,
-				C0438D8B1DE6B54F0030C894 /* BalanceCell.xib */,
-				189433D81DD4647E00F3D618 /* LSViewController.h */,
-				189433D91DD4647E00F3D618 /* LSViewController.m */,
+				A12215D71DF95F500076218E /* Model */,
+				A12215D61DF95F460076218E /* View */,
 			);
 			name = lishi;
 			path = jianyi/lishi;
@@ -606,10 +564,6 @@
 		84FFC0F11CD35DD400C749F6 /* NetWorking */ = {
 			isa = PBXGroup;
 			children = (
-				C058906F1DE41F4A004F0399 /* Tool.h */,
-				C05890701DE41F4A004F0399 /* Tool.m */,
-				C05890761DE4546C004F0399 /* JsonstrTodic.h */,
-				C05890771DE4546C004F0399 /* JsonstrTodic.m */,
 				84FFC0F21CD35DD400C749F6 /* NetWorking.h */,
 				84FFC0F31CD35DD400C749F6 /* NetWorking.m */,
 			);
@@ -636,6 +590,151 @@
 				84FFC1531CD4A21600C749F6 /* UIColor+Y_StockChart.m */,
 			);
 			path = Theme;
+			sourceTree = "<group>";
+		};
+		A12215D51DF95F280076218E /* StringTool */ = {
+			isa = PBXGroup;
+			children = (
+				C058906F1DE41F4A004F0399 /* Tool.h */,
+				C05890701DE41F4A004F0399 /* Tool.m */,
+				C05890761DE4546C004F0399 /* JsonstrTodic.h */,
+				C05890771DE4546C004F0399 /* JsonstrTodic.m */,
+			);
+			name = StringTool;
+			sourceTree = "<group>";
+		};
+		A12215D61DF95F460076218E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C0438D8E1DE6B56E0030C894 /* BalanceDetailCell.h */,
+				C0438D8F1DE6B56E0030C894 /* BalanceDetailCell.m */,
+				C0438D901DE6B56E0030C894 /* BalanceDetailCell.xib */,
+				C0438D8A1DE6B54F0030C894 /* BalanceCell.m */,
+				C0438D891DE6B54F0030C894 /* BalanceCell.h */,
+				C0438D8B1DE6B54F0030C894 /* BalanceCell.xib */,
+				A12215D81DF95F580076218E /* Controller */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		A12215D71DF95F500076218E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		A12215D81DF95F580076218E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				189433D81DD4647E00F3D618 /* LSViewController.h */,
+				189433D91DD4647E00F3D618 /* LSViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		A12215D91DF95F8C0076218E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				183E277E1DD5C8D600033F60 /* JSViewController.xib */,
+				183E27771DD5BDD900033F60 /* OptionView.h */,
+				183E27781DD5BDD900033F60 /* OptionView.m */,
+				183E277A1DD5BDF100033F60 /* OptionView.xib */,
+				189433DD1DD4823F00F3D618 /* SimpleCell.h */,
+				189433DE1DD4823F00F3D618 /* SimpleCell.m */,
+				189433E31DD4838F00F3D618 /* SimpleCell.xib */,
+				189433E11DD4828700F3D618 /* SeniorCell.m */,
+				189433E01DD4828700F3D618 /* SeniorCell.h */,
+				187D5D3A1DD58E6C0064B084 /* SeniorCell.xib */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		A12215DA1DF95F930076218E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				183E27611DD5B28B00033F60 /* EdtingTableViewController.h */,
+				183E27621DD5B28B00033F60 /* EdtingTableViewController.m */,
+				183E275C1DD5B11100033F60 /* SymbolListTableViewController.h */,
+				183E275D1DD5B11100033F60 /* SymbolListTableViewController.m */,
+				189433CA1DD4466700F3D618 /* HQViewController.h */,
+				189433CB1DD4466700F3D618 /* HQViewController.m */,
+				183E277C1DD5C8D600033F60 /* JSViewController.h */,
+				183E277D1DD5C8D600033F60 /* JSViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		A12215DB1DF95FC60076218E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C026B68E1DDEF959002BDA25 /* Jiaoyi.storyboard */,
+				C003941A1DF5114000514803 /* orderEdting.m */,
+				C003941B1DF5114000514803 /* orderEdting.xib */,
+				C003941C1DF5114100514803 /* orderEdting.h */,
+				C02B72891DDD49CB005FBE1C /* DetailCell.h */,
+				C02B728A1DDD49CB005FBE1C /* DetailCell.m */,
+				C02B728B1DDD49CB005FBE1C /* DetailCell.xib */,
+				C02B72841DDD49AC005FBE1C /* NomalCell.h */,
+				C02B72851DDD49AC005FBE1C /* NomalCell.m */,
+				C02B72861DDD49AC005FBE1C /* NomalCell.xib */,
+				C0E412591DD9849600798679 /* HeaderView.h */,
+				C0E4125A1DD9849600798679 /* HeaderView.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		A12215DC1DF95FCD0076218E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				C026B6901DDF1507002BDA25 /* NextJiaoyiViewController.h */,
+				C026B6911DDF1507002BDA25 /* NextJiaoyiViewController.m */,
+				189433CD1DD446A800F3D618 /* JYViewController.h */,
+				189433CE1DD446A800F3D618 /* JYViewController.m */,
+				C06A1F071DDC6CC9008852B0 /* NewJiaoyiViewController.h */,
+				C06A1F081DDC6CC9008852B0 /* NewJiaoyiViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		A12215DD1DF960040076218E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				189433D31DD446C300F3D618 /* SetUpViewController.h */,
+				189433D41DD446C300F3D618 /* SetUpViewController.m */,
+				C08F03511DD94A4200945352 /* AccountViewController.h */,
+				C08F03521DD94A4200945352 /* AccountViewController.m */,
+				C02B72911DDD8A96005FBE1C /* AddAccountViewController.h */,
+				C02B72921DDD8A96005FBE1C /* AddAccountViewController.m */,
+				C0A7C55D1DDDA1310084B6A0 /* LoginViewController.h */,
+				C0A7C55E1DDDA1310084B6A0 /* LoginViewController.m */,
+				C0E412651DD9C2FA00798679 /* TubiaoSetUPTableViewController.h */,
+				C0E412661DD9C2FA00798679 /* TubiaoSetUPTableViewController.m */,
+				C0F34A8F1DDECAD500E860CD /* GuanyuViewController.h */,
+				C0F34A901DDECAD500E860CD /* GuanyuViewController.m */,
+				C0F34A921DDEDAD200E860CD /* XieyiViewController.h */,
+				C0F34A931DDEDAD200E860CD /* XieyiViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		A12215DE1DF9603A0076218E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C08DD3D21DE299680090E528 /* Logined.h */,
+				C08DD3D31DE299680090E528 /* Logined.m */,
+				C08DD3D51DE299A50090E528 /* Logined.xib */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		A12215DF1DF9604E0076218E /* other */ = {
+			isa = PBXGroup;
+			children = (
+				C02B728E1DDD7FD9005FBE1C /* Account.h */,
+				C02B728F1DDD7FD9005FBE1C /* Account.m */,
+			);
+			name = other;
 			sourceTree = "<group>";
 		};
 		B7E650416503594D38537EEC /* Pods */ = {
@@ -685,6 +784,8 @@
 		C0E4125E1DD99F7200798679 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				C042E2401DF7AEEE00EBEB32 /* GoodsDetail.h */,
+				C042E2411DF7AEEE00EBEB32 /* GoodsDetail.m */,
 				C0E412601DD99FAD00798679 /* HangQing.h */,
 				C0E412611DD99FAD00798679 /* HangQing.m */,
 				C075B88A1DDAAB6A00F773AE /* SymbolModel.h */,
@@ -725,12 +826,12 @@
 		84C0D77E1CD117B40013B3D4 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = yate1996;
 				TargetAttributes = {
 					84C0D7851CD117B40013B3D4 = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = 73W72LVS68;
+						DevelopmentTeam = 8N7Q58WJE4;
 					};
 				};
 			};
@@ -770,6 +871,7 @@
 				C026B68F1DDEF959002BDA25 /* Jiaoyi.storyboard in Resources */,
 				84C0D7941CD117B40013B3D4 /* Main.storyboard in Resources */,
 				84D8EABB1CD1D0EE008D7BC7 /* MA-EMA-MACD介绍.md in Resources */,
+				C003941E1DF5114100514803 /* orderEdting.xib in Resources */,
 				C0438D8D1DE6B54F0030C894 /* BalanceCell.xib in Resources */,
 				187D5D3B1DD58E6C0064B084 /* SeniorCell.xib in Resources */,
 				183E27801DD5C8D600033F60 /* JSViewController.xib in Resources */,
@@ -841,6 +943,7 @@
 				84FFC0F41CD35DD400C749F6 /* NetWorking.m in Sources */,
 				183E277F1DD5C8D600033F60 /* JSViewController.m in Sources */,
 				189433D21DD446B400F3D618 /* KViewController.m in Sources */,
+				C042E2421DF7AEEE00EBEB32 /* GoodsDetail.m in Sources */,
 				C0A7C55F1DDDA1310084B6A0 /* LoginViewController.m in Sources */,
 				84C0D7911CD117B40013B3D4 /* ViewController.m in Sources */,
 				189433DF1DD4823F00F3D618 /* SimpleCell.m in Sources */,
@@ -878,6 +981,7 @@
 				C06A1F061DDC3A5A008852B0 /* GoodsPath.m in Sources */,
 				C075B88C1DDAAB6A00F773AE /* SymbolModel.m in Sources */,
 				C0438D911DE6B56E0030C894 /* BalanceDetailCell.m in Sources */,
+				C003941D1DF5114100514803 /* orderEdting.m in Sources */,
 				183E27791DD5BDD900033F60 /* OptionView.m in Sources */,
 				C08DD3D41DE299680090E528 /* Logined.m in Sources */,
 				84681C731CD4A694008A8157 /* Y_StockChartGlobalVariable.m in Sources */,
@@ -1010,7 +1114,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 73W72LVS68;
+				DEVELOPMENT_TEAM = 8N7Q58WJE4;
 				INFOPLIST_FILE = "BTC-Kline/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1031,7 +1135,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 73W72LVS68;
+				DEVELOPMENT_TEAM = 8N7Q58WJE4;
 				INFOPLIST_FILE = "BTC-Kline/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

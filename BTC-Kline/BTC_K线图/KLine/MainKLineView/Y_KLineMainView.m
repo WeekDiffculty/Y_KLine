@@ -95,13 +95,9 @@
     CGContextSetFillColorWithColor(context, [UIColor backgroundColor].CGColor);
     CGContextFillRect(context, rect);
     
-    //设置显示日期的区域背景颜色
-    CGContextSetFillColorWithColor(context, [UIColor assistBackgroundColor].CGColor);
+   // 设置显示日期的区域背景颜色
+    CGContextSetFillColorWithColor(context, [UIColor backgroundColor].CGColor);
     CGContextFillRect(context, CGRectMake(0, Y_StockChartKLineMainViewMaxY, self.frame.size.width, self.frame.size.height - Y_StockChartKLineMainViewMaxY));
-    
-    
-
-    
     
     Y_MALine *MALine = [[Y_MALine alloc]initWithContext:context];
     
@@ -133,7 +129,7 @@
             
             //日期
             
-            NSDate *date = [NSDate dateWithTimeIntervalSince1970:self.needDrawKLineModels[idx].Date.doubleValue/1000];
+            NSDate *date = [NSDate dateWithTimeIntervalSince1970:self.needDrawKLineModels[idx].Date.doubleValue];
             NSDateFormatter *formatter = [NSDateFormatter new];
             formatter.dateFormat = @"HH:mm";
             NSString *dateStr = [formatter stringFromDate:date];

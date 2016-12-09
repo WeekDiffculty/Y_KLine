@@ -15,7 +15,7 @@
 #import "HQViewController.h"
 #import "JYViewController.h"
 #import "NewJiaoyiViewController.h"
-@interface ViewController ()<HQVCDelegate>
+@interface ViewController ()<HQVCDelegate,JYDElegate>
 
 @end
 
@@ -27,6 +27,9 @@
     UINavigationController *Navc = self.viewControllers[0];
     HQViewController *HQVC = Navc.viewControllers.firstObject;
     HQVC.HQdelegate = self;
+    UINavigationController *jiaoyiNAvc = self.viewControllers[2];
+    JYViewController *JYVC = jiaoyiNAvc.viewControllers.firstObject;
+    JYVC.delegate = self;
 }
 - (void)viewDidAppear:(BOOL)animated
 {
@@ -43,22 +46,24 @@
 
     
 }
-//- (IBAction)present:(id)sender {
-//    AppDelegate *appdelegate = [UIApplication sharedApplication].delegate;
-//    appdelegate.isEable = YES;
-//    Y_StockChartViewController *stockChartVC = [Y_StockChartViewController new];
-//    stockChartVC.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
-//    [self presentViewController:stockChartVC animated:YES completion:nil];
-//}
 #pragma HqDelegate>>>>>>>>>>>>>>>>>>>>>>>
 
-- (void)openJiaoyiWithVC:(UIViewController *)VC{
+- (void)openJiaoyiWithVC:(UIViewController *)VC withSymbol:(NSString *)symbol{
     [self setSelectedIndex:2];
-    [self.viewControllers[2] pushViewController:[NewJiaoyiViewController new] animated:YES];
+    NewJiaoyiViewController *newVC = [NewJiaoyiViewController new];
+    newVC.symbol = symbol;
+    [self.viewControllers[2] pushViewController:newVC animated:YES];
 }
-- (void)openTubiaoWithVC:(UIViewController *)VC{
+- (void)openTubiaoWithVC:(UIViewController *)VC withSymbol:(NSString *)symbol{
     [self setSelectedIndex:1];
 
+}
+- (void)openTubiao{
+     [self setSelectedIndex:1];
+}
+- (void)opennewJiaoyi{
+    [self setSelectedIndex:2];
+    [self.viewControllers[2] pushViewController:[NewJiaoyiViewController new] animated:YES];
 }
 - (BOOL)shouldAutorotate
 {

@@ -100,12 +100,6 @@
 	</dict>
 	<dict>
 		<key>symbol</key>
-		<string>GOLD</string>
-		<key>description</key>
-		<string>Gold</string>
-	</dict>
-	<dict>
-		<key>symbol</key>
 		<string>USDCAD</string>
 		<key>description</key>
 		<string>US Dollar vs Candian Dollar</string>

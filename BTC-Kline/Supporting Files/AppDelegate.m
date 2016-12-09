@@ -21,7 +21,6 @@
     // Override point for customization after application launch.
    [[RCIMClient sharedRCIMClient] initWithAppKey:@"qd46yzrfqukaf"];
    NSString *token = [[NSUserDefaults standardUserDefaults]objectForKey:@"token"];
-    token = @"sUU6bg7nrZSzTwJiJH6kPYBIF5+mkh0oWkC2lJmLXAYS4Ikdb18G6GDqblGwHbZZLbqlIanvr0hg0jOMWeEdxQ==";
     if (![token isEqualToString:@""]) {
         [[RCIM sharedRCIM] connectWithToken:token success:^(NSString *userId) {
             NSLog(@"登陆成功。当前登录的用户ID：%@", userId);
@@ -35,14 +34,6 @@
         }];
     }
               return YES;
-}
-- (UIInterfaceOrientationMask)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window
-{
-    if(self.isEable) {
-        return UIInterfaceOrientationMaskLandscape;
-    } else {
-        return UIInterfaceOrientationMaskPortrait;
-    }
 }
 - (void)applicationWillResignActive:(UIApplication *)application {
     

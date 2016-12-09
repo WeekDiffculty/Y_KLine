@@ -7,7 +7,8 @@
 //
 
 #import "JSViewController.h"
-
+#import "Glob.h"
+#import "GoodsDetail.h"
 @interface JSViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *dianCha;
 @property (weak, nonatomic) IBOutlet UILabel *xioaSHUwei;
@@ -27,7 +28,26 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+}
+
+- (void)viewWillAppear:(BOOL)animated{
+    NSString *str = [NSString stringWithFormat:@"%@%@",GOODSDETAIl,self.symbol];
+    [NetWorking goodsDetailWithApi:str success:^(GoodsDetail *model) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            //  self.dianCha.text ;
+            self.xioaSHUwei.text = model.digits;
+            self.zhisunSHuiping.text = model.stops_level;
+            // self.guadanTOquxiao;
+            self.heyueSHU.text = model.contract_size;
+            // self.lirunJisuanMOshi;
+            // self.kucunFeileixing;
+            self.mairuKUcunfei.text = model.margin_mode;
+            self.maichuKucunfei.text = model.profit_mode;
+            //self.yufukuanJisuan;
+            self.yufukuanDuichong.text = model.tick_value;
+            self.title = model.symbol;
+        });
+    }];
 }
 
 - (void)didReceiveMemoryWarning {

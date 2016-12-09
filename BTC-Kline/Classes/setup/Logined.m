@@ -7,6 +7,7 @@
 //
 
 #import "Logined.h"
+#import "Glob.h"
 @interface Logined ()
 
 @end
@@ -16,7 +17,6 @@
     Logined *logined = [[[NSBundle mainBundle]loadNibNamed:@"Logined" owner:nil options:nil] firstObject];
     return logined;
 }
-
 - (void)setModel:(userInfo *)model{
         _model = model;
         self.account.text = model.login;

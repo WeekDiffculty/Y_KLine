@@ -10,12 +10,13 @@
 #import "Glob.h"
 #import "SymbolModel.h"
 #import "Y_StockChartViewController.h"
-
+#import "AppDelegate.h"
 @interface KViewController ()<UIPickerViewDataSource,UIPickerViewDelegate>
 @property (nonatomic, strong)UIPickerView *symbolPicker;
 @property (nonatomic, copy) NSArray *arrayData;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *symbol;
 @property (nonatomic, weak) UIView *chatView;
+
 @end
 
 @implementation KViewController
@@ -80,6 +81,9 @@
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
     SymbolModel *model = self.arrayData[row];
     self.symbol.title = model.symbolName;
+    Y_StockChartViewController *stockVC = self.childViewControllers[0];
+    stockVC.symbolName = model.symbolName;
+    [stockVC reloadData];
     [self.symbolPicker removeFromSuperview];
 }
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
@@ -93,7 +97,6 @@
         make.width.equalTo(@80);
         make.height.equalTo(@300);
     }];
-   
 }
 - (IBAction)canshu:(UIButton *)sender {
     Y_StockChartViewController *vc = (Y_StockChartViewController *) self.chatView.nextResponder;

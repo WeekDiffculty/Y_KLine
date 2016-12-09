@@ -22,20 +22,20 @@
 }
 - (IBAction)newJiaoyi:(UIButton *)sender {
     if (self.OptinViewDelegate) {
-        [self.OptinViewDelegate OpenJiaoyiWithoptionView:self];
+        [self.OptinViewDelegate OpenJiaoyiWithoptionView:self withSymbol:self.tittle];
     }
 }
 
 - (IBAction)OpenTubaio:(UIButton *)sender {
     if (self.OptinViewDelegate) {
-        [self.OptinViewDelegate OpenTubiaoWithoptionView:self];
+        [self.OptinViewDelegate OpenTubiaoWithoptionView:self withSymbol:self.tittle];
     }
 
 }
 
 - (IBAction)jiaoyiSHuxing:(UIButton *)sender {
     if (self.OptinViewDelegate) {
-        [self.OptinViewDelegate JiaoyishuxingWithOptionView:self];
+        [self.OptinViewDelegate JiaoyishuxingWithOptionView:self withSymbol:self.tittle];
     }
 
 }

@@ -29,7 +29,11 @@
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.row==0) {
-        [[LoginViewController new] loginWithceshi];
+        [[LoginViewController new] loginWithceshi:^(BOOL success) {
+            if (success) {
+                [self.navigationController popToRootViewControllerAnimated:YES];
+            }
+        }];
     }else if(indexPath.row ==1){
     }
 }

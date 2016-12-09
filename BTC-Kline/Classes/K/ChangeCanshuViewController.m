@@ -92,8 +92,7 @@
             array = self.dict[@"比尔.威廉姆斯指标"];
             cell.textLabel.text = array[indexPath.row];
             break;
-        default:
-            
+        default:            
             break;
     }
 
@@ -103,6 +102,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{

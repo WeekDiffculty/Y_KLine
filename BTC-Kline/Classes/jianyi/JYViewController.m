@@ -13,7 +13,8 @@
 #import "DetailCell.h"
 #import "NewJiaoyiViewController.h"
 #import "jioayiModel.h"
-@interface JYViewController ()<UITableViewDelegate,UITableViewDataSource>
+#import "orderEdting.h"
+@interface JYViewController ()<UITableViewDelegate,UITableViewDataSource,jiaoyiDelegete,orderEdtingDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *symbolAndBanlance;
 @property (strong, nonatomic) IBOutlet UIView *views;
 @property (weak, nonatomic) IBOutlet UIView *detailView;
@@ -27,10 +28,23 @@
 @property (nonatomic) BOOL isDetail;
 @property (nonatomic) NSInteger openCell;
 @property (nonatomic) CGFloat profit;
+@property (strong, nonatomic) orderEdting  *orderEdtingView;
+@property (nonatomic, strong) UIView *backView;
+@property (nonatomic, strong) jioayiModel *jioayiModel;
 @end
 
 @implementation JYViewController
 
+- (UIView *)backView{
+    if (!_backView) {
+        _backView = [[UIView alloc]init];
+        _backView.frame = self.view.frame;
+        _backView.backgroundColor = [UIColor grayColor];
+        _backView.alpha= 0.9;
+        [self.view addSubview:_backView];
+    }
+    return _backView;
+}
 - (NSArray *)arrayData{
     if (!_arrayData) {
         _arrayData = [NSArray array];
@@ -38,6 +52,15 @@
     return  _arrayData;
 }
 
+
+- (orderEdting *)orderEdtingView{
+    if (!_orderEdtingView) {
+        _orderEdtingView = [orderEdting optionView];
+        _orderEdtingView.alpha = 1;
+    }
+    return _orderEdtingView;
+}
+ 
 - (void)viewWillAppear:(BOOL)animated{
     [self reloadData];
 }
@@ -89,6 +112,7 @@
         
     }else{
         NomalCell *cell = [NomalCell cellWith:tableView];
+        cell.delegate = self;
         cell.model = model;
         return  cell;
     }
@@ -130,5 +154,65 @@
 - (IBAction)newJiaoyi:(UIBarButtonItem *)sender {
     NewJiaoyiViewController *jyVC = [[NewJiaoyiViewController alloc]init];
     [self.navigationController pushViewController:jyVC animated:YES];
+}
+#pragma NomalCelldelegate
+- (void)NomalCell:(NomalCell *)cell withjiaoyiModel:(jioayiModel *)model{
+    self.jioayiModel = model;
+    [self.view addSubview:self.backView];
+    [self.backView addSubview:self.orderEdtingView];
+    self.orderEdtingView.delegate = self;
+     self.orderEdtingView.frame = CGRectMake(75, 200, Width-150, 200);
+    if ([model.cmd isEqualToString:@"0"]||[model.cmd isEqualToString:@"2"]||[model.cmd isEqualToString:@"4"] ) {
+        self.orderEdtingView.tittle = [NSString stringWithFormat:@"%@,%@",model.symbol,@"BUY"];
+    }else{
+        self.orderEdtingView.tittle = [NSString stringWithFormat:@"%@,%@",model.symbol,@"SELL"];
+    }
+    self.orderEdtingView.tittle = model.symbol;
+}
+#pragma orderEdtingDelegate
+- (void)OpenPosionWithOptionView:(UIView *)optionView{
+    [NetWorking unwindWithApi:CLOSE_POSITION param:self.jioayiModel success:^(NSString *responseObject) {
+        if ([responseObject isEqualToString:@"error"]) {
+            [self tip:@"平仓失败"];
+        }else{
+            [self tip:[NSString stringWithFormat:@"订单关闭，以%@价格平仓",self.jioayiModel.close_price]];
+        }
+    } fail:^(NSError *error) {
+        [self tip:@"请检查网络是否正常"];
+    }];
+    [self removeTheView];
+}
+- (void)tip:(NSString *)str{
+    
+    UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:@"温馨提示" message:str preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *yes = [UIAlertAction actionWithTitle:@"知道了" style:0 handler:^(UIAlertAction * _Nonnull action) {
+        
+    }];
+    [alertVC addAction:yes];
+    [self presentViewController:alertVC animated:YES completion:nil];
+}
+
+- (void)OpenJiaoyiWithoptionView:(UIView *)optionView{
+    if ([self.delegate respondsToSelector:@selector(opennewJiaoyi)]) {
+        [self.delegate opennewJiaoyi];
+    }
+    [self removeTheView];
+}
+- (void)OpenTubiaoWithoptionView:(UIView *)optionView{
+    if ([self.delegate respondsToSelector:@selector(openTubiao)]) {
+        [self.delegate openTubiao];
+    }
+    [self removeTheView];
+}
+
+- (void)removeTheView{
+    [self.orderEdtingView removeFromSuperview];
+    self.orderEdtingView = nil;
+    [self.backView removeFromSuperview];
+    self.backView = nil;
+
+}
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    [self removeTheView];
 }
 @end

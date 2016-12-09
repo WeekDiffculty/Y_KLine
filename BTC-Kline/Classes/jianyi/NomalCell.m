@@ -8,6 +8,7 @@
 
 #import "NomalCell.h"
 #import "jioayiModel.h"
+#import "Glob.h"
 @interface NomalCell()
 @property (weak, nonatomic) IBOutlet UILabel *symbolName;
 @property (weak, nonatomic) IBOutlet UILabel *volum;
@@ -17,7 +18,6 @@
 
 @end
 @implementation NomalCell
-
 + (instancetype)cellWith:(UITableView *)tableview{
     static NSString *strID = @"Nomalcell";
     NomalCell *cell = [tableview dequeueReusableCellWithIdentifier:strID];
@@ -38,8 +38,16 @@
     return self;
 }
 - (void) loadDefaultSetting{
-    
+    UILongPressGestureRecognizer *longGesture = [[UILongPressGestureRecognizer alloc]initWithTarget:self action:@selector(longPress)];
+    [self addGestureRecognizer:longGesture];
 }
+- (void)longPress{
+    if ([self.delegate respondsToSelector:@selector(NomalCell:withjiaoyiModel:)]) {
+        [self.delegate NomalCell:self withjiaoyiModel:self.model];
+    }
+}
+
+
 - (void)setModel:(jioayiModel *)model{
     _model = model;    
     self.symbolName.text = model.symbol;
@@ -51,7 +59,6 @@
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 
-    // Configure the view for the selected state
 }
 
 @end

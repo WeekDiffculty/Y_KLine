@@ -7,8 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@protocol JYDElegate <NSObject>
+- (void) opennewJiaoyi;
+- (void) openTubiao;
+@end
 @interface JYViewController : UIViewController
 - (IBAction)newJiaoyi:(UIBarButtonItem *)sender;
-
+@property (nonatomic, weak) id<JYDElegate>delegate;
 @end

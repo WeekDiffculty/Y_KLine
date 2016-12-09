@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2659" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -366,13 +366,13 @@
                                         <rect key="frame" x="100" y="0.0" width="150" height="45"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1.444" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mtd-Kn-dbY">
-                                                <rect key="frame" x="0.0" y="10" width="48.5" height="35"/>
+                                                <rect key="frame" x="0.0" y="10" width="48" height="35"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="22" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g7y-xJ-Ay0">
-                                                <rect key="frame" x="48.5" y="0.0" width="47.5" height="45"/>
+                                                <rect key="frame" x="48" y="0.0" width="48" height="45"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="35"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -633,6 +633,7 @@
                         <outlet property="gewei" destination="Mtd-Kn-dbY" id="rIy-zA-bHe"/>
                         <outlet property="huoli" destination="POx-9g-E4z" id="Zih-tR-0Va"/>
                         <outlet property="lifang" destination="wc8-te-JFh" id="ZSM-Hd-O0k"/>
+                        <outlet property="oderTo" destination="KfS-F3-NTp" id="nyW-cd-upZ"/>
                         <outlet property="piancha" destination="Dwi-YD-mtr" id="ceE-rv-yi5"/>
                         <outlet property="symbolanddescription" destination="trH-er-xVI" id="9Yc-Hi-gMD"/>
                         <outlet property="volumss" destination="i3l-x7-gx8" id="Ey9-z7-QfG"/>

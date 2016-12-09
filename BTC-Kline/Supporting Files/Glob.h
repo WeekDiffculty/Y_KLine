@@ -22,6 +22,8 @@
 #import "MJExtension.h"
 //*行情*/
 #define  HQJK @"http://47.89.53.7:8777/api/?type=singlequote&symbol="
+//商品详情
+#define GOODSDETAIl @"http://47.89.53.7:8788/api/?type=symbolinfo&symbol="
 //账号密码校验3
 #define ACCOUNT_PASSWORD @"http://47.89.53.7:8788/api/"
 //用户查询

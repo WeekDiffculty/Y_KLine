@@ -23,13 +23,26 @@
 @property (nonatomic, copy) NSArray *arrayData;
 @property (nonatomic) BOOL isSenior;
 @property (nonatomic, strong) NSTimer *timer;
+@property (nonatomic, strong) UIView *backView;
 @end
 
 @implementation HQViewController
+- (UIView *)backView{
+    if (!_backView) {
+        _backView = [[UIView alloc]init];
+        _backView.frame = self.view.frame;
+        _backView.backgroundColor = [UIColor grayColor];
+        _backView.alpha= 0.95;
+        [self.view addSubview:_backView];
+    }
+    return _backView;
+}
+
 - (OptionView *)optionView{
     if (!_optionView) {
         _optionView = [OptionView optionView];
         _optionView.OptinViewDelegate = self;
+        _optionView.alpha = 1;
     }
     return _optionView;
 }
@@ -79,9 +92,19 @@
     tableView.delegate= self;
     tableView.dataSource = self;
     [tableView setRowHeight:60];
-    
 }
-
+//监测网络
+- (void) chekNet{
+//    [NetWorking netStatus:HQJK success:^(BOOL netIsconnect) {
+//        if (netIsconnect) {
+//            self.arrayData;
+//            [self.tabView reloadData];
+//        }else{
+//            self.arrayData = nil;
+//        }
+//    }];
+//
+}
 - (void)refresh{
     dispatch_async(dispatch_get_main_queue(), ^{
         NSInteger count = self.arrayData.count;
@@ -149,14 +172,22 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     SymbolModel *model = self.arrayData[indexPath.row];
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
-    [self.view addSubview:self.optionView];
+    [self.view addSubview:self.backView];
+    [self.backView addSubview:self.optionView];
     self.optionView.tittle = model.symbolName;
     self.optionView.frame= CGRectMake(75, 200, Width-150, 200);
 }
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    [self removView];
+}
+- (void)removView{
     [self.optionView removeFromSuperview];
+    self.optionView = nil;
+    [self.backView removeFromSuperview];
+    self.backView = nil;
 }
 - (void)viewWillAppear:(BOOL)animated{
+    [self chekNet];
     self.timer = [NSTimer scheduledTimerWithTimeInterval:3.5 target:self selector:@selector(refresh) userInfo:nil repeats:YES];
        [self.timer fire];
     self.arrayData = nil;
@@ -173,22 +204,23 @@
     // Dispose of any resources that can be recreated.
 }
 #pragma OptionviewDelegate
-- (void)OpenTubiaoWithoptionView:(UIView *)optionView{
+- (void)OpenTubiaoWithoptionView:(UIView *)optionView withSymbol:(NSString *)symbol{
     if (self.HQdelegate) {
-        [self.HQdelegate openTubiaoWithVC:self];
+        [self.HQdelegate openTubiaoWithVC:self withSymbol:symbol];
     }
-    [self.optionView removeFromSuperview];
+    [self removView];
 }
--(void)JiaoyishuxingWithOptionView:(UIView *)optionView{
+-(void)JiaoyishuxingWithOptionView:(UIView *)optionView withSymbol:(NSString *)symbol {
     JSViewController *JSVC = [JSViewController new];
+    JSVC.symbol = symbol;
     [self.navigationController pushViewController:JSVC animated:YES];
-    [self.optionView removeFromSuperview];
+    [self removView];
 }
 
-- (void)OpenJiaoyiWithoptionView:(UIView *)optionView{
+- (void)OpenJiaoyiWithoptionView:(UIView *)optionView withSymbol:(NSString *)symbol{
     if (self.HQdelegate) {
-        [self.HQdelegate openJiaoyiWithVC:self];
+        [self.HQdelegate openJiaoyiWithVC:self withSymbol:symbol];
     }
-    [self.optionView removeFromSuperview];
+    [self removView];
 }
 @end

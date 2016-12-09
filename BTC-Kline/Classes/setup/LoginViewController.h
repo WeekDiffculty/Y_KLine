@@ -12,5 +12,5 @@
 @property (weak, nonatomic) IBOutlet UITextField *account;
 @property (weak, nonatomic) IBOutlet UITextField *password;
 - (IBAction)login:(UIBarButtonItem *)sender;
-- (void)loginWithceshi;
+-(void)loginWithceshi:(void(^)(BOOL success))success;
 @end

@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface JSViewController : UIViewController
-
+@property (nonatomic, copy) NSString *symbol;
 @end

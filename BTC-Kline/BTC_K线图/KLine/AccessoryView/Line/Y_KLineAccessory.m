@@ -34,6 +34,7 @@
         return;
     }
     CGContextRef context = self.context;
+    //涨的线
     CGContextSetStrokeColorWithColor(context, [UIColor increaseColor].CGColor);
     CGContextSetLineWidth(context, [Y_StockChartGlobalVariable kLineWidth]);
     
@@ -41,6 +42,7 @@
     
     if(self.kLineModel.MACD.floatValue > 0)
     {
+        //跌的线
         CGContextSetStrokeColorWithColor(context, [UIColor decreaseColor].CGColor);
     }
     CGContextStrokeLineSegments(context, solidPoints, 2);

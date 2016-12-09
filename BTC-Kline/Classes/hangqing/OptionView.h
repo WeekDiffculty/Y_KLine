@@ -8,9 +8,9 @@
 
 #import <UIKit/UIKit.h>
 @protocol OptionViewDelegate <NSObject>
-- (void)OpenJiaoyiWithoptionView:(UIView *)optionView;
-- (void)OpenTubiaoWithoptionView:(UIView *)optionView;
-- (void)JiaoyishuxingWithOptionView:(UIView *)optionView;
+- (void)OpenJiaoyiWithoptionView:(UIView *)optionView withSymbol:(NSString *)symbol;
+- (void)OpenTubiaoWithoptionView:(UIView *)optionView withSymbol:(NSString *)symbol;
+- (void)JiaoyishuxingWithOptionView:(UIView *)optionView withSymbol:(NSString *)symbol;
 @end
 
 @interface OptionView : UIView

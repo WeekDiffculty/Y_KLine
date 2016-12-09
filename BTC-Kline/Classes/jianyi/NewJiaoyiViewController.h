@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface NewJiaoyiViewController : UIViewController
-
+@property (nonatomic, copy) NSString *symbol;
 @end

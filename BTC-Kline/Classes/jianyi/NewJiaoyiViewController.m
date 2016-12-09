@@ -10,6 +10,7 @@
 #import "Glob.h"
 #import "SymbolModel.h"
 #import "NextJiaoyiViewController.h"
+#import "orderEdting.h"
 @interface NewJiaoyiViewController ()<UITextFieldDelegate,UIPickerViewDelegate,UIPickerViewDataSource>
 @property (weak, nonatomic) IBOutlet UILabel *symbolAndDescriptions;
 @property (weak, nonatomic) IBOutlet UILabel *cmd;

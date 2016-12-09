@@ -31,7 +31,8 @@
 #pragma mark 辅助背景色
 +(UIColor *)assistBackgroundColor
 {
-    return [UIColor colorWithRGBHex:0x1d2227];
+    return [UIColor grayColor];
+//    return [UIColor colorWithRGBHex:0x1d2227];
 }
 
 #pragma mark 涨的颜色

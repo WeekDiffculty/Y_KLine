@@ -9,7 +9,7 @@
 #import "Y_KLineGroupModel.h"
 #import "Y_KLineModel.h"
 @implementation Y_KLineGroupModel
-+ (instancetype) objectWithArray:(NSArray *)arr {
++ (instancetype) objectWithArray:(NSArray *)arr withcurrentPrice:(NSString *)currentPrice {
     
     NSAssert([arr isKindOfClass:[NSArray class]], @"arr不是一个数组");
     

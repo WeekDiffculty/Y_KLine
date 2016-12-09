@@ -9,6 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface Y_StockChartViewController : UIViewController
+@property (nonatomic, copy) NSString *symbolName;
 
 - (void)changeCanshu;
+
+- (void)reloadData;
 @end

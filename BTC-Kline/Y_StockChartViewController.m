@@ -16,6 +16,7 @@
 #import "UIColor+Y_StockChart.h"
 #import "AppDelegate.h"
 #import "Glob.h"
+#import "ChangeCanshuViewController.h"
 @interface Y_StockChartViewController ()<Y_StockChartViewDataSource>
 
 @property (nonatomic, strong) Y_StockChartView *stockChartView;
@@ -29,13 +30,21 @@
 @property (nonatomic, assign) NSInteger currentIndex;
 //类型 1min 5min 1d
 @property (nonatomic, copy) NSString *type;
+//商品类型
 
 @end
 
 @implementation Y_StockChartViewController
-
+- (NSString *)symbolName{
+    if (!_symbolName) {
+        _symbolName = @"AUDCHF";
+    }
+    return _symbolName;
+}
 - (void)viewWillAppear:(BOOL)animated
 {
+  
+    [self reloadData];
     [super viewWillAppear:animated];
     //隐藏状态栏
     [UIApplication sharedApplication].statusBarHidden = YES;
@@ -134,7 +143,7 @@
     // 周期  时间戳 symbol
     NSString *endTime = [self getCurrentTimestamp];
     NSString *startTime = [self getStartTimestampWithType:self.type];
-    param[@"symbol"] = @"AUDCHF"; //symbol
+    param[@"symbol"] = self.symbolName; //symbol
     param[@"starttime"] = startTime;
     param[@"endtime"] = endTime;
 //    [NetWorking requestWithApi:@"https://www.btc123.com/kline/klineapi" param:param thenSuccess:^(NSDictionary *responseObject) {
@@ -153,17 +162,20 @@
 //    }];
 //
     [NetWorking historyKlineQueryWithApi:param success:^(NSDictionary *responseObject) {
-         NSInteger digits = [responseObject[@"digits"] integerValue];
-        [[NSUserDefaults standardUserDefaults]setInteger:digits forKey:@"digits"];
-        [[NSUserDefaults standardUserDefaults]synchronize];
-        Y_KLineGroupModel *groupModel = [Y_KLineGroupModel objectWithArray:responseObject[@"data"]];
-        NSArray *aray = responseObject[@"data"];
-        [aray writeToFile:@"/Users/zbf920563837icloudcom/Desktop/djj.plist" atomically:YES];;
+        dispatch_async(dispatch_get_main_queue(), ^{
+            NSInteger digits = [responseObject[@"digits"] integerValue];
+            [[NSUserDefaults standardUserDefaults]setInteger:digits forKey:@"digits"];
+            [[NSUserDefaults standardUserDefaults]synchronize];
+            Y_KLineGroupModel *groupModel = [Y_KLineGroupModel objectWithArray:responseObject[@"data"]withcurrentPrice:responseObject[@"currentprice"]] ;
+          
+            NSArray *aray = responseObject[@"data"];
+            [aray writeToFile:@"/Users/bf/Desktop/djj.plist" atomically:YES];;
             self.groupModel = groupModel;
-                    [self.modelsDict setObject:groupModel forKey:self.type];
-                    NSLog(@"%@",groupModel);
-                    [self.stockChartView reloadData];
-    } fail:^(NSError *error) {
+            [self.modelsDict setObject:groupModel forKey:self.type];
+            NSLog(@"%@",groupModel);
+            [self.stockChartView reloadData];
+        });
+            } fail:^(NSError *error) {
         
     }];
 }
@@ -232,26 +244,11 @@
         [_stockChartView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.edges.equalTo(self.view);
         }];
-        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(dismiss)];
-        tap.numberOfTapsRequired = 2;
-        [self.view addGestureRecognizer:tap];
-    }
+            }
     return _stockChartView;
 }
-- (void)dismiss
-{
-   AppDelegate *app = [UIApplication sharedApplication].delegate;
-    app.isEable = NO;
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
-- (UIInterfaceOrientationMask)supportedInterfaceOrientations
-{
-    return UIInterfaceOrientationMaskLandscape;
-}
-- (BOOL)shouldAutorotate
-{
-    return NO;
-}
+
+
 - (void)changeCanshu{
     ChangeCanshuViewController *changeVC = [[ChangeCanshuViewController alloc]init];
     [self.navigationController pushViewController:changeVC animated:YES];

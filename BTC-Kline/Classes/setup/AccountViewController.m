@@ -77,7 +77,9 @@
      [self.view addSubview:self.logined];
     WeakObj(self);
     [NetWorking userQueryWithApi:USER_SEARCH account:ccount.account password:ccount.password success:^(userInfo *responseObject) {//
+        dispatch_async(dispatch_get_main_queue(), ^{
             weakself.logined.model = responseObject;
+        })  ;
              } fail:^(NSError *error) {
     }];
 }

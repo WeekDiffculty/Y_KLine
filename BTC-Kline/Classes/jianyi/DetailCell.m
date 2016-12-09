@@ -35,17 +35,9 @@
 
 - (instancetype)initWithCoder:(NSCoder *)aDecoder{
     if ([super initWithCoder:aDecoder]) {
-        [self loadDefaultSetting];
+       
     }
     return self;
-}
-- (void) loadDefaultSetting{
-    UISwipeGestureRecognizer *swipeGesture = [[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(swipe)];
-    [swipeGesture setDirection:UISwipeGestureRecognizerDirectionLeft];
-    [self addGestureRecognizer:swipeGesture];
-}
-- (void)swipe{
-    
 }
 - (void)setModel:(jioayiModel *)model{
     _model = model;
