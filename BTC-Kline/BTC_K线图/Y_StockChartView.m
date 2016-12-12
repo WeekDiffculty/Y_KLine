@@ -60,7 +60,7 @@
         [self addSubview:_segmentView];
         [_segmentView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.bottom.left.top.equalTo(self);
-            make.width.equalTo(@50);
+            make.width.equalTo(@40);
         }];
     }
     return _segmentView;

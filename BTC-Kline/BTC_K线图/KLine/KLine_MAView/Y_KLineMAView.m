@@ -70,13 +70,13 @@
         _lowLabel.textColor = [UIColor whiteColor];
         _closeLabel.textColor = [UIColor whiteColor];
 
-        NSNumber *labelWidth = [NSNumber numberWithInt:47];
+        NSNumber *labelWidth = [NSNumber numberWithInt:30];
         
         [_dateDescLabel mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(self.mas_left);
             make.top.equalTo(self.mas_top);
             make.bottom.equalTo(self.mas_bottom);
-            make.width.equalTo(@100);
+            make.width.equalTo(@80);
 
         }];
         
@@ -142,13 +142,12 @@
             make.bottom.equalTo(self.mas_bottom);
             
         }];
-        
+    
         [_MA30Label mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(_MA7Label.mas_right);
             make.top.equalTo(self.mas_top);
             make.bottom.equalTo(self.mas_bottom);
         }];
-        
     }
     return self;
 }
@@ -178,7 +177,7 @@
 - (UILabel *)private_createLabel
 {
     UILabel *label = [UILabel new];
-    label.font = [UIFont systemFontOfSize:10];
+    label.font = [UIFont systemFontOfSize:8];
     label.textColor = [UIColor assistTextColor];
     [self addSubview:label];
     return label;

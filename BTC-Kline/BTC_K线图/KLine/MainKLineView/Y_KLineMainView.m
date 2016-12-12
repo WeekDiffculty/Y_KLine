@@ -264,8 +264,6 @@
     } else {
        needDrawKLineStartIndex = self.needDrawStartIndex;
     }
-    
-    
     NSLog(@"这是模型开始的index-----------%lu",needDrawKLineStartIndex);
     [self.needDrawKLineModels removeAllObjects];
     

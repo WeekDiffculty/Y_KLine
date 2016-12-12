@@ -32,9 +32,21 @@
         [[LoginViewController new] loginWithceshi:^(BOOL success) {
             if (success) {
                 [self.navigationController popToRootViewControllerAnimated:YES];
+            }else{
+                [self tip:@"获取失败，检查网络"];
             }
         }];
     }else if(indexPath.row ==1){
     }
 }
+- (void)tip:(NSString *)str{
+    
+    UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:@"温馨提示" message:str preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *yes = [UIAlertAction actionWithTitle:@"知道了" style:0 handler:^(UIAlertAction * _Nonnull action) {
+        
+    }];
+    [alertVC addAction:yes];
+    [self presentViewController:alertVC animated:YES completion:nil];
+}
+
 @end

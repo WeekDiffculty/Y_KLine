@@ -367,6 +367,7 @@
         [self.kLineMainView drawMainView];
     }
 }
+
 #pragma mark 长按手势执行方法
 - (void)event_longPressMethod:(UILongPressGestureRecognizer *)longPress
 {

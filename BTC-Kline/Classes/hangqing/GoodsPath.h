@@ -12,11 +12,11 @@
 #define etcGoods @"etcGoods.plist"
 #define accountPath @"account.archive"
 @interface GoodsPath : NSObject
-@property (nonatomic, weak) NSString * currentGoodsPath;
-@property (nonatomic, weak) NSString *goodsPath;
-@property (nonatomic, weak) NSString *etcPath;
+@property (nonatomic, copy) NSString * currentGoodsPath;
+@property (nonatomic, copy) NSString *goodsPath;
+@property (nonatomic, copy) NSString *etcPath;
 
-@property (nonatomic, weak) NSString *account;
-
+@property (nonatomic, copy) NSString *account;
+@property (nonatomic, copy)NSString *html;
 + (instancetype)sharePath;
 @end

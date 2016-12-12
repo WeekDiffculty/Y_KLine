@@ -31,10 +31,17 @@
 @property (strong, nonatomic) orderEdting  *orderEdtingView;
 @property (nonatomic, strong) UIView *backView;
 @property (nonatomic, strong) jioayiModel *jioayiModel;
+@property (nonatomic, strong) NSTimer *timer;
 @end
 
 @implementation JYViewController
 
+- (NSTimer *)timer{
+    if (!_timer) {
+     _timer =  [NSTimer scheduledTimerWithTimeInterval:3.5 target:self selector:@selector(reloadData) userInfo:nil repeats:YES];
+    }
+    return  _timer;
+}
 - (UIView *)backView{
     if (!_backView) {
         _backView = [[UIView alloc]init];
@@ -62,7 +69,11 @@
 }
  
 - (void)viewWillAppear:(BOOL)animated{
-    [self reloadData];
+    [self.timer fire];
+}
+- (void)viewWillDisappear:(BOOL)animated{
+    [self.timer invalidate];
+    _timer = nil;
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -119,6 +130,7 @@
 }
 
 - (void)reloadData{
+    self.profit = 0.0;
      Account *ccount = [NSKeyedUnarchiver unarchiveObjectWithFile:[GoodsPath sharePath].account];
     [NetWorking checkThepositionWithApi:CHICANG account:ccount.account password:ccount.password success:^(NSArray *responseObject) {
         NSInteger count = responseObject.count;
@@ -134,15 +146,16 @@
         
     }];
 }
-
+//  计算总盈亏
 - (void)profie{
     NSInteger count = self.arrayData.count;
-    
     for (NSInteger index = 0; index < count; index ++) {
         jioayiModel *model = self.arrayData[index];
         self.profit += [model.profit doubleValue];
     }
-    self.symbolAndBanlance.text = [NSString stringWithFormat:@"%g",self.profit];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        self.symbolAndBanlance.text = [NSString stringWithFormat:@"%g",self.profit];
+    });
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     self.isDetail = !_isDetail;

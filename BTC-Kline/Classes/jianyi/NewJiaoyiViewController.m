@@ -146,30 +146,44 @@
 }
 
 - (IBAction)fastBack:(UIButton *)sender {
-    self.volums -= 0.1;
+    self.volums -= 1;
+    if (self.volums<2) {
+        [self tip:@"数量最小为2"];
+        return;
+    }
     NSString *str = [NSString stringWithFormat:@"%g",self.volums];
     self.volumValue.text = str;
     self.volum.text = str;
 }
 - (IBAction)back:(UIButton *)sender {
-    self.volums -= 0.01;
+    self.volums -= 0.1;
+    if (self.volums<2) {
+        [self tip:@"数量最小为2"];
+        return;
+    }
     NSString *str = [NSString stringWithFormat:@"%g",self.volums];
     self.volumValue.text = str;
     self.volum.text = str;
 }
+
 - (IBAction)forword:(UIButton *)sender {
-    self.volums += 0.01;
+    self.volums += 0.1;
+   
     NSString *str = [NSString stringWithFormat:@"%g",self.volums];
     self.volumValue.text = str;
     self.volum.text = str;
 }
 - (IBAction)fastForword:(UIButton *)sender {
-    self.volums += 0.1;
+    self.volums += 1;
     NSString *str = [NSString stringWithFormat:@"%g",self.volums];
     self.volumValue.text = str;
     self.volum.text = str;
 }
 - (IBAction)next:(id)sender {
+    if (self.volums<2) {
+        [self tip:@"数量最小为2,请核对"];
+        return;
+    }
     UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Jiaoyi" bundle:nil];
     NextJiaoyiViewController *nextVC = [storyBoard instantiateViewControllerWithIdentifier:@"NextJiaoyiViewController"];
     if (self.model&&self.volums&&self.cmd) {

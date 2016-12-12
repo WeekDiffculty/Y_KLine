@@ -24,6 +24,7 @@
     if (!_logOutBtn) {
         _logOutBtn = [[UIButton alloc]init];
         [_logOutBtn setTitle: @"退出登录" forState:UIControlStateNormal];
+        _logOutBtn.layer.cornerRadius = 9;
         _logOutBtn.backgroundColor = [UIColor redColor];
         _logOutBtn.frame = CGRectMake((Width - 100)*0.5, Height - 100, 100, 40);
         [_logOutBtn addTarget:self action:@selector(logout:) forControlEvents:UIControlEventTouchUpInside];
@@ -72,6 +73,7 @@
 - (void)loginedWithconfig:(Account *)ccount{
     [self.view addSubview:self.noLoginView];
     self.noLoginView.text = @"当前登录用户：";
+    self.noLoginView.textAlignment = NSTextAlignmentCenter;
     self.noLoginView.frame = CGRectMake(0, 64, Width, 50);
     [self.view addSubview:self.logOutBtn];
      [self.view addSubview:self.logined];

@@ -95,7 +95,7 @@
 - (UILabel *)private_createLabel
 {
     UILabel *label = [UILabel new];
-    label.font = [UIFont systemFontOfSize:10];
+    label.font = [UIFont systemFontOfSize:8];
     label.textColor = [UIColor assistTextColor];
     label.textAlignment = NSTextAlignmentLeft;
     label.adjustsFontSizeToFitWidth = YES;

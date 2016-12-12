@@ -56,7 +56,7 @@
             }];
         }
     } fail:^(NSError *error) {
-        [self tip:@"请检查网络"];
+        success(NO);
     }];
 }
 

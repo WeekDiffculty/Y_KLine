@@ -7,32 +7,28 @@
 //
 
 #import "UIColor+Y_StockChart.h"
-
 @implementation UIColor (Y_StockChart)
-
 + (UIColor *)colorWithRGBHex:(UInt32)hex {
     int r = (hex >> 16) & 0xFF;
     int g = (hex >> 8) & 0xFF;
     int b = (hex) & 0xFF;
-    
     return [UIColor colorWithRed:r / 255.0f
                            green:g / 255.0f
                             blue:b / 255.0f
                            alpha:1.0f];
 }
-
 #pragma mark 所有图表的背景颜色
 +(UIColor *)backgroundColor
 {
-    return [UIColor lightGrayColor];
-  // return [UIColor colorWithRGBHex:0x181c20];
+    //return [UIColor lightGrayColor];
+   return [UIColor colorWithRGBHex:0x181c20];
 }
 
 #pragma mark 辅助背景色
 +(UIColor *)assistBackgroundColor
 {
-    return [UIColor grayColor];
-//    return [UIColor colorWithRGBHex:0x1d2227];
+    //return [UIColor grayColor];
+    return [UIColor colorWithRGBHex:0x1d2227];
 }
 
 #pragma mark 涨的颜色

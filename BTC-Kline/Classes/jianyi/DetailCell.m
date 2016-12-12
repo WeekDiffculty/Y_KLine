@@ -42,9 +42,9 @@
 - (void)setModel:(jioayiModel *)model{
     _model = model;
     self.symbolName.text = model.symbol;
-    self.volum.text = model.volume;
     self.starPrice.text = model.open_price;
-    self.currentPrice.text = model.close_price;
+    self.volum.text = [NSString stringWithFormat:@"buy %@",model.volume];
+    self.currentPrice.text = [NSString stringWithFormat:@"→%@" ,model.close_price];
     self.banlance.text = model.profit;
     NSString *time = model.open_time;
     NSTimeInterval interval=[time doubleValue] / 1.0;

@@ -63,7 +63,7 @@ static NSInteger const Y_StockChartSegmentStartTag = 2000;
             UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
             [btn setTitleColor:[UIColor mainTextColor] forState:UIControlStateNormal];
             [btn setTitleColor:[UIColor ma30Color] forState:UIControlStateSelected];
-            btn.titleLabel.font = [UIFont systemFontOfSize:13];
+            btn.titleLabel.font = [UIFont systemFontOfSize:12];
             btn.tag = Y_StockChartSegmentStartTag + 100 + idx;
             [btn addTarget:self action:@selector(event_segmentButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
             [btn setTitle:title forState:UIControlStateNormal];
