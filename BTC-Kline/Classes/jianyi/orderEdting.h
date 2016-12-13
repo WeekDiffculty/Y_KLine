@@ -8,9 +8,9 @@
 
 #import <UIKit/UIKit.h>
 @protocol orderEdtingDelegate <NSObject>
-- (void)OpenJiaoyiWithoptionView:(UIView *)optionView;
-- (void)OpenTubiaoWithoptionView:(UIView *)optionView;
-- (void)OpenPosionWithOptionView:(UIView *)optionView;
+- (void)OpenJiaoyiWithoptionView:(UIView *)optionView withSymbol:(NSString *)symbol;
+- (void)OpenTubiaoWithoptionView:(UIView *)optionView withSymbol:(NSString *)symbol;
+- (void)OpenPosionWithOptionView:(UIView *)optionView withSymbol:(NSString *)symbol;
 @end
 
 @interface orderEdting : UIView

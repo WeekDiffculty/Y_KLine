@@ -53,6 +53,7 @@
 		84FFC12E1CD4676F00C749F6 /* Y_StockChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FFC12D1CD4676F00C749F6 /* Y_StockChartView.m */; };
 		84FFC1541CD4A21600C749F6 /* UIColor+Y_StockChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FFC1531CD4A21600C749F6 /* UIColor+Y_StockChart.m */; };
 		911E22236ED76437562A6A2F /* libPods-BTC-Kline.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 74E3A205500B38FC6E717747 /* libPods-BTC-Kline.a */; };
+		A1E336891DFE991D00F7C751 /* NSString+md5.m in Sources */ = {isa = PBXBuildFile; fileRef = A1E336881DFE991D00F7C751 /* NSString+md5.m */; };
 		C003941D1DF5114100514803 /* orderEdting.m in Sources */ = {isa = PBXBuildFile; fileRef = C003941A1DF5114000514803 /* orderEdting.m */; };
 		C003941E1DF5114100514803 /* orderEdting.xib in Resources */ = {isa = PBXBuildFile; fileRef = C003941B1DF5114000514803 /* orderEdting.xib */; };
 		C026B68F1DDEF959002BDA25 /* Jiaoyi.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C026B68E1DDEF959002BDA25 /* Jiaoyi.storyboard */; };
@@ -178,6 +179,8 @@
 		84FFC1521CD4A21600C749F6 /* UIColor+Y_StockChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Y_StockChart.h"; sourceTree = "<group>"; };
 		84FFC1531CD4A21600C749F6 /* UIColor+Y_StockChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Y_StockChart.m"; sourceTree = "<group>"; };
 		91D39E2EDC14546C0231B348 /* Pods-BTC-Kline.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BTC-Kline.release.xcconfig"; path = "Pods/Target Support Files/Pods-BTC-Kline/Pods-BTC-Kline.release.xcconfig"; sourceTree = "<group>"; };
+		A1E336871DFE991D00F7C751 /* NSString+md5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+md5.h"; sourceTree = "<group>"; };
+		A1E336881DFE991D00F7C751 /* NSString+md5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+md5.m"; sourceTree = "<group>"; };
 		B7FEEF5804F5D1806CD22D6C /* Pods-BTC-Kline.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BTC-Kline.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BTC-Kline/Pods-BTC-Kline.debug.xcconfig"; sourceTree = "<group>"; };
 		C003941A1DF5114000514803 /* orderEdting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = orderEdting.m; sourceTree = "<group>"; };
 		C003941B1DF5114000514803 /* orderEdting.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = orderEdting.xib; sourceTree = "<group>"; };
@@ -595,6 +598,8 @@
 		A12215D51DF95F280076218E /* StringTool */ = {
 			isa = PBXGroup;
 			children = (
+				A1E336871DFE991D00F7C751 /* NSString+md5.h */,
+				A1E336881DFE991D00F7C751 /* NSString+md5.m */,
 				C058906F1DE41F4A004F0399 /* Tool.h */,
 				C05890701DE41F4A004F0399 /* Tool.m */,
 				C05890761DE4546C004F0399 /* JsonstrTodic.h */,
@@ -967,6 +972,7 @@
 				84681C9D1CD89954008A8157 /* Y_KLineVolume.m in Sources */,
 				189433CF1DD446A800F3D618 /* JYViewController.m in Sources */,
 				C06A1F091DDC6CC9008852B0 /* NewJiaoyiViewController.m in Sources */,
+				A1E336891DFE991D00F7C751 /* NSString+md5.m in Sources */,
 				84681C8D1CD7290D008A8157 /* Y_KLine.m in Sources */,
 				189433D51DD446C300F3D618 /* SetUpViewController.m in Sources */,
 				84681CA91CD8DBFA008A8157 /* Y_VolumeMAView.m in Sources */,

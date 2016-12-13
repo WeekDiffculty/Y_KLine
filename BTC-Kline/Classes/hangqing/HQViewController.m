@@ -16,6 +16,7 @@
 #import "EdtingTableViewController.h"
 #import "OptionView.h"
 #import "JSViewController.h"
+#import "NSString+md5.h"
 @interface HQViewController ()<UITableViewDataSource,UITableViewDelegate,OptionViewDelegate>
 @property (weak, nonatomic) IBOutlet UISegmentedControl *simpleOrSeniorModel;
 @property (nonatomic, weak) OptionView *optionView;
@@ -24,9 +25,21 @@
 @property (nonatomic) BOOL isSenior;
 @property (nonatomic, strong) NSTimer *timer;
 @property (nonatomic, strong) UIView *backView;
+@property (nonatomic, strong) UILabel *noDateView;
 @end
 
 @implementation HQViewController
+- (UILabel *)noDateView{
+    if (!_noDateView) {
+        _noDateView = [[UILabel alloc]initWithFrame:self.view.frame];
+        _noDateView.text = @"网络或服务器异常，检查网络，联系服务提供商。";
+        [_noDateView setAdjustsFontSizeToFitWidth:YES];
+        _noDateView.textAlignment = NSTextAlignmentCenter;
+        _noDateView.backgroundColor = [UIColor grayColor];
+        [self.view addSubview:_noDateView];
+    }
+    return _noDateView;
+}
 - (UIView *)backView{
     if (!_backView) {
         _backView = [[UIView alloc]init];
@@ -50,7 +63,6 @@
 +(void)load{
     NSString *versionNew = [[NSUserDefaults standardUserDefaults] objectForKey:@"version"];
     NSString * versionOld= [[NSBundle mainBundle] infoDictionary][@"CFBundleShortVersionString"];
-    
     if ([versionOld isEqualToString:versionNew]) { //
         
        
@@ -83,6 +95,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self loadDefaultSetting];
+   
 }
 - (void)loadDefaultSetting{
     UITableView *tableView = [[UITableView alloc]init];
@@ -92,19 +105,39 @@
     tableView.delegate= self;
     tableView.dataSource = self;
     [tableView setRowHeight:60];
+    [self.view addSubview:self.noDateView];
+//    NSString *str = @"12345";
+//    NSLog(@"%@",[NSString md5HexDigest:str]);
+//    NSLog(@"%@",[NSString md5HexDigest:str]);
+    
 }
 //监测网络
 - (void) chekNet{
-//    [NetWorking netStatus:HQJK success:^(BOOL netIsconnect) {
-//        if (netIsconnect) {
-//            self.arrayData;
-//            [self.tabView reloadData];
-//        }else{
-//            self.arrayData = nil;
-//        }
-//    }];
-//
+    [NetWorking netStatus:HQJK success:^(BOOL netIsconnect) {
+        if (netIsconnect) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self.noDateView removeFromSuperview];
+                self.noDateView = nil;
+                NSLog(@"%@", self.arrayData);
+                [self.tabView reloadData]; 
+            });
+                   }else{
+            [self.view addSubview:self.noDateView];
+            self.arrayData = nil;
+            [self tip:@"网络或服务器异常，请稍后再试"];
+        }
+    }];
 }
+- (void)tip:(NSString *)str{
+    
+    UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:@"温馨提示" message:str preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *yes = [UIAlertAction actionWithTitle:@"知道了" style:0 handler:^(UIAlertAction * _Nonnull action) {
+        
+    }];
+    [alertVC addAction:yes];
+    [self presentViewController:alertVC animated:YES completion:nil];
+}
+
 - (void)refresh{
     dispatch_async(dispatch_get_main_queue(), ^{
         NSInteger count = self.arrayData.count;
@@ -133,27 +166,6 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-//    // Allocate a reachability object
-//    Reachability* reach = [Reachability reachabilityWithHostname:@"http://47.89.53.7:8777/api/?type=singlequote&symbol=xagusd"];
-//    
-//    // Set the blocks
-//    reach.reachableBlock = ^(Reachability*reach)
-//    {
-//        // keep in mind this is called on a background thread
-//        // and if you are updating the UI it needs to happen
-//        // on the main thread, like this:
-//        
-//        dispatch_async(dispatch_get_main_queue(), ^{
-//            NSLog(@"REACHABLE!");
-//           
-//        });
-//    };
-//    reach.unreachableBlock = ^(Reachability*reach)
-//    {
-//        NSLog(@"UNREACHABLE!");
-//    };
-//    // Start the notifier, which will cause the reachability object to retain itself!
-//    [reach startNotifier];
     return self.arrayData.count;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -189,7 +201,7 @@
 - (void)viewWillAppear:(BOOL)animated{
     [self chekNet];
     self.timer = [NSTimer scheduledTimerWithTimeInterval:3.5 target:self selector:@selector(refresh) userInfo:nil repeats:YES];
-       [self.timer fire];
+    [self.timer fire];
     self.arrayData = nil;
     NSLog(@"%@", self.arrayData);
     [self.tabView reloadData];
@@ -223,4 +235,5 @@
     }
     [self removView];
 }
+
 @end

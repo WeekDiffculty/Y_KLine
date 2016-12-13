@@ -43,7 +43,6 @@
     
     UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:@"温馨提示" message:str preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction *yes = [UIAlertAction actionWithTitle:@"知道了" style:0 handler:^(UIAlertAction * _Nonnull action) {
-        
     }];
     [alertVC addAction:yes];
     [self presentViewController:alertVC animated:YES completion:nil];

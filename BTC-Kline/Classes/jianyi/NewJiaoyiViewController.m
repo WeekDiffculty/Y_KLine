@@ -12,7 +12,7 @@
 #import "NextJiaoyiViewController.h"
 #import "orderEdting.h"
 @interface NewJiaoyiViewController ()<UITextFieldDelegate,UIPickerViewDelegate,UIPickerViewDataSource>
-@property (weak, nonatomic) IBOutlet UILabel *symbolAndDescriptions;
+
 @property (weak, nonatomic) IBOutlet UILabel *cmd;
 @property (weak, nonatomic) IBOutlet UILabel *volum;
 @property (weak, nonatomic) IBOutlet UITextField *volumValue;
@@ -45,7 +45,6 @@
     }
     return  _arrayData;
 }
-
 
 - (NSArray *)arrayCMD{
     if (!_arrayCMD) {
@@ -83,8 +82,15 @@
     self.CmdtextField.delegate = self;
     self.CmdtextField.enabled = YES;
     self.title = @"新交易";
+    self.volumValue.delegate = self;
 }
 
+- (void)textFieldDidEndEditing:(UITextField *)textField{
+    if (textField.tag == 99) {
+        self.volums = [textField.text floatValue];
+        self.volum.text = textField.text;
+    }
+}
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     [self.symBol resignFirstResponder];
     [self.CmdtextField resignFirstResponder];
@@ -131,7 +137,6 @@
         self.symbolAndDescriptions.text = [NSString stringWithFormat:@"%@-%@",model.symbolName, model.descriptions];
     }
 }
-
 - (void)textFieldDidBeginEditing:(UITextField *)textField{
     if (textField.tag == 66) {
         self.isCMD = NO;
@@ -147,8 +152,8 @@
 
 - (IBAction)fastBack:(UIButton *)sender {
     self.volums -= 1;
-    if (self.volums<2) {
-        [self tip:@"数量最小为2"];
+    if (self.volums<1) {
+        [self tip:@"数量最小为1"];
         return;
     }
     NSString *str = [NSString stringWithFormat:@"%g",self.volums];
@@ -157,8 +162,8 @@
 }
 - (IBAction)back:(UIButton *)sender {
     self.volums -= 0.1;
-    if (self.volums<2) {
-        [self tip:@"数量最小为2"];
+    if (self.volums<1) {
+        [self tip:@"数量最小为1"];
         return;
     }
     NSString *str = [NSString stringWithFormat:@"%g",self.volums];
@@ -180,8 +185,8 @@
     self.volum.text = str;
 }
 - (IBAction)next:(id)sender {
-    if (self.volums<2) {
-        [self tip:@"数量最小为2,请核对"];
+    if (self.volums<1) {
+        [self tip:@"数量最小为1,请核对"];
         return;
     }
     UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Jiaoyi" bundle:nil];
@@ -193,7 +198,7 @@
         [self.navigationController pushViewController:nextVC animated:YES];
 
     }else{
-        [self tip:@"请核对算选的参数"];
+        [self tip:@"请核对所选的参数"];
     }   
 }
 - (void)tip:(NSString *)str{

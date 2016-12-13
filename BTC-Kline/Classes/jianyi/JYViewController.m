@@ -14,6 +14,7 @@
 #import "NewJiaoyiViewController.h"
 #import "jioayiModel.h"
 #import "orderEdting.h"
+#import "userInfo.h"
 @interface JYViewController ()<UITableViewDelegate,UITableViewDataSource,jiaoyiDelegete,orderEdtingDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *symbolAndBanlance;
 @property (strong, nonatomic) IBOutlet UIView *views;
@@ -38,7 +39,7 @@
 
 - (NSTimer *)timer{
     if (!_timer) {
-     _timer =  [NSTimer scheduledTimerWithTimeInterval:3.5 target:self selector:@selector(reloadData) userInfo:nil repeats:YES];
+     _timer =  [NSTimer scheduledTimerWithTimeInterval:4 target:self selector:@selector(reloadData) userInfo:nil repeats:YES];
     }
     return  _timer;
 }
@@ -98,7 +99,6 @@
     [tableView setScrollsToTop:NO];
     [tableView setShowsVerticalScrollIndicator:NO];
     [tableView setEstimatedRowHeight:120];
-    
     [self reloadData];
 }
 #pragma  delegate >>>>>>>>>>>>>>>
@@ -130,9 +130,10 @@
 }
 
 - (void)reloadData{
-    self.profit = 0.0;
+    
      Account *ccount = [NSKeyedUnarchiver unarchiveObjectWithFile:[GoodsPath sharePath].account];
     [NetWorking checkThepositionWithApi:CHICANG account:ccount.account password:ccount.password success:^(NSArray *responseObject) {
+        self.profit = 0.0;
         NSInteger count = responseObject.count;
         NSMutableArray *arraM = [NSMutableArray arrayWithCapacity:count];
         for (NSInteger index = 0; index < count; index ++) {
@@ -140,11 +141,24 @@
             [arraM addObject:model];
         }
         self.arrayData = [arraM copy];
-        [self.tableView reloadData];
-        [self profie];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.tableView reloadData];
+            [self profie];
+        });
+        
     } fail:^(NSError *error) {
         
     }];
+    
+    WeakObj(self);
+    [NetWorking userQueryWithApi:USER_SEARCH account:ccount.account password:ccount.password success:^(userInfo *responseObject) {//
+        dispatch_async(dispatch_get_main_queue(), ^{
+            weakself.jieyu.text = responseObject.balance;
+            weakself.jingzhi.text = responseObject.profit;
+        })  ;
+    } fail:^(NSError *error) {
+    }];
+
 }
 //  计算总盈亏
 - (void)profie{
@@ -153,9 +167,7 @@
         jioayiModel *model = self.arrayData[index];
         self.profit += [model.profit doubleValue];
     }
-    dispatch_async(dispatch_get_main_queue(), ^{
-        self.symbolAndBanlance.text = [NSString stringWithFormat:@"%g",self.profit];
-    });
+     self.symbolAndBanlance.text = [NSString stringWithFormat:@"%g",self.profit];
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     self.isDetail = !_isDetail;
@@ -182,8 +194,8 @@
     }
     self.orderEdtingView.tittle = model.symbol;
 }
-#pragma orderEdtingDelegate
-- (void)OpenPosionWithOptionView:(UIView *)optionView{
+#pragma orderEdtingDelegate 平仓
+- (void)OpenPosionWithOptionView:(UIView *)optionView withSymbol:(NSString *)symbol{
     [NetWorking unwindWithApi:CLOSE_POSITION param:self.jioayiModel success:^(NSString *responseObject) {
         if ([responseObject isEqualToString:@"error"]) {
             [self tip:@"平仓失败"];
@@ -205,15 +217,15 @@
     [self presentViewController:alertVC animated:YES completion:nil];
 }
 
-- (void)OpenJiaoyiWithoptionView:(UIView *)optionView{
-    if ([self.delegate respondsToSelector:@selector(opennewJiaoyi)]) {
-        [self.delegate opennewJiaoyi];
+- (void)OpenJiaoyiWithoptionView:(UIView *)optionView withSymbol:(NSString *)symbol{
+    if ([self.delegate respondsToSelector:@selector(opennewJiaoyi:withSymbol:)]) {
+        [self.delegate opennewJiaoyi:self withSymbol:symbol];
     }
     [self removeTheView];
 }
-- (void)OpenTubiaoWithoptionView:(UIView *)optionView{
-    if ([self.delegate respondsToSelector:@selector(openTubiao)]) {
-        [self.delegate openTubiao];
+- (void)OpenTubiaoWithoptionView:(UIView *)optionView withSymbol:(NSString *)symbol{
+    if ([self.delegate respondsToSelector:@selector(openTubiao:withSymbol:)]) {
+        [self.delegate openTubiao:self withSymbol:symbol];
     }
     [self removeTheView];
 }

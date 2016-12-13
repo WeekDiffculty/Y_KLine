@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@protocol KViewVCDelegate<NSObject>
+- (void)KViewVC:(UIViewController *)KViewController withSymbol:(NSString *)symbol;
+@end
 @interface KViewController : UIViewController
+@property (nonatomic, weak) id <KViewVCDelegate>delegate;
+- (void)openAndSelectedSymbol:(NSString *)symbol;
 
 @end

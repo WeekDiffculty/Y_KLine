@@ -296,7 +296,7 @@
         if(error){
             //  NSLog(@"error %@",error);
         }
-        //判断状态响应码
+//        判断状态响应码
         NSHTTPURLResponse *httpresponse=(NSHTTPURLResponse *)response;
         if(httpresponse.statusCode==200){
             netStatus(YES);

@@ -96,14 +96,13 @@
         [self tip:@"目前只支持即时买入、即时卖出哦！"];
         return;
     }
-    NSString *openURL = [NSString stringWithFormat:@"%@?type=%@&volume=%@&price=%@&symbol=%@&cmd=%@&SL=%@,&TP=%@&server=%@&login=%@&pwd=%@",OPEN_POSITION,@"openorder",@(self.volums),self.price,self.model.symbolName,cmd,self.SL?self.SL:@0,self.TP?self.TP:@0,self.server?self.server:@0,ccount.account,ccount.password];
+    NSString *openURL = [NSString stringWithFormat:@"%@?type=%@&volume=%@&price=%@&symbol=%@&cmd=%@&SL=%@&TP=%@&server=%@&login=%@&pwd=%@",OPEN_POSITION,@"openorder",@(self.volums),self.price,self.model.symbolName,cmd,self.SL?self.SL:@0,self.TP?self.TP:@0,self.server?self.server:@0,ccount.account,ccount.password];
     [NetWorking openPositionWithApi:openURL param:nil success:^(NSString *responseObject) {
-        if ([responseObject isEqualToString:@"成功"]) {
+        if (![responseObject isEqualToString:@"error"]) {
             [self jiaoyiSuccess];
         }else{
             [self tip:@"交易失败"];
-        }
-    } fail:^(NSError *error) {
+        }    } fail:^(NSError *error) {
         NSLog(@"%@",error.userInfo);
     }];
 }
@@ -143,7 +142,7 @@
 
 }
 - (void)viewWillAppear:(BOOL)animated{
-    self.timer = [NSTimer scheduledTimerWithTimeInterval:3.5 target:self selector:@selector(setCurrentPrice) userInfo:nil repeats:YES];
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(setCurrentPrice) userInfo:nil repeats:YES];
     [self.timer fire];
 }
 

@@ -10,4 +10,5 @@
 
 @interface NewJiaoyiViewController : UIViewController
 @property (nonatomic, copy) NSString *symbol;
+@property (weak, nonatomic) IBOutlet UILabel *symbolAndDescriptions;
 @end

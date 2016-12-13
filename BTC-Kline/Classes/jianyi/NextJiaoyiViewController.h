@@ -12,4 +12,5 @@
 @property (nonatomic, copy) NSString *cmd;
 @property (nonatomic, strong) SymbolModel *model;
 @property (nonatomic) CGFloat volums;
+
 @end

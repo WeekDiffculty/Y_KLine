@@ -51,14 +51,26 @@
             self.symbolName.text = responseObject.symble;
             NSString *str = responseObject.price;
             NSInteger length = str.length;
-            self.gewei.text = [str substringToIndex:(length -3)];
-            self.fenshu.text = [str substringWithRange:NSMakeRange(length -3, 2)];
-            self.lifang.text = [str substringFromIndex:(length -1)];
+            if (length>3) {
+                self.gewei.text = [str substringToIndex:(length -3)];
+                 self.fenshu.text = [str substringWithRange:NSMakeRange(length -3, 2)];
+                
+                self.lifang.text = [str substringFromIndex:(length -1)];
+            }else{
+                self.gewei.text = str;
+            }
+           
             //
-            self.hGewei.text = [str substringToIndex:(length -3)];
-            self.hFenshu.text = [str substringWithRange:NSMakeRange(length-3, 2)];
-            self.time.text = responseObject.time;
-            self.hLifang.text = [str substringFromIndex:(length -1)];
+            if (length>3) {
+                self.hGewei.text = [str substringToIndex:(length -3)];
+                self.hFenshu.text = [str substringWithRange:NSMakeRange(length-3, 2)];
+              self.hLifang.text = [str substringFromIndex:(length -1)];
+            }else{
+                self.gewei.text = str;
+            }
+           
+            
+           
             NSArray *array = @[self.gewei,self.fenshu,self.lifang,self.hGewei,self.hFenshu,self.hLifang];
             [self changeColor:[responseObject.price substringFromIndex:(length -1)].integerValue labelArray:array];
         });

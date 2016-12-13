@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 @protocol JYDElegate <NSObject>
-- (void) opennewJiaoyi;
-- (void) openTubiao;
+- (void) opennewJiaoyi:(UIViewController *)VC withSymbol:(NSString *)symbol;
+- (void) openTubiao:(UIViewController *)VC withSymbol:(NSString *)symbol;
 @end
 @interface JYViewController : UIViewController
 - (IBAction)newJiaoyi:(UIBarButtonItem *)sender;

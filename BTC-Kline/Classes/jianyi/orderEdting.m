@@ -21,18 +21,18 @@
     self.symbolName.text = tittle;
 }
 - (IBAction)ClosePositation:(UIButton *)sender {
-    if ([self.delegate respondsToSelector:@selector(OpenPosionWithOptionView:)]) {
-        [self.delegate OpenPosionWithOptionView:self];
+    if ([self.delegate respondsToSelector:@selector(OpenPosionWithOptionView:withSymbol:)]) {
+        [self.delegate OpenPosionWithOptionView:self withSymbol:self.symbolName.text];
     }
 }
 - (IBAction)NewOrder:(UIButton *)sender {
-    if ([self.delegate respondsToSelector:@selector(OpenJiaoyiWithoptionView:)]) {
-        [self.delegate OpenJiaoyiWithoptionView:self];
+    if ([self.delegate respondsToSelector:@selector(OpenJiaoyiWithoptionView:withSymbol:)]) {
+        [self.delegate OpenJiaoyiWithoptionView:self withSymbol:self.symbolName.text];
     }
 }
 - (IBAction)OpenChatt:(UIButton *)sender {
-    if ([self.delegate respondsToSelector:@selector(OpenTubiaoWithoptionView:)]) {
-        [self.delegate OpenTubiaoWithoptionView:self];
+    if ([self.delegate respondsToSelector:@selector(OpenTubiaoWithoptionView:withSymbol:)]) {
+        [self.delegate OpenTubiaoWithoptionView:self withSymbol:self.symbolName.text];
     }
 }
 

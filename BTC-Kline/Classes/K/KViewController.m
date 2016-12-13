@@ -86,6 +86,12 @@
     [stockVC reloadData];
     [self.symbolPicker removeFromSuperview];
 }
+//打开指定图表
+- (void)openAndSelectedSymbol:(NSString *)symbol{
+    Y_StockChartViewController *stockVC = [KViewController new].childViewControllers[0];
+    stockVC.symbolName = symbol;
+    [stockVC reloadData];
+}
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     [self.symbolPicker removeFromSuperview];
 }
@@ -101,6 +107,11 @@
 - (IBAction)canshu:(UIButton *)sender {
     Y_StockChartViewController *vc = (Y_StockChartViewController *) self.chatView.nextResponder;
     [vc changeCanshu];
+}
+- (IBAction)newJiaoyi:(id)sender {
+    if ([self.delegate respondsToSelector:@selector(KViewVC:withSymbol:)]) {
+        [self.delegate KViewVC:self withSymbol:self.symbol.title];
+    }
 }
 
 @end
