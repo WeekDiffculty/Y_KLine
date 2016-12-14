@@ -177,7 +177,7 @@
 - (UILabel *)private_createLabel
 {
     UILabel *label = [UILabel new];
-    label.font = [UIFont systemFontOfSize:8];
+    label.font = [UIFont systemFontOfSize:7];
     label.textColor = [UIColor assistTextColor];
     [self addSubview:label];
     return label;

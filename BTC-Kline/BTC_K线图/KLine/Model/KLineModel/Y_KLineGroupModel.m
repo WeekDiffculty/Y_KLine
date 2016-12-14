@@ -34,6 +34,11 @@
             beishu *= 10;
         }
         NSString *str = [NSString stringWithFormat:@"%@",arrayM[1]];
+        for (NSInteger index = 2; index<5; index++) {
+            NSString *number = [NSString stringWithFormat:@"%.3f",((CGFloat)[str floatValue]/beishu+(CGFloat)[arrayM[index] floatValue]/beishu)];
+            [arrayM removeObjectAtIndex:index];
+            [arrayM insertObject:number atIndex:index];
+        }
         [arrayM removeObjectAtIndex:1];
         [arrayM insertObject:[NSString stringWithFormat:@"%.3f",(CGFloat)str.floatValue/beishu] atIndex:1];
         

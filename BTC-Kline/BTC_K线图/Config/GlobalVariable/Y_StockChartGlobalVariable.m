@@ -10,7 +10,7 @@
 /**
  *  K线图的宽度，默认2
  */
-static CGFloat Y_StockChartKLineWidth = 8;
+static CGFloat Y_StockChartKLineWidth = 2;
 
 /**
  *  K线图的间隔，默认1

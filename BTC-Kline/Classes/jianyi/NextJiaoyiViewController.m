@@ -108,10 +108,13 @@
 }
 
 - (void)tip:(NSString *)str{
-    
+    WeakObj(self);
     UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:@"温馨提示" message:str preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction *yes = [UIAlertAction actionWithTitle:@"知道了" style:0 handler:^(UIAlertAction * _Nonnull action) {
-        
+        if ([str isEqualToString:@"交易成功"]) {
+            [weakself.navigationController popToRootViewControllerAnimated:YES];
+        }
+       
     }];
     [alertVC addAction:yes];
     [self presentViewController:alertVC animated:YES completion:nil];
@@ -119,7 +122,6 @@
 
 - (void) jiaoyiSuccess{
     [self tip:@"交易成功"];
-    [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
 - (void)setCurrentPrice{
