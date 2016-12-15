@@ -30,7 +30,8 @@
 @property (nonatomic, assign) NSInteger currentIndex;
 //类型 1min 5min 1d
 @property (nonatomic, copy) NSString *type;
-//商品类型
+//计时器
+@property (nonatomic, strong) NSTimer *timer;
 
 @end
 
@@ -41,10 +42,16 @@
     }
     return _symbolName;
 }
+- (NSTimer *)timer{
+    if (!_timer) {
+        _timer =  [NSTimer scheduledTimerWithTimeInterval:4 target:self selector:@selector(reloadData) userInfo:nil repeats:YES];
+    }
+    return  _timer;
+}
+
 - (void)viewWillAppear:(BOOL)animated
 {
-  
-    [self reloadData];
+    [self.timer fire];
     [super viewWillAppear:animated];
     //隐藏状态栏
     [UIApplication sharedApplication].statusBarHidden = YES;
@@ -52,6 +59,8 @@
 
 - (void)viewWillDisappear:(BOOL)animated
 {
+    [self.timer invalidate];
+    _timer = nil;
     [super viewWillDisappear:animated];
     [UIApplication sharedApplication].statusBarHidden = NO;
 }

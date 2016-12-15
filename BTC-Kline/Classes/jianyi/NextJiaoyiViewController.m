@@ -48,13 +48,18 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
     [self loadDefaultSetting];
 }
 
 - (void) loadDefaultSetting{
-    self.symbolanddescription.text = [NSString stringWithFormat:@"%@-%@",self.model.symbolName,self.model.descriptions];
-    self.cmds.text = self.cmd;
+    if (self.model) {
+        self.symbolanddescription.text = [NSString stringWithFormat:@"%@-%@",self.model.symbolName,self.model.descriptions];
+    }else{
+        self.symbolanddescription.text = [NSString stringWithFormat:@"%@",self.symbol];
+
+    }
+    
+      self.cmds.text = self.cmd;
     self.volumss.text = [NSString stringWithFormat:@"%g",self.volums];
     self.piancha.inputView = self.datePicker;
 }
@@ -125,7 +130,13 @@
 }
 
 - (void)setCurrentPrice{
-    NSString *url = [HQJK stringByAppendingString:self.model.symbolName];
+    NSString *name ;
+    if (self.model) {
+        name = self.model.symbolName;
+    }else{
+        name = self.symbol;
+    }
+    NSString *url = [HQJK stringByAppendingString:name];
     WeakObj(self);
     [NetWorking requestHQWithApi:url param:nil success:^(HangQing *responseObject) {
         dispatch_async(dispatch_get_main_queue(), ^{

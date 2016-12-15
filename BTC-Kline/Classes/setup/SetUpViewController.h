@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface SetUpViewController : UITableViewController
-
+- (void)toChat;
 @end

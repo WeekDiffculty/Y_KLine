@@ -73,16 +73,21 @@
 //打开图表对应商品
 - (void)ToTubiaoWithSymbol:(NSString *)symbol{
     [self setSelectedIndex:1];
-//    UINavigationController *jiaoyiNAvc = self.viewControllers[1];
-//    KViewController *VIEWVC = jiaoyiNAvc.viewControllers.firstObject;
-//    [VIEWVC openAndSelectedSymbol:symbol];
-}
+    //线程延迟调用 通信
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        UINavigationController *jiaoyiNAvc = self.viewControllers[1];
+        KViewController *VIEWVC = jiaoyiNAvc.viewControllers.firstObject;
+        [VIEWVC openAndSelectedSymbol:symbol];
+    });
+    }
 //打开新交易对应商品
 - (void)ToNewJiaoyiWithSymbol:(NSString *)symbol{
     [self setSelectedIndex:2];
-    NewJiaoyiViewController *newVC = [NewJiaoyiViewController new];
+    UINavigationController *jiaoyiNAvc = self.viewControllers[2];
+    JYViewController *JYVC = jiaoyiNAvc.viewControllers.firstObject;
+    NewJiaoyiViewController *newVC = [[NewJiaoyiViewController alloc]init];
     newVC.symbol = symbol;
-    [self.viewControllers[2] pushViewController:newVC animated:YES];
+    [JYVC.navigationController pushViewController:newVC animated:YES];
 
 }
 - (BOOL)shouldAutorotate

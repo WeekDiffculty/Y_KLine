@@ -52,7 +52,12 @@
     _model = model;    
     self.symbolName.text = model.symbol;
     self.starPrice.text = model.open_price;
-    self.volum.text = [NSString stringWithFormat:@"buy %@",model.volume];
+    if ([model.cmd isEqualToString:@"0"]) {
+     self.volum.text = [NSString stringWithFormat:@"buy %@",model.volume];
+    }else if([model.cmd isEqualToString:@"1"]){
+       self.volum.text = [NSString stringWithFormat:@"sell %@",model.volume]; 
+    }
+    
     self.currentPrice.text = [NSString stringWithFormat:@"→%@" ,model.close_price];
     self.banlance.text = model.profit;
 }

@@ -75,19 +75,27 @@ EOM
 }
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_resource "MJRefresh/MJRefresh/MJRefresh.bundle"
-  install_resource "RongCloudIMKit/Rong_Cloud_iOS_IMKit_SDK_v2_7_3_stable/RongCloud.bundle"
-  install_resource "RongCloudIMKit/Rong_Cloud_iOS_IMKit_SDK_v2_7_3_stable/en.lproj"
-  install_resource "RongCloudIMKit/Rong_Cloud_iOS_IMKit_SDK_v2_7_3_stable/zh-Hans.lproj"
-  install_resource "RongCloudIMKit/Rong_Cloud_iOS_IMKit_SDK_v2_7_3_stable/Emoji.plist"
-  install_resource "RongCloudIMKit/Rong_Cloud_iOS_IMKit_SDK_v2_7_3_stable/RCConfig.plist"
+  install_resource "RongCloudIM/RongCloudIM/RongCloud.bundle"
+  install_resource "RongCloudIM/RongCloudIM/en.lproj"
+  install_resource "RongCloudIM/RongCloudIM/zh-Hans.lproj"
+  install_resource "RongCloudIM/RongCloudIM/Emoji.plist"
+  install_resource "RongCloudIM/RongCloudIM/RCConfig.plist"
+  install_resource "RongCloudIM/RongCloudIM/JrmfIMLib/JResource.bundle"
+  install_resource "RongCloudIM/RongCloudIM/JrmfIMLib/en.lproj"
+  install_resource "RongCloudIM/RongCloudIM/JrmfIMLib/zh-Hans.lproj"
+  install_resource "RongCloudIM/RongCloudIM/AlipaySDK/AlipaySDK.bundle"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_resource "MJRefresh/MJRefresh/MJRefresh.bundle"
-  install_resource "RongCloudIMKit/Rong_Cloud_iOS_IMKit_SDK_v2_7_3_stable/RongCloud.bundle"
-  install_resource "RongCloudIMKit/Rong_Cloud_iOS_IMKit_SDK_v2_7_3_stable/en.lproj"
-  install_resource "RongCloudIMKit/Rong_Cloud_iOS_IMKit_SDK_v2_7_3_stable/zh-Hans.lproj"
-  install_resource "RongCloudIMKit/Rong_Cloud_iOS_IMKit_SDK_v2_7_3_stable/Emoji.plist"
-  install_resource "RongCloudIMKit/Rong_Cloud_iOS_IMKit_SDK_v2_7_3_stable/RCConfig.plist"
+  install_resource "RongCloudIM/RongCloudIM/RongCloud.bundle"
+  install_resource "RongCloudIM/RongCloudIM/en.lproj"
+  install_resource "RongCloudIM/RongCloudIM/zh-Hans.lproj"
+  install_resource "RongCloudIM/RongCloudIM/Emoji.plist"
+  install_resource "RongCloudIM/RongCloudIM/RCConfig.plist"
+  install_resource "RongCloudIM/RongCloudIM/JrmfIMLib/JResource.bundle"
+  install_resource "RongCloudIM/RongCloudIM/JrmfIMLib/en.lproj"
+  install_resource "RongCloudIM/RongCloudIM/JrmfIMLib/zh-Hans.lproj"
+  install_resource "RongCloudIM/RongCloudIM/AlipaySDK/AlipaySDK.bundle"
 fi
 
 mkdir -p "${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"

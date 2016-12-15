@@ -33,6 +33,27 @@
             NSLog(@"token错误");
         }];
     }
+    //设置接收消息代理
+    
+    [RCIM sharedRCIM].receiveMessageDelegate = self;
+    //开启输入状态监听
+    [RCIM sharedRCIM].enableTypingStatus = YES;
+    //开启多端未读状态同步
+    [RCIM sharedRCIM].enableSyncReadStatus = YES;
+    
+    //设置显示未注册的消息
+    //如：新版本增加了某种自定义消息，但是老版本不能识别，开发者可以在旧版本中预先自定义这种未识别的消息的显示
+    [RCIM sharedRCIM].showUnkownMessage = YES;
+    [RCIM sharedRCIM].showUnkownMessageNotificaiton = YES;
+    
+    //开启消息@功能（只支持群聊和讨论组, App需要实现群成员数据源groupMemberDataSource）
+    [RCIM sharedRCIM].enableMessageMentioned = YES;
+    
+    //开启消息撤回功能
+    [RCIM sharedRCIM].enableMessageRecall = YES;
+    
+    
+
               return YES;
 }
 - (void)applicationWillResignActive:(UIApplication *)application {

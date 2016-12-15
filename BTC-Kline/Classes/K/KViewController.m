@@ -16,7 +16,6 @@
 @property (nonatomic, copy) NSArray *arrayData;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *symbol;
 @property (nonatomic, weak) UIView *chatView;
-
 @end
 
 @implementation KViewController
@@ -86,9 +85,11 @@
     [stockVC reloadData];
     [self.symbolPicker removeFromSuperview];
 }
+
 //打开指定图表
 - (void)openAndSelectedSymbol:(NSString *)symbol{
-    Y_StockChartViewController *stockVC = [KViewController new].childViewControllers[0];
+    Y_StockChartViewController *stockVC = self.childViewControllers[0];
+    self.symbol.title = symbol;
     stockVC.symbolName = symbol;
     [stockVC reloadData];
 }

@@ -18,7 +18,22 @@ PODS:
   - MJExtension (3.0.13)
   - MJRefresh (3.1.12)
   - Reachability (3.2)
-  - RongCloudIMKit (2.7.3)
+  - RongCloudIM (2.8.3):
+    - RongCloudIM/CallKit (= 2.8.3)
+    - RongCloudIM/CallLib (= 2.8.3)
+    - RongCloudIM/IMKit (= 2.8.3)
+    - RongCloudIM/IMLib (= 2.8.3)
+    - RongCloudIM/RedPacket (= 2.8.3)
+  - RongCloudIM/CallKit (2.8.3):
+    - RongCloudIM/CallLib
+    - RongCloudIM/IMKit
+  - RongCloudIM/CallLib (2.8.3):
+    - RongCloudIM/IMLib
+  - RongCloudIM/IMKit (2.8.3):
+    - RongCloudIM/IMLib
+  - RongCloudIM/IMLib (2.8.3)
+  - RongCloudIM/RedPacket (2.8.3):
+    - RongCloudIM/IMKit
   - SDWebImage (3.8.2):
     - SDWebImage/Core (= 3.8.2)
   - SDWebImage/Core (3.8.2)
@@ -29,7 +44,7 @@ DEPENDENCIES:
   - MJExtension (~> 3.0.13)
   - MJRefresh (~> 3.1.12)
   - Reachability (~> 3.2)
-  - RongCloudIMKit (~> 2.7.3)
+  - RongCloudIM (~> 2.8.3)
   - SDWebImage (~> 3.8.2)
 
 SPEC CHECKSUMS:
@@ -38,9 +53,9 @@ SPEC CHECKSUMS:
   MJExtension: 5932755f451458eefa24239358817f8d291240c7
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
-  RongCloudIMKit: 0b93700b17d224c7c213815b8a23a9c356fe20e2
-  SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
+  RongCloudIM: 33c6ba0880116d992b527c054903f683b014f0c2
+  SDWebImage: '098e97e6176540799c27e804c96653ee0833d13c'
 
-PODFILE CHECKSUM: fb2ddeb062764461d513e1cb1ae733b678f0e8b2
+PODFILE CHECKSUM: d3a62f9a75ebb5f8ea53017d68611d424f7bce5c
 
 COCOAPODS: 1.1.1

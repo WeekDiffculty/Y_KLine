@@ -61,7 +61,6 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
     [self loadDefaultSetting];
 }
 
@@ -83,6 +82,8 @@
     self.CmdtextField.enabled = YES;
     self.title = @"新交易";
     self.volumValue.delegate = self;
+    self.symBol.text = self.symbol;
+    self.symbolAndDescriptions.text = self.symbol;
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField{
@@ -191,8 +192,9 @@
     }
     UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Jiaoyi" bundle:nil];
     NextJiaoyiViewController *nextVC = [storyBoard instantiateViewControllerWithIdentifier:@"NextJiaoyiViewController"];
-    if (self.model&&self.volums&&self.cmd) {
+    if ((self.model||self.symbol)&&self.volums&&self.cmd) {
         nextVC.model = self.model;
+        nextVC.symbol = self.symbol;
         nextVC.volums = self.volums;
         nextVC.cmd = self.cmd.text;
         [self.navigationController pushViewController:nextVC animated:YES];

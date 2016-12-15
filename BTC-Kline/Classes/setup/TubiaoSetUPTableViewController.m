@@ -20,10 +20,22 @@
 @property (weak, nonatomic) IBOutlet UITableViewCell *shujuchuangkou;
 @property (weak, nonatomic) IBOutlet UITableViewCell *color;
 @property (nonatomic, strong) NSMutableArray *arrayButton;
+@property (nonatomic, strong) UIView *colorView ;
 @end
 
 @implementation TubiaoSetUPTableViewController
 
+- (UIView *)colorView{
+    if (!_colorView) {
+        _colorView = [[UIView alloc]init];
+        for (NSInteger index = 0; index<4; index ++) {
+            UIButton *button = [[UIButton alloc]init];
+            
+            [_colorView addSubview:button];
+        }
+    }
+    return _colorView;
+}
 - (NSMutableArray *)arrayButton{
     if (!_arrayButton) {
         _arrayButton = [NSMutableArray array];
@@ -119,31 +131,32 @@
 }
 - (void)valueChanged:(UISwitch *)switcher{
     switch (switcher.tag) {
-        case 0:
+        case 0://交易量
+            NSLog(@"");
+            break;
+        case 1://买价线
+             NSLog(@"");
+            break;
+        case 2://周期定为符
             
             break;
-        case 1:
+        case 3://交易类别
             
             break;
-        case 2:
+        case 4://数据窗口
             
             break;
-        case 3:
-            
-            break;
-        case 4:
-            
-            break;
-        case 5:
+        case 5://颜色
             
             break;
         default:
             break;
     }
 }
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+ 
 }
 
 
