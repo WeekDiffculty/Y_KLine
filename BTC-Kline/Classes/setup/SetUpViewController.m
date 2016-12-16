@@ -91,7 +91,7 @@
 
     //上传用户信息，nickname是必须要填写的
     RCCustomerServiceInfo *csInfo = [[RCCustomerServiceInfo alloc] init];
-    csInfo.userId = [RCIMClient sharedRCIMClient].currentUserInfo.userId;
+    csInfo.userId = [RCIM sharedRCIM].currentUserInfo.userId;
     
     csInfo.nickName = @"新用户";
     csInfo.loginName = ccount.account;
@@ -102,7 +102,7 @@
     csInfo.age = @"36";
     csInfo.profession = @"software engineer";
     csInfo.portraitUrl =
-    [RCIMClient sharedRCIMClient].currentUserInfo.portraitUri;
+    [RCIM sharedRCIM].currentUserInfo.portraitUri;
     csInfo.province = @"beijing";
     csInfo.city = @"beijing";
 //    csInfo.memo = @"这是一个好顾客!";
@@ -122,7 +122,6 @@
     chatService.csInfo = csInfo;
     //chatService.title = chatService.userName;
     self.hidesBottomBarWhenPushed = YES;
-    chatService.setVC = self;
     [self addChildViewController:chatService];
     [self.navigationController pushViewController:chatService animated:YES];
     self.hidesBottomBarWhenPushed = NO;

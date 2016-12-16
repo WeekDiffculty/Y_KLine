@@ -38,7 +38,7 @@
 @implementation Y_StockChartViewController
 - (NSString *)symbolName{
     if (!_symbolName) {
-        _symbolName = @"AUDCHF";
+        _symbolName = @"USDJPY";
     }
     return _symbolName;
 }

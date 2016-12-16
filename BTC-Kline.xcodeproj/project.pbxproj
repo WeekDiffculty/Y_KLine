@@ -1128,7 +1128,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/BTC-Kline/Classes/setup/OtherResources/VoiceLib",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.yeeyuntech.BTC-Kline";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.State-Street.com";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -1149,7 +1149,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/BTC-Kline/Classes/setup/OtherResources/VoiceLib",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.yeeyuntech.BTC-Kline";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.State-Street.com";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};

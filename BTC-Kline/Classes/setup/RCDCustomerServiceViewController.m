@@ -9,7 +9,7 @@
 #import "RCDCustomerServiceViewController.h"
 
 //#import "RCDSettingBaseViewController.h"
-@interface RCDCustomerServiceViewController ()<RCIMClientReceiveMessageDelegate>
+@interface RCDCustomerServiceViewController ()
 //＊＊＊＊＊＊＊＊＊应用自定义评价界面开始1＊＊＊＊＊＊＊＊＊＊＊＊＊
 //@property (nonatomic, strong)NSString *commentId;
 //@property (nonatomic)RCCustomerServiceStatus serviceStatus;
@@ -21,13 +21,7 @@
 
 @implementation RCDCustomerServiceViewController
 
-- (void)onReceived:(RCMessage *)message left:(int)nLeft object:(id)object{
-    RCTextMessage *messages = message.content;
-    NSString *str = messages.content;
-    if (![str isEqualToString:@"您好，很高兴为您服务，请问有什么可以帮您的？"]) {
-    
-    }
-}
+
 //#pragma mark - 导航栏基本设置
 //- (void)onRCIMReceiveMessage:(RCMessage *)message left:(int)left{
 //    [self.conversationMessageCollectionView reloadData];
@@ -52,7 +46,7 @@
      
       self.navigationController.navigationBar.tintColor = [UIColor blueColor];
     [self notifyUpdateUnreadMessageCount];
-    [[RCIMClient sharedRCIMClient]setReceiveMessageDelegate:self object:nil];
+   
 //    UIButton *button =
 //    [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 25, 25)];
 //    UIImageView *imageView =

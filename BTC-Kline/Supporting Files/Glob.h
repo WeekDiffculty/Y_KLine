@@ -41,3 +41,9 @@
 #define TOKEN @"http://api.cn.ronghub.com/user/getToken.json"
 //头像
 #define PORTRAITURLI @"http://img5.duitang.com/uploads/item/201601/06/20160106061634_ALNQs.jpeg"
+
+#ifdef DEBUG
+#define NSLog(fmt, ...) NSLog((fmt), ##__VA_ARGS__);
+#else
+#define NSLog(...);
+#endif

@@ -75,6 +75,7 @@
         make.top.equalTo(self.view).offset(64);
         make.bottom.equalTo(self.view).offset(-44);
     }];
+    
 }
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{

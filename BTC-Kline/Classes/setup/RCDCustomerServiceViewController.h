@@ -7,7 +7,7 @@
 //
 
 #import <RongIMKit/RongIMKit.h>
-#import "SetUpViewController.h"
+
 @interface RCDCustomerServiceViewController : RCConversationViewController
-@property (nonatomic, strong) SetUpViewController *setVC ;
+
 @end

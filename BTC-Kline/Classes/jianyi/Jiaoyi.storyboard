@@ -68,9 +68,18 @@
                                         <rect key="frame" x="0.0" y="504" width="375" height="50"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V7P-KN-giK">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                                                <rect key="frame" x="148" y="0.0" width="80" height="50"/>
+                                                <color key="backgroundColor" red="0.33586653047704862" green="0.81823950240604781" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="80" id="EbI-bU-vOQ"/>
+                                                </constraints>
                                                 <size key="titleShadowOffset" width="1" height="0.0"/>
                                                 <state key="normal" title="下一步"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="next:" destination="gEo-AI-lrK" eventType="touchUpInside" id="Opc-Nu-7F1"/>
                                                 </connections>
@@ -78,10 +87,9 @@
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
+                                            <constraint firstItem="V7P-KN-giK" firstAttribute="centerX" secondItem="mzD-M1-Os9" secondAttribute="centerX" id="4LY-V1-SMe"/>
                                             <constraint firstItem="V7P-KN-giK" firstAttribute="top" secondItem="mzD-M1-Os9" secondAttribute="top" id="7i8-Bn-BKK"/>
                                             <constraint firstAttribute="bottom" secondItem="V7P-KN-giK" secondAttribute="bottom" id="ETl-KB-wg4"/>
-                                            <constraint firstAttribute="trailing" secondItem="V7P-KN-giK" secondAttribute="trailing" id="a8Z-6W-0Vs"/>
-                                            <constraint firstItem="V7P-KN-giK" firstAttribute="leading" secondItem="mzD-M1-Os9" secondAttribute="leading" id="h10-eQ-ZCl"/>
                                             <constraint firstAttribute="height" constant="50" id="w2E-Oi-gZy"/>
                                         </constraints>
                                     </view>
@@ -298,6 +306,7 @@
                         <outlet property="fastBack" destination="CqV-jJ-3WU" id="zBP-ak-KZ2"/>
                         <outlet property="fastForword" destination="fmt-4f-0go" id="GTd-Ge-zjl"/>
                         <outlet property="forword" destination="vv0-TK-apv" id="k0g-rw-cWh"/>
+                        <outlet property="nextStep" destination="V7P-KN-giK" id="j3B-Wp-43q"/>
                         <outlet property="symBol" destination="Uwn-me-pWb" id="znu-z4-kgC"/>
                         <outlet property="symbolAndDescriptions" destination="0Lb-8p-CxV" id="7H8-2y-BJ8"/>
                         <outlet property="volum" destination="RTK-6k-4bY" id="xSZ-HO-HHc"/>
@@ -582,6 +591,11 @@
                                         <state key="normal" title="下单">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="7"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="Openorder:" destination="Wad-cr-URv" eventType="touchUpInside" id="3IX-6j-cC7"/>
                                         </connections>

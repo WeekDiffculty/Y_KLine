@@ -227,6 +227,7 @@
     if ([self.delegate respondsToSelector:@selector(openTubiao:withSymbol:)]) {
         [self.delegate openTubiao:self withSymbol:symbol];
     }
+    
     [self removeTheView];
 }
 
@@ -235,7 +236,6 @@
     self.orderEdtingView = nil;
     [self.backView removeFromSuperview];
     self.backView = nil;
-
 }
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     [self removeTheView];

@@ -91,8 +91,8 @@
 - (void)setDataSource:(id<Y_StockChartViewDataSource>)dataSource
 {
     _dataSource = dataSource;
-    if(self.itemModels)
-    {
+    if(self.itemModels)//设置默认选项
+     {
         self.segmentView.selectedIndex = 4;
     }
 }

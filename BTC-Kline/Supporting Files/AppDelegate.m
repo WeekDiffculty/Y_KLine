@@ -19,7 +19,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-   [[RCIMClient sharedRCIMClient] initWithAppKey:@"qd46yzrfqukaf"];
+   [[RCIM sharedRCIM] initWithAppKey:@"qd46yzrfqukaf"];
    NSString *token = [[NSUserDefaults standardUserDefaults]objectForKey:@"token"];
     if (![token isEqualToString:@""]) {
         [[RCIM sharedRCIM] connectWithToken:token success:^(NSString *userId) {

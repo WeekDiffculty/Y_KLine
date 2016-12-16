@@ -27,6 +27,7 @@
 @property (nonatomic, copy) NSArray *arrayCMD;
 @property (nonatomic, copy) NSArray *arrayData;
 @property (nonatomic) BOOL isCMD;
+@property (weak, nonatomic) IBOutlet UIButton *nextStep;
 @property (nonatomic, strong) SymbolModel *model;
 @end
 
@@ -128,9 +129,14 @@
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
     if (self.isCMD) {
+        if (row==0||row==1) {
+            self.nextStep.enabled  = YES;
+        }else{
+            self.nextStep.enabled = NO;
+            [self tip:@"目前仅支持即时买入及卖出"];
+        }
         self.CmdtextField.text = self.arrayCMD[row];
         self.cmd.text = self.arrayCMD[row];
-
     }else{
        SymbolModel *model = self.arrayData[row];
         self.model = model;
