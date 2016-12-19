@@ -8,7 +8,8 @@
 
 #import "TubiaoSetUPTableViewController.h"
 #import "Glob.h"
-@interface TubiaoSetUPTableViewController ()
+#import "ColorView.h"
+@interface TubiaoSetUPTableViewController ()<ColorViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableViewCell *zhuxingtu;
 @property (weak, nonatomic) IBOutlet UITableViewCell *yinyangzhu;
 @property (weak, nonatomic) IBOutlet UITableViewCell *tubiaoxian;
@@ -20,21 +21,17 @@
 @property (weak, nonatomic) IBOutlet UITableViewCell *shujuchuangkou;
 @property (weak, nonatomic) IBOutlet UITableViewCell *color;
 @property (nonatomic, strong) NSMutableArray *arrayButton;
-@property (nonatomic, strong) UIView *colorView ;
+@property (nonatomic, strong) ColorView *colorView ;
+
 @end
 
 @implementation TubiaoSetUPTableViewController
-
-- (UIView *)colorView{
+- (ColorView *)colorView{
     if (!_colorView) {
-        _colorView = [[UIView alloc]init];
-        for (NSInteger index = 0; index<4; index ++) {
-            UIButton *button = [[UIButton alloc]init];
-            
-            [_colorView addSubview:button];
-        }
+        _colorView = [[ColorView alloc]init];
+        _colorView.delegate = self;
     }
-    return _colorView;
+    return  _colorView;
 }
 - (NSMutableArray *)arrayButton{
     if (!_arrayButton) {
@@ -68,9 +65,8 @@
         UITableViewCell *cell = array[index];
          [self addSwitcherWithcell:cell andindex:index];
     }
-   
-    self.color.textLabel.text = @"颜色";
-}
+    self.color.textLabel.text = @"图表背景颜色";
+    }
 
 - (void)addButtonWithCell:(UITableViewCell *)cell andindex:(NSInteger)index{
     UIButton *button = [[UIButton alloc]init];
@@ -147,71 +143,28 @@
             
             break;
         case 5://颜色
-            
+          
             break;
         default:
             break;
     }
 }
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
- 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (indexPath.section==0) {
+        
+    }else if(indexPath.section ==1){
+        
+    }else if(indexPath.section ==2){
+        
+    }else if(indexPath.section ==3){
+        [self toChangeColor];
+    }
 }
-
-
-/*
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
-    return cell;
+- (void)toChangeColor{
+    self.colorView.frame = CGRectMake((Width -120)/2, 300, 120, 120);
+    [self.view addSubview:self.colorView];
 }
-*/
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+- (void)selectedColor:(UIView *)view{
+    [self.colorView removeFromSuperview];
 }
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 @end

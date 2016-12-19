@@ -6,6 +6,25 @@
 //  Copyright © 2016年 yate1996. All rights reserved.
 //
 
+/*  默认图表选择
+ 
+ NSInteger TubaioType =  [[NSUserDefaults standardUserDefaults]integerForKey:@"typeNumber"];
+ switch (TubaioType) {
+ case 0:
+ self.segmentView.selectedIndex = 4;
+ break;
+ case 1:
+ self.segmentView.selectedIndex = 1;
+ break;
+ case 2:
+ self.segmentView.selectedIndex = 4;
+ break;
+ default:
+ 
+ break;
+ }
+ 
+*/
 #import "Y_StockChartView.h"
 #import "Y_KLineView.h"
 #import "Masonry.h"
@@ -91,9 +110,9 @@
 - (void)setDataSource:(id<Y_StockChartViewDataSource>)dataSource
 {
     _dataSource = dataSource;
-    if(self.itemModels)//设置默认选项
+     if(self.itemModels)//设置默认选项
      {
-        self.segmentView.selectedIndex = 4;
+         self.segmentView.selectedIndex = 4;
     }
 }
 - (void)reloadData

@@ -29,22 +29,21 @@
 //- (void)viewWillAppear:(BOOL)animated{
 //     self.navigationController.navigationBar.barTintColor = [UIColor blueColor];
 //  }
+//- (void)viewWillDisappear:(BOOL)animated{
+//    self.navigationController.navigationBar.barTintColor = [UIColor whiteColor];
+//}
 //- (void)onReceived:(RCMessage *)message left:(int)nLeft object:(id)object{
 //    if (nLeft) {
 //        return;
 //    }
 //
 //}
-//- (void)viewWillDisappear:(BOOL)animated{
-//     self.navigationController.navigationBar.barTintColor = [UIColor whiteColor];
-//}
+
 
 - (void)viewDidLoad {
   [super viewDidLoad];
     	self.title = @"客服";
   // Do any additional setup after loading the view.
-     
-      self.navigationController.navigationBar.tintColor = [UIColor blueColor];
     [self notifyUpdateUnreadMessageCount];
    
 //    UIButton *button =

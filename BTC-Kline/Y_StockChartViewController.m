@@ -155,26 +155,14 @@
     param[@"symbol"] = self.symbolName; //symbol
     param[@"starttime"] = startTime;
     param[@"endtime"] = endTime;
-//    [NetWorking requestWithApi:@"https://www.btc123.com/kline/klineapi" param:param thenSuccess:^(NSDictionary *responseObject) {
-//        if ([responseObject[@"isSuc"] boolValue]) {
-//            Y_KLineGroupModel *groupModel = [Y_KLineGroupModel objectWithArray:responseObject[@"datas"]];
-//            NSDictionary *dict = (NSDictionary *)responseObject;
-//            [dict writeToFile:@"/Users/zbf920563837icloudcom/Desktop/data.plist" atomically:YES];
-//            self.groupModel = groupModel;
-//            [self.modelsDict setObject:groupModel forKey:self.type];
-//            NSLog(@"%@",groupModel);
-//            [self.stockChartView reloadData];
-//        }
-//        
-//    } fail:^{
-//        
-//    }];
-//
     [NetWorking historyKlineQueryWithApi:param success:^(NSDictionary *responseObject) {
         dispatch_async(dispatch_get_main_queue(), ^{
             NSInteger digits = [responseObject[@"digits"] integerValue];
             [[NSUserDefaults standardUserDefaults]setInteger:digits forKey:@"digits"];
             [[NSUserDefaults standardUserDefaults]synchronize];
+            if (![responseObject[@"data"] isKindOfClass:[NSArray class]]) {
+                return ;
+            }
             Y_KLineGroupModel *groupModel = [Y_KLineGroupModel objectWithArray:responseObject[@"data"]withcurrentPrice:responseObject[@"currentprice"]] ;
           
             NSArray *aray = responseObject[@"data"];
@@ -262,4 +250,14 @@
     ChangeCanshuViewController *changeVC = [[ChangeCanshuViewController alloc]init];
     [self.navigationController pushViewController:changeVC animated:YES];
 }
+- (void)tip:(NSString *)str{
+    
+    UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:@"温馨提示" message:str preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *yes = [UIAlertAction actionWithTitle:@"知道了" style:0 handler:^(UIAlertAction * _Nonnull action) {
+        
+    }];
+    [alertVC addAction:yes];
+    [self presentViewController:alertVC animated:YES completion:nil];
+}
+
 @end

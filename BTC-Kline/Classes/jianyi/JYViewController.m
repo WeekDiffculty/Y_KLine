@@ -60,7 +60,6 @@
     return  _arrayData;
 }
 
-
 - (orderEdting *)orderEdtingView{
     if (!_orderEdtingView) {
         _orderEdtingView = [orderEdting optionView];
@@ -70,7 +69,12 @@
 }
  
 - (void)viewWillAppear:(BOOL)animated{
-    [self.timer fire];
+    Account *ccount = [NSKeyedUnarchiver unarchiveObjectWithFile:[GoodsPath sharePath].account];
+    if ([ccount.account isEqualToString:@""]||!ccount.account) {
+        self.symbolAndBanlance.text = @"未登录";
+    }else{
+     [self.timer fire];
+    }
 }
 - (void)viewWillDisappear:(BOOL)animated{
     [self.timer invalidate];
@@ -99,7 +103,6 @@
     [tableView setScrollsToTop:NO];
     [tableView setShowsVerticalScrollIndicator:NO];
     [tableView setEstimatedRowHeight:120];
-    [self reloadData];
 }
 #pragma  delegate >>>>>>>>>>>>>>>
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
@@ -130,9 +133,8 @@
 }
 
 - (void)reloadData{
-    
      Account *ccount = [NSKeyedUnarchiver unarchiveObjectWithFile:[GoodsPath sharePath].account];
-    [NetWorking checkThepositionWithApi:CHICANG account:ccount.account password:ccount.password success:^(NSArray *responseObject) {
+     [NetWorking checkThepositionWithApi:CHICANG account:ccount.account password:ccount.password success:^(NSArray *responseObject) {
         self.profit = 0.0;
         NSInteger count = responseObject.count;
         NSMutableArray *arraM = [NSMutableArray arrayWithCapacity:count];

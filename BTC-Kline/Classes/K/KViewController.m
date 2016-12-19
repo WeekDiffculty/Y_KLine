@@ -16,6 +16,7 @@
 @property (nonatomic, copy) NSArray *arrayData;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *symbol;
 @property (nonatomic, weak) UIView *chatView;
+@property (weak, nonatomic) IBOutlet UIView *MiddleView;
 @end
 
 @implementation KViewController
@@ -75,7 +76,17 @@
         make.top.equalTo(self.view).offset(64);
         make.bottom.equalTo(self.view).offset(-44);
     }];
-    
+    self.title = @"图表";
+   
+    UILabel *label = [[UILabel alloc]init];
+    [self.MiddleView addSubview:label];
+    [label mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.leading.trailing.bottom.equalTo(self.MiddleView);
+    }];
+    label.textAlignment = NSTextAlignmentCenter;
+    label.textColor = [UIColor blackColor];
+    label.backgroundColor = [UIColor colorWithRed:249/256.0 green:249/256.0 blue:249/256.0 alpha:1];
+    label.text = @"图表";
 }
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{

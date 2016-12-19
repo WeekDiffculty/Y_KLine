@@ -81,11 +81,11 @@
         if(httpresponse.statusCode==200){
             //请求成功,解析数据
             NSString *str=[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-            NSMutableString *resault = [str mutableCopy];
-            
-            NSDictionary *dict = [JsonstrTodic dictionaryWithJsonString:[resault substringFromIndex:1]][@"data"];
-            GoodsDetail *model = [GoodsDetail mj_objectWithKeyValues:dict];
-            success(model);
+            if (![str isEqualToString:@""]&&str) {
+                NSDictionary *dict = [JsonstrTodic dictionaryWithJsonString:[str substringFromIndex:1]][@"data"];
+                GoodsDetail *model = [GoodsDetail mj_objectWithKeyValues:dict];
+                success(model);
+            }
             dispatch_async(dispatch_get_main_queue(), ^{
                 [task suspend];
             });

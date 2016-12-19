@@ -19,9 +19,30 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-   [[RCIM sharedRCIM] initWithAppKey:@"qd46yzrfqukaf"];
-   NSString *token = [[NSUserDefaults standardUserDefaults]objectForKey:@"token"];
-    if (![token isEqualToString:@""]) {
+    [self loginRongandConfig];
+                return YES;
+}
+- (void)loginRongandConfig{
+    [[RCIM sharedRCIM] initWithAppKey:@"qd46yzrfqukaf"];
+     Account *ccount = [NSKeyedUnarchiver unarchiveObjectWithFile:[GoodsPath sharePath].account];
+    if (![ccount.account isEqualToString:@""]&&ccount.account) {
+    if ([[[NSUserDefaults standardUserDefaults]objectForKey:@"token"] isEqualToString:@""]||![[NSUserDefaults standardUserDefaults]objectForKey:@"token"]) {
+        [NetWorking getTokenWithApi:TOKEN withUserId:ccount.account name:ccount.account portraitUri:nil success:^(NSString *token) {
+            [[NSUserDefaults standardUserDefaults]setObject:token forKey:@"token"];
+            [[NSUserDefaults standardUserDefaults]synchronize];
+            [[RCIM sharedRCIM] connectWithToken:token success:^(NSString *userId) {
+                NSLog(@"登陆成功。当前登录的用户ID：%@", userId);
+            } error:^(RCConnectErrorCode status) {
+                NSLog(@"登陆的错误码为:%ld", status);
+            } tokenIncorrect:^{
+                //token过期或者不正确。
+                //如果设置了token有效期并且token过期，请重新请求您的服务器获取新的token
+                //如果没有设置token有效期却提示token错误，请检查您客户端和服务器的appkey是否匹配，还有检查您获取token的流程。
+                NSLog(@"token错误");
+            }];
+        }];
+    }else{
+        NSString *token = [[NSUserDefaults standardUserDefaults]objectForKey:@"token"];
         [[RCIM sharedRCIM] connectWithToken:token success:^(NSString *userId) {
             NSLog(@"登陆成功。当前登录的用户ID：%@", userId);
         } error:^(RCConnectErrorCode status) {
@@ -32,7 +53,9 @@
             //如果没有设置token有效期却提示token错误，请检查您客户端和服务器的appkey是否匹配，还有检查您获取token的流程。
             NSLog(@"token错误");
         }];
+
     }
+}
     //设置接收消息代理
     
     [RCIM sharedRCIM].receiveMessageDelegate = self;
@@ -51,11 +74,8 @@
     
     //开启消息撤回功能
     [RCIM sharedRCIM].enableMessageRecall = YES;
-    
-    
-
-              return YES;
 }
+
 - (void)applicationWillResignActive:(UIApplication *)application {
     
 }

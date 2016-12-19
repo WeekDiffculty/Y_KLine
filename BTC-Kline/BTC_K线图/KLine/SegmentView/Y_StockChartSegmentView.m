@@ -70,7 +70,6 @@ static NSInteger const Y_StockChartSegmentStartTag = 2000;
             [_indicatorView addSubview:btn];
             
             [btn mas_makeConstraints:^(MASConstraintMaker *make) {
-                
                 make.height.equalTo(_indicatorView).multipliedBy(1.0f/titleArr.count);
                 make.width.equalTo(_indicatorView);
                 make.left.equalTo(_indicatorView);
