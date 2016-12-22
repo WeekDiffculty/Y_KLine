@@ -11,6 +11,7 @@
 @interface LoginViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UITextField *account;
 @property (weak, nonatomic) IBOutlet UITextField *password;
+@property (nonatomic, copy) void (^block)(BOOL);
 - (IBAction)login:(UIBarButtonItem *)sender;
 -(void)loginWithceshi:(void(^)(BOOL success))success;
 @end

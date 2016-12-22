@@ -119,7 +119,6 @@
         if ([str isEqualToString:@"交易成功"]) {
             [weakself.navigationController popToRootViewControllerAnimated:YES];
         }
-       
     }];
     [alertVC addAction:yes];
     [self presentViewController:alertVC animated:YES completion:nil];

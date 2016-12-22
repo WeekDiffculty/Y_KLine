@@ -83,8 +83,10 @@
     [label mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.leading.trailing.bottom.equalTo(self.MiddleView);
     }];
+    //.....................
     label.textAlignment = NSTextAlignmentCenter;
     label.textColor = [UIColor blackColor];
+    label.userInteractionEnabled = YES;
     label.backgroundColor = [UIColor colorWithRed:249/256.0 green:249/256.0 blue:249/256.0 alpha:1];
     label.text = @"图表";
 }

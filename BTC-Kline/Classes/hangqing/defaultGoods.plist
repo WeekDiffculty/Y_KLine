@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>symbol</key>
+		<string>EURUSD</string>
+		<key>description</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>symbol</key>
+		<string>GBPUSD</string>
+		<key>description</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>symbol</key>
+		<string>XAUUSD</string>
+		<key>description</key>
+		<string>Gold</string>
+	</dict>
+	<dict>
+		<key>symbol</key>
+		<string>XAGUSD</string>
+		<key>description</key>
+		<string>Silver</string>
+	</dict>
+	<dict>
+		<key>symbol</key>
+		<string>USoil</string>
+		<key>description</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>symbol</key>
+		<string>USDCNH</string>
+		<key>description</key>
+		<string></string>
+	</dict>
+</array>
+</plist>

@@ -54,6 +54,8 @@
 		84FFC1541CD4A21600C749F6 /* UIColor+Y_StockChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FFC1531CD4A21600C749F6 /* UIColor+Y_StockChart.m */; };
 		911E22236ED76437562A6A2F /* libPods-BTC-Kline.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 74E3A205500B38FC6E717747 /* libPods-BTC-Kline.a */; };
 		A1178E101E07AF0800C7B29A /* ColorView.m in Sources */ = {isa = PBXBuildFile; fileRef = A1178E0F1E07AF0800C7B29A /* ColorView.m */; };
+		A14AB0211E0B709D008E8411 /* more.m in Sources */ = {isa = PBXBuildFile; fileRef = A14AB0201E0B709D008E8411 /* more.m */; };
+		A151EC561E08CEEA00DB9ADA /* defaultGoods.plist in Resources */ = {isa = PBXBuildFile; fileRef = A151EC551E08CEEA00DB9ADA /* defaultGoods.plist */; };
 		A1E336891DFE991D00F7C751 /* NSString+md5.m in Sources */ = {isa = PBXBuildFile; fileRef = A1E336881DFE991D00F7C751 /* NSString+md5.m */; };
 		C003941D1DF5114100514803 /* orderEdting.m in Sources */ = {isa = PBXBuildFile; fileRef = C003941A1DF5114000514803 /* orderEdting.m */; };
 		C003941E1DF5114100514803 /* orderEdting.xib in Resources */ = {isa = PBXBuildFile; fileRef = C003941B1DF5114000514803 /* orderEdting.xib */; };
@@ -182,6 +184,9 @@
 		91D39E2EDC14546C0231B348 /* Pods-BTC-Kline.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BTC-Kline.release.xcconfig"; path = "Pods/Target Support Files/Pods-BTC-Kline/Pods-BTC-Kline.release.xcconfig"; sourceTree = "<group>"; };
 		A1178E0E1E07AF0800C7B29A /* ColorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorView.h; sourceTree = "<group>"; };
 		A1178E0F1E07AF0800C7B29A /* ColorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorView.m; sourceTree = "<group>"; };
+		A14AB01F1E0B709D008E8411 /* more.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = more.h; sourceTree = "<group>"; };
+		A14AB0201E0B709D008E8411 /* more.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = more.m; sourceTree = "<group>"; };
+		A151EC551E08CEEA00DB9ADA /* defaultGoods.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = defaultGoods.plist; sourceTree = "<group>"; };
 		A1E336871DFE991D00F7C751 /* NSString+md5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+md5.h"; sourceTree = "<group>"; };
 		A1E336881DFE991D00F7C751 /* NSString+md5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+md5.m"; sourceTree = "<group>"; };
 		B7FEEF5804F5D1806CD22D6C /* Pods-BTC-Kline.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BTC-Kline.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BTC-Kline/Pods-BTC-Kline.debug.xcconfig"; sourceTree = "<group>"; };
@@ -734,6 +739,8 @@
 				C08DD3D51DE299A50090E528 /* Logined.xib */,
 				A1178E0E1E07AF0800C7B29A /* ColorView.h */,
 				A1178E0F1E07AF0800C7B29A /* ColorView.m */,
+				A14AB01F1E0B709D008E8411 /* more.h */,
+				A14AB0201E0B709D008E8411 /* more.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -803,6 +810,7 @@
 				C06A1F041DDC3A5A008852B0 /* GoodsPath.h */,
 				C06A1F051DDC3A5A008852B0 /* GoodsPath.m */,
 				C0E412631DD9AB1F00798679 /* goods.plist */,
+				A151EC551E08CEEA00DB9ADA /* defaultGoods.plist */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -842,7 +850,7 @@
 					84C0D7851CD117B40013B3D4 = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = 73W72LVS68;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -874,6 +882,7 @@
 				C08DD3D61DE299A50090E528 /* Logined.xib in Resources */,
 				C02B728D1DDD49CB005FBE1C /* DetailCell.xib in Resources */,
 				189433E41DD4838F00F3D618 /* SimpleCell.xib in Resources */,
+				A151EC561E08CEEA00DB9ADA /* defaultGoods.plist in Resources */,
 				84FFC0F01CD31EBD00C749F6 /* 指标公式.md in Resources */,
 				C02B72881DDD49AC005FBE1C /* NomalCell.xib in Resources */,
 				C0921D021DEE6AEE00E4B522 /* CANSHU.plist in Resources */,
@@ -945,6 +954,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A14AB0211E0B709D008E8411 /* more.m in Sources */,
 				A1178E101E07AF0800C7B29A /* ColorView.m in Sources */,
 				C0F34A911DDECAD500E860CD /* GuanyuViewController.m in Sources */,
 				84FFC12E1CD4676F00C749F6 /* Y_StockChartView.m in Sources */,
@@ -1138,8 +1148,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.StateStreet.com;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "e699ac2f-a297-4f2d-91c4-345b159670f7";
-				PROVISIONING_PROFILE_SPECIFIER = jjjjjj;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};
@@ -1161,8 +1171,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.StateStreet.com;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "e699ac2f-a297-4f2d-91c4-345b159670f7";
-				PROVISIONING_PROFILE_SPECIFIER = jjjjjj;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
 		};

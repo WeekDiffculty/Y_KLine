@@ -171,6 +171,9 @@
 #pragma mark 重新设置相关数据，然后重绘
 - (void)drawMainView
 {
+    if(!self.kLineModels){
+        return;
+    }
     NSAssert(self.kLineModels, @"kLineModels不能为空");
     
     //提取需要的kLineModel

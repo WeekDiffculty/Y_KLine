@@ -36,6 +36,7 @@
         [_noDateView setAdjustsFontSizeToFitWidth:YES];
         _noDateView.textAlignment = NSTextAlignmentCenter;
         _noDateView.backgroundColor = [UIColor grayColor];
+        _noDateView.userInteractionEnabled = YES;
         [self.view addSubview:_noDateView];
     }
     return _noDateView;
@@ -69,8 +70,27 @@
     }else{
         NSString *path = [[NSBundle mainBundle]pathForResource:@"goods" ofType:@"plist"];
         NSArray *array  = [NSArray arrayWithContentsOfFile:path];
-        [array writeToFile: [GoodsPath sharePath].goodsPath atomically:YES];
-        [array writeToFile:[GoodsPath sharePath].currentGoodsPath atomically:YES];
+        [array writeToFile: [GoodsPath sharePath].goodsPath atomically:YES];//总商品写入沙盒
+        //默认商品 EURUSD,GBPUSD,XAUUSD,XAGUSD,USoil,USDCNH
+        NSArray *currentArray = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle]pathForResource:@"defaultGoods" ofType:@"plist"]];
+        //剩余需要自定义添加的商品
+        NSMutableArray *etcArray = [NSMutableArray array];
+        NSInteger count = array.count;
+        for (NSInteger index =0; index< count; index++) {
+            NSDictionary *dict1 = array[index];
+            int j=0;
+            for (NSInteger i=0; i<currentArray.count; i++) {
+                NSDictionary *dict2 = currentArray[i];
+                if (![dict1[@"symbol"]isEqualToString:dict2[@"symbol"]]) {
+                    j++;
+                }
+                if (j==6) {
+                    [etcArray addObject:dict1];
+                }
+            }
+        }
+        [etcArray writeToFile:[GoodsPath sharePath].etcPath atomically:YES];
+        [currentArray writeToFile:[GoodsPath sharePath].currentGoodsPath atomically:YES];
         [[NSUserDefaults standardUserDefaults]setObject:versionOld forKey:@"version"];
         [[NSUserDefaults standardUserDefaults]synchronize];
     }

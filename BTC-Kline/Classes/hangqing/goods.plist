@@ -4,6 +4,12 @@
 <array>
 	<dict>
 		<key>symbol</key>
+		<string>USDCNH</string>
+		<key>description</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>symbol</key>
 		<string>EURNZD</string>
 		<key>description</key>
 		<string>Euro vs New Zealand Dollar</string>
@@ -121,6 +127,24 @@
 		<string>XAUUSD</string>
 		<key>description</key>
 		<string>Gold</string>
+	</dict>
+	<dict>
+		<key>symbol</key>
+		<string>USoil</string>
+		<key>description</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>symbol</key>
+		<string>EURUSD</string>
+		<key>description</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>symbol</key>
+		<string>GBPUSD</string>
+		<key>description</key>
+		<string></string>
 	</dict>
 </array>
 </plist>

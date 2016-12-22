@@ -156,44 +156,46 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+//快减
 - (IBAction)fastBack:(UIButton *)sender {
-    self.volums -= 1;
-    if (self.volums<1) {
-        [self tip:@"数量最小为1"];
-        return;
-    }
-    NSString *str = [NSString stringWithFormat:@"%g",self.volums];
-    self.volumValue.text = str;
-    self.volum.text = str;
-}
-- (IBAction)back:(UIButton *)sender {
     self.volums -= 0.1;
-    if (self.volums<1) {
-        [self tip:@"数量最小为1"];
+    if (self.volums<0.01) {
+        [self tip:@"数量最小为0.01"];
         return;
     }
     NSString *str = [NSString stringWithFormat:@"%g",self.volums];
     self.volumValue.text = str;
     self.volum.text = str;
 }
-
+//减
+- (IBAction)back:(UIButton *)sender {
+    self.volums -= 0.01;
+    if (self.volums<0.01) {
+        [self tip:@"数量最小为0.01"];
+        return;
+    }
+    NSString *str = [NSString stringWithFormat:@"%g",self.volums];
+    self.volumValue.text = str;
+    self.volum.text = str;
+}
+//加
 - (IBAction)forword:(UIButton *)sender {
-    self.volums += 0.1;
+    self.volums += 0.01;
    
     NSString *str = [NSString stringWithFormat:@"%g",self.volums];
     self.volumValue.text = str;
     self.volum.text = str;
 }
+//快加
 - (IBAction)fastForword:(UIButton *)sender {
-    self.volums += 1;
+    self.volums += 0.1;
     NSString *str = [NSString stringWithFormat:@"%g",self.volums];
     self.volumValue.text = str;
     self.volum.text = str;
 }
 - (IBAction)next:(id)sender {
-    if (self.volums<1) {
-        [self tip:@"数量最小为1,请核对"];
+    if (self.volums<0.01) {
+        [self tip:@"数量最小为0.01,请核对"];
         return;
     }
     UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Jiaoyi" bundle:nil];
